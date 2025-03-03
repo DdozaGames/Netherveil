@@ -74,6 +74,7 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilGameMode() {}
 	{
 		return ANetherveilGameMode::StaticClass();
 	}
+	ANetherveilGameMode::ANetherveilGameMode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ANetherveilGameMode);
 	ANetherveilGameMode::~ANetherveilGameMode() {}
 	struct Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_NetherveilGameMode_h_Statics

@@ -11,8 +11,6 @@ class ANetherveilGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
-public:
-	ANetherveilGameMode();
 };
 
 

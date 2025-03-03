@@ -29,6 +29,8 @@ public: \
 
 
 #define FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_NetherveilGameMode_h_12_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NETHERVEIL_API ANetherveilGameMode(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NETHERVEIL_API ANetherveilGameMode(ANetherveilGameMode&&); \
@@ -36,7 +38,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NETHERVEIL_API, ANetherveilGameMode); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANetherveilGameMode); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ANetherveilGameMode) \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ANetherveilGameMode) \
 	NETHERVEIL_API virtual ~ANetherveilGameMode();
 
 

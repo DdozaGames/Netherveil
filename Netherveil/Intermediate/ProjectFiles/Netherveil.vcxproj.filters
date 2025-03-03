@@ -11,6 +11,7 @@
     <None Include="..\..\Source\NetherveilEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -52,6 +53,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Netherveil\NetherveilGameMode.h">
       <Filter>Source\Netherveil</Filter>
+    </ClInclude>
+    <Filter Include="Source\Netherveil\Private">
+      <UniqueIdentifier>{075B995A-4D32-3875-B7CF-5992F786231E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Netherveil\Private\Player">
+      <UniqueIdentifier>{8370BC1E-C5D4-3C70-876E-46F0D26B0235}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Player\NetherveilPlayer.cpp">
+      <Filter>Source\Netherveil\Private\Player</Filter>
+    </ClCompile>
+    <Filter Include="Source\Netherveil\Public">
+      <UniqueIdentifier>{0C6BC1A1-747D-3A7A-9661-8848B64BA299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Netherveil\Public\Player">
+      <UniqueIdentifier>{2037C054-31A2-35B9-B927-73EF08D07940}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Player\NetherveilPlayer.h">
+      <Filter>Source\Netherveil\Public\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
