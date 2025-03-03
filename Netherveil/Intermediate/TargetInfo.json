@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Netherveil",
+			"Path": "..\\Source\\Netherveil.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "NetherveilEditor",
+			"Path": "..\\Source\\NetherveilEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
