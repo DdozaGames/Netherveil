@@ -9,6 +9,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/Bullet.h"
+#include "Player/PlayerAnim.h"
 
 ANetherveilPlayer::ANetherveilPlayer()
 {
@@ -81,6 +82,7 @@ void ANetherveilPlayer::BeginPlay()
 	//기본으로 유탄총 사용
 	ChangeToGrenadeGun();
 
+	anim = Cast<UPlayerAnim>(GetMesh()->GetAnimInstance());
 }
 
 void ANetherveilPlayer::Tick(float DeltaTime)
@@ -152,7 +154,19 @@ void ANetherveilPlayer::Move()
 
 void ANetherveilPlayer::InputFire()
 {
+	//애니메이션 몽타주 재생
+	if (anim)
+	{
+		anim->PlayAttackAnim();
+	}
+
+	//사운드 재생 
 	UGameplayStatics::PlaySound2D(GetWorld(), bulletSound);
+
+	//카메라 셰이크 재생
+	auto controller = GetWorld()->GetFirstPlayerController();
+	controller->PlayerCameraManager->StartCameraShake(cameraShake);
+
 
 	if (bUsingGrenadeGun)
 	{

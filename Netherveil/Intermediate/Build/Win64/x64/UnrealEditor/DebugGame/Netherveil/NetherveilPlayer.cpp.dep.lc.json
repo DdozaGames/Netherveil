@@ -78,7 +78,9 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
             "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\source\\netherveil\\public\\player\\bullet.h",
-            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\unrealeditor\\inc\\netherveil\\uht\\bullet.generated.h"
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\unrealeditor\\inc\\netherveil\\uht\\bullet.generated.h",
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\source\\netherveil\\public\\player\\playeranim.h",
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\unrealeditor\\inc\\netherveil\\uht\\playeranim.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

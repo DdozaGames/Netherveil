@@ -45,6 +45,9 @@ public:
 	void Sprint();
 	void StopSprinting();
 
+	UPROPERTY(EditAnywhere, Category = PlayerAnim)
+	class UPlayerAnim* anim;
+
 	//------------------------Move------------------------------
 	void Move();
 
@@ -93,4 +96,6 @@ public:
 	//총알 발사 사운드
 	UPROPERTY(EditDefaultsOnly, Category = Sound)
 	class USoundBase* bulletSound;
+
+
 };

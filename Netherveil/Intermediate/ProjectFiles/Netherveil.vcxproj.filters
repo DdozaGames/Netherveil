@@ -75,6 +75,9 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Player\NetherveilPlayer.cpp">
       <Filter>Source\Netherveil\Private\Player</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Player\PlayerAnim.cpp">
+      <Filter>Source\Netherveil\Private\Player</Filter>
+    </ClCompile>
     <Filter Include="Source\Netherveil\Public">
       <UniqueIdentifier>{0C6BC1A1-747D-3A7A-9661-8848B64BA299}</UniqueIdentifier>
     </Filter>
@@ -94,6 +97,9 @@
       <Filter>Source\Netherveil\Public\Player</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Player\NetherveilPlayer.h">
+      <Filter>Source\Netherveil\Public\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Player\PlayerAnim.h">
       <Filter>Source\Netherveil\Public\Player</Filter>
     </ClInclude>
   </ItemGroup>
