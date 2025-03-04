@@ -6,6 +6,7 @@
 #include "Enemy/EnemyAnim.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/NetherveilPlayer.h"
+#include "Runtime/AIModule/Classes/AIController.h"
 
 UEnemyFSM::UEnemyFSM()
 {
@@ -23,6 +24,8 @@ void UEnemyFSM::BeginPlay()
 	me = Cast<AEnemy>(GetOwner());
 
 	anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
+
+	ai = Cast<AAIController>(me->GetController());
 }
 
 
@@ -68,10 +71,13 @@ void UEnemyFSM::MoveState()
 {
 	FVector destination = target->GetActorLocation();
 	FVector dir = destination - me->GetActorLocation();
-	me->AddMovementInput(dir.GetSafeNormal());
+	//me->AddMovementInput(dir.GetSafeNormal());
+	ai->MoveToLocation(destination);
+
 
 	if(dir.Size() < attackRange)
 	{
+		ai->StopMovement();
 		currentState = EEnemyState::Attack;
 		anim->animState = currentState;
 		anim->bAttackPlay = true;
@@ -143,5 +149,6 @@ void UEnemyFSM::OnDamageProcess()
 		anim->PlayDamageAnim(TEXT("Die"));
 	}
 	anim->animState = currentState;
+	ai->StopMovement();
 }
 

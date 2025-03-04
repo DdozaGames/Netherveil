@@ -34,7 +34,7 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
-"C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Intermediate\Build\Win64\x64\NetherveilEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h.obj"
+"C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Intermediate\Build\Win64\x64\NetherveilEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.NonOptimized.Cpp20.h.obj"
 "C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Netherveil\Bullet.gen.cpp.obj"
 "C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Netherveil\Enemy.gen.cpp.obj"
 "C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\Netherveil\EnemyAnim.gen.cpp.obj"
@@ -60,6 +60,8 @@
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\InputCore\UnrealEditor-InputCore.lib"
 "..\Plugins\EnhancedInput\Intermediate\Build\Win64\x64\UnrealEditor\Development\EnhancedInput\UnrealEditor-EnhancedInput.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UMG\UnrealEditor-UMG.lib"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\NavigationSystem\UnrealEditor-NavigationSystem.lib"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\AIModule\UnrealEditor-AIModule.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
