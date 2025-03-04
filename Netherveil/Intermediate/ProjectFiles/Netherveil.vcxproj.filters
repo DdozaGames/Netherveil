@@ -63,6 +63,9 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\Enemy.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAnim.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
@@ -85,6 +88,9 @@
       <UniqueIdentifier>{9CC3F23C-525E-32BD-876F-3AD4BE5BF348}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\Enemy.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h">

@@ -62,4 +62,8 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float damageDelayTime = 2.0f;
+
+	UPROPERTY()
+	class UEnemyAnim* anim;
+
 };

@@ -8,7 +8,7 @@ AEnemy::AEnemy()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	ConstructorHelpers::FObjectFinder<USkeletalMesh> tempMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/Asset/Creep/uploads_files_4240643_Creep__1_.uploads_files_4240643_Creep__1_'"));
+	ConstructorHelpers::FObjectFinder<USkeletalMesh> tempMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/Asset/Creep/SK_Creep.SK_Creep'"));
 
 	if (tempMesh.Succeeded())
 	{

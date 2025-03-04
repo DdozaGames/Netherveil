@@ -3,6 +3,7 @@
 
 #include "Components/CapsuleComponent.h"
 #include "Enemy/Enemy.h"
+#include "Enemy/EnemyAnim.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/NetherveilPlayer.h"
 
@@ -21,6 +22,7 @@ void UEnemyFSM::BeginPlay()
 	target = Cast<ANetherveilPlayer>(actor);
 	me = Cast<AEnemy>(GetOwner());
 
+	anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
 }
 
 
@@ -58,7 +60,7 @@ void UEnemyFSM::IdleState()
 		currentState = EEnemyState::Move;
 		currentTime = 0;
 
-		//anim->animState = currentState;
+		anim->animState = currentState;
 	}
 }
 
@@ -71,9 +73,9 @@ void UEnemyFSM::MoveState()
 	if(dir.Size() < attackRange)
 	{
 		currentState = EEnemyState::Attack;
-		/*anim->animState = currentState;
+		anim->animState = currentState;
 		anim->bAttackPlay = true;
-		currentTime = attackDelayTime;*/
+		currentTime = attackDelayTime;
 	}
 }
 
@@ -84,14 +86,14 @@ void UEnemyFSM::AttackState()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Attack!"));
 		currentTime = 0;
-		//anim->bAttackPlay = true;
+		anim->bAttackPlay = true;
 	}
 
 	float distance = FVector::Distance(target->GetActorLocation(), me->GetActorLocation());
 	if (distance > attackRange)
 	{
 		currentState = EEnemyState::Move;
-		//anim->animState = currentState;
+		anim->animState = currentState;
 	}
 }
 
@@ -104,12 +106,17 @@ void UEnemyFSM::DamageState()
 	{
 		currentState = EEnemyState::Idle;
 		currentTime = 0;
-		//anim->animState = currentState;
+		anim->animState = currentState;
 	}
 }
 
 void UEnemyFSM::DieState()
 {
+	//아직 죽음 애니메이션 끝나지 않았다면
+	if (anim->bDieDone == false)
+	{
+		return;
+	}
 	me->Destroy();
 }
 
@@ -121,11 +128,11 @@ void UEnemyFSM::OnDamageProcess()
 	{
 		currentState = EEnemyState::Damage;
 
-		/*currentTime = 0;
+		currentTime = 0;
 
 		int32 index = FMath::RandRange(0, 1);
 		FString sectionName = FString::Printf(TEXT("Damage%d"), index);
-		anim->PlayDamageAnim(FName(*sectionName));*/
+		anim->PlayDamageAnim(FName(*sectionName));
 	}
 	else
 	{
@@ -133,8 +140,8 @@ void UEnemyFSM::OnDamageProcess()
 
 		me->GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
-		//anim->PlayDamageAnim(TEXT("Die"));
+		anim->PlayDamageAnim(TEXT("Die"));
 	}
-	//anim->animState = currentState;
+	anim->animState = currentState;
 }
 
