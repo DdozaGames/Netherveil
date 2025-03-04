@@ -4,6 +4,7 @@
 #include "Blueprint/UserWidget.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Enemy/EnemyFSM.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -183,12 +184,12 @@ void ANetherveilPlayer::InputFire()
 				hitComp->AddForce(force);
 			}
 
-			/*auto enemy = hitInfo.GetActor()->GetDefaultSubobjectByName(TEXT("FSM"));
+			auto enemy = hitInfo.GetActor()->GetDefaultSubobjectByName(TEXT("FSM"));
 			if (enemy)
 			{
 				auto enemyFSM = Cast<UEnemyFSM>(enemy);
 				enemyFSM->OnDamageProcess();
-			}*/
+			}
 		}
 	}
 }

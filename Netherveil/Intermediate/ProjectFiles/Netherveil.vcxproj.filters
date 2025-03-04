@@ -57,6 +57,15 @@
     <Filter Include="Source\Netherveil\Private">
       <UniqueIdentifier>{075B995A-4D32-3875-B7CF-5992F786231E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Netherveil\Private\Enemy">
+      <UniqueIdentifier>{10AB48BA-1343-326C-84A1-37F13658A63D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\Enemy.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <Filter Include="Source\Netherveil\Private\Player">
       <UniqueIdentifier>{8370BC1E-C5D4-3C70-876E-46F0D26B0235}</UniqueIdentifier>
     </Filter>
@@ -69,6 +78,15 @@
     <Filter Include="Source\Netherveil\Public">
       <UniqueIdentifier>{0C6BC1A1-747D-3A7A-9661-8848B64BA299}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Netherveil\Public\Enemy">
+      <UniqueIdentifier>{9CC3F23C-525E-32BD-876F-3AD4BE5BF348}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\Enemy.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
     <Filter Include="Source\Netherveil\Public\Player">
       <UniqueIdentifier>{2037C054-31A2-35B9-B927-73EF08D07940}</UniqueIdentifier>
     </Filter>
