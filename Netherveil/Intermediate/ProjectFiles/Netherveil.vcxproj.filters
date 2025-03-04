@@ -60,6 +60,9 @@
     <Filter Include="Source\Netherveil\Private\Player">
       <UniqueIdentifier>{8370BC1E-C5D4-3C70-876E-46F0D26B0235}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Player\Bullet.cpp">
+      <Filter>Source\Netherveil\Private\Player</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Player\NetherveilPlayer.cpp">
       <Filter>Source\Netherveil\Private\Player</Filter>
     </ClCompile>
@@ -69,6 +72,9 @@
     <Filter Include="Source\Netherveil\Public\Player">
       <UniqueIdentifier>{2037C054-31A2-35B9-B927-73EF08D07940}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Player\Bullet.h">
+      <Filter>Source\Netherveil\Public\Player</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Player\NetherveilPlayer.h">
       <Filter>Source\Netherveil\Public\Player</Filter>
     </ClInclude>

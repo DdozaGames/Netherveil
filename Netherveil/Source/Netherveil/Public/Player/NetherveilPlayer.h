@@ -47,4 +47,50 @@ public:
 
 	//------------------------Move------------------------------
 	void Move();
+
+	//-----------------------Attack-----------------------------
+	UPROPERTY(VisibleAnywhere, Category = GunMesh)
+	class USkeletalMeshComponent* granadeGunComp;
+
+	UPROPERTY(VisibleAnywhere, Category = GunMesh)
+	class UStaticMeshComponent* sniperGunComp;
+
+	UPROPERTY(EditDefaultsOnly, Category = BulletFactory)
+	TSubclassOf<class ABullet> bulletFactory;
+
+	void InputFire();
+
+	//유탄총 사용 여부
+	bool bUsingGrenadeGun = true;
+	//유탄총으로 변경
+	void ChangeToGrenadeGun();
+	//스나이퍼건으로 변경
+	void ChangeToSniperGun();
+	//스나이퍼 조준
+	void SniperAim();
+
+	bool bSniperAim = false;
+
+	UPROPERTY(EditDefaultsOnly, Category = SniperUI)
+	TSubclassOf<class UUserWidget> sniperUIFactory;
+
+	UPROPERTY()
+	class UUserWidget* _sniperUI;
+
+	UPROPERTY(EditAnywhere, Category = BulletEffect)
+	class UParticleSystem* bulletEffectFactory;
+
+	UPROPERTY(EditDefaultsOnly, Category = SniperUI)
+	TSubclassOf<class UUserWidget> crosshairUIFactory;
+
+	UPROPERTY()
+	class UUserWidget* _crosshairUI;
+
+	//카메라 셰이크
+	UPROPERTY(EditDefaultsOnly, Category = CameraMotion)
+	TSubclassOf<class UCameraShakeBase> cameraShake;
+
+	//총알 발사 사운드
+	UPROPERTY(EditDefaultsOnly, Category = Sound)
+	class USoundBase* bulletSound;
 };
