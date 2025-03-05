@@ -5,7 +5,12 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/TestMap.umap"
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/TestMap.umap",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyShroudfiendMelee.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/ABP_Enemy.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/ABP_EnemyShroudFiendMelee.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Animations/ABP_Player.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_Enemy.uasset"
 			]
 		}
 	]

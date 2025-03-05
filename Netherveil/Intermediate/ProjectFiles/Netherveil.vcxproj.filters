@@ -69,6 +69,12 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM_ShroudfiendMelee.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyShroudfiendMelee.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <Filter Include="Source\Netherveil\Private\Player">
       <UniqueIdentifier>{8370BC1E-C5D4-3C70-876E-46F0D26B0235}</UniqueIdentifier>
     </Filter>
@@ -94,6 +100,12 @@
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_ShroudfiendMelee.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <Filter Include="Source\Netherveil\Public\Player">

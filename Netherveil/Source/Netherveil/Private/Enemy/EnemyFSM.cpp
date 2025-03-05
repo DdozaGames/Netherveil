@@ -23,9 +23,11 @@ void UEnemyFSM::BeginPlay()
 	target = Cast<ANetherveilPlayer>(actor);
 	me = Cast<AEnemy>(GetOwner());
 
-	anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
-
-	ai = Cast<AAIController>(me->GetController());
+	if (me)
+	{
+		anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
+		ai = Cast<AAIController>(me->GetController());
+	}
 }
 
 
@@ -63,7 +65,12 @@ void UEnemyFSM::IdleState()
 		currentState = EEnemyState::Move;
 		currentTime = 0;
 
-		anim->animState = currentState;
+		if (anim)
+		{
+			anim->animState = currentState;
+			UE_LOG(LogTemp, Warning, TEXT("Idle Anim"));
+
+		}
 	}
 }
 
@@ -106,7 +113,7 @@ void UEnemyFSM::AttackState()
 void UEnemyFSM::DamageState()
 {
 	currentTime += GetWorld()->DeltaTimeSeconds;
-	//UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
+	UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
 
 	if (currentTime > damageDelayTime)
 	{
@@ -139,6 +146,7 @@ void UEnemyFSM::OnDamageProcess()
 		int32 index = FMath::RandRange(0, 1);
 		FString sectionName = FString::Printf(TEXT("Damage%d"), index);
 		anim->PlayDamageAnim(FName(*sectionName));
+		UE_LOG(LogTemp, Warning, TEXT("%d"),hp);
 	}
 	else
 	{
@@ -147,6 +155,9 @@ void UEnemyFSM::OnDamageProcess()
 		me->GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 		anim->PlayDamageAnim(TEXT("Die"));
+
+		UE_LOG(LogTemp, Warning, TEXT("Die"));
+
 	}
 	anim->animState = currentState;
 	ai->StopMovement();

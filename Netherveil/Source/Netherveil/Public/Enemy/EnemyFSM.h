@@ -35,7 +35,7 @@ public:
 
 	void IdleState();
 	void MoveState();
-	void AttackState();
+	virtual void AttackState();
 	void DamageState();
 	void DieState();
 
@@ -55,7 +55,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float attackDelayTime = 3.0f;
 
-	void OnDamageProcess();
+	virtual void OnDamageProcess();
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = FSM)
 	int32 hp = 3;
