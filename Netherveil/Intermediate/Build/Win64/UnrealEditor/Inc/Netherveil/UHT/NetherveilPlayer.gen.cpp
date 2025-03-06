@@ -25,8 +25,138 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Netherveil();
 // End Cross Module References
+	DEFINE_FUNCTION(ANetherveilPlayer::execOnGameOver)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnGameOver_Implementation();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ANetherveilPlayer::execOnHitEvent)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnHitEvent();
+		P_NATIVE_END;
+	}
+	struct NetherveilPlayer_eventOnUsingGrenade_Parms
+	{
+		bool isGrenade;
+	};
+	static FName NAME_ANetherveilPlayer_OnGameOver = FName(TEXT("OnGameOver"));
+	void ANetherveilPlayer::OnGameOver()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ANetherveilPlayer_OnGameOver),NULL);
+	}
+	static FName NAME_ANetherveilPlayer_OnUsingGrenade = FName(TEXT("OnUsingGrenade"));
+	void ANetherveilPlayer::OnUsingGrenade(bool isGrenade)
+	{
+		NetherveilPlayer_eventOnUsingGrenade_Parms Parms;
+		Parms.isGrenade=isGrenade ? true : false;
+		ProcessEvent(FindFunctionChecked(NAME_ANetherveilPlayer_OnUsingGrenade),&Parms);
+	}
 	void ANetherveilPlayer::StaticRegisterNativesANetherveilPlayer()
 	{
+		UClass* Class = ANetherveilPlayer::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "OnGameOver", &ANetherveilPlayer::execOnGameOver },
+			{ "OnHitEvent", &ANetherveilPlayer::execOnHitEvent },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ANetherveilPlayer_OnGameOver_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ANetherveilPlayer_OnGameOver_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Health" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANetherveilPlayer_OnGameOver_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANetherveilPlayer, nullptr, "OnGameOver", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_OnGameOver_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANetherveilPlayer_OnGameOver_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ANetherveilPlayer_OnGameOver()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANetherveilPlayer_OnGameOver_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANetherveilPlayer, nullptr, "OnHitEvent", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics
+	{
+		static void NewProp_isGrenade_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_isGrenade;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::NewProp_isGrenade_SetBit(void* Obj)
+	{
+		((NetherveilPlayer_eventOnUsingGrenade_Parms*)Obj)->isGrenade = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::NewProp_isGrenade = { "isGrenade", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(NetherveilPlayer_eventOnUsingGrenade_Parms), &Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::NewProp_isGrenade_SetBit, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::NewProp_isGrenade,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Gun" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xc8\xa3\xef\xbf\xbd\xef\xbf\xbd\xc7\xb4\xef\xbf\xbd \xef\xbf\xbd\xcc\xba\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xc8\xa3\xef\xbf\xbd\xef\xbf\xbd\xc7\xb4\xef\xbf\xbd \xef\xbf\xbd\xcc\xba\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANetherveilPlayer, nullptr, "OnUsingGrenade", nullptr, nullptr, Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::PropPointers), sizeof(NetherveilPlayer_eventOnUsingGrenade_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::PropPointers) < 2048);
+	static_assert(sizeof(NetherveilPlayer_eventOnUsingGrenade_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ANetherveilPlayer);
 	UClass* Z_Construct_UClass_ANetherveilPlayer_NoRegister()
@@ -36,6 +166,7 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 	struct Z_Construct_UClass_ANetherveilPlayer_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -99,6 +230,14 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_bulletSound_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_bulletSound;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_hp_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_hp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_initialHp_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_initialHp;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -108,6 +247,12 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Netherveil,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::DependentSingletons) < 16);
+	const FClassFunctionLinkInfo Z_Construct_UClass_ANetherveilPlayer_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ANetherveilPlayer_OnGameOver, "OnGameOver" }, // 1446480415
+		{ &Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent, "OnHitEvent" }, // 314406478
+		{ &Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade, "OnUsingGrenade" }, // 1320040687
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
@@ -242,6 +387,32 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound = { "bulletSound", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, bulletSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_hp_MetaData[] = {
+		{ "Category", "Health" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc3\xbc\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc3\xbc\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_hp = { "hp", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, hp), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_hp_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_hp_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_initialHp_MetaData[] = {
+		{ "Category", "Health" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xef\xbf\xbd\xca\xb1\xef\xbf\xbd hp \xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xca\xb1\xef\xbf\xbd hp \xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_initialHp = { "initialHp", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, initialHp), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_initialHp_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_initialHp_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANetherveilPlayer_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_springArmComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_CamComp,
@@ -258,6 +429,8 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp__crosshairUI,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_cameraShake,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_hp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_initialHp,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANetherveilPlayer_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANetherveilPlayer>::IsAbstract,
@@ -267,11 +440,11 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_ANetherveilPlayer_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -297,9 +470,9 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 3225799560U) },
+		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 1565726585U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_969841408(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_681651507(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

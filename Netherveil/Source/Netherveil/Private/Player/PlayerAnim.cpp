@@ -31,13 +31,8 @@ void UPlayerAnim::NativeUpdateAnimation(float DeltaSeconds)
 
 void UPlayerAnim::PlayAttackAnim()
 {
-	if (attackAnimMontage && attackAnimMontage->IsValidLowLevel())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Montage 유효! 실행 시도"));
-		Montage_Play(attackAnimMontage);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Montage가 유효하지 않습니다!"));
-	}
+
+	Montage_Play(attackAnimMontage);
+
+	
 }

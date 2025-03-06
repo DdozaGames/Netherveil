@@ -113,11 +113,11 @@ void UEnemyFSM::AttackState()
 void UEnemyFSM::DamageState()
 {
 	currentTime += GetWorld()->DeltaTimeSeconds;
-	UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
+	//UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
 
 	if (currentTime > damageDelayTime)
 	{
-		currentState = EEnemyState::Idle;
+		currentState = EEnemyState::Move;
 		currentTime = 0;
 		anim->animState = currentState;
 	}
@@ -128,6 +128,7 @@ void UEnemyFSM::DieState()
 	//아직 죽음 애니메이션 끝나지 않았다면
 	if (anim->bDieDone == false)
 	{
+		//UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
 		return;
 	}
 	me->Destroy();
@@ -146,7 +147,7 @@ void UEnemyFSM::OnDamageProcess()
 		int32 index = FMath::RandRange(0, 1);
 		FString sectionName = FString::Printf(TEXT("Damage%d"), index);
 		anim->PlayDamageAnim(FName(*sectionName));
-		UE_LOG(LogTemp, Warning, TEXT("%d"),hp);
+		
 	}
 	else
 	{
@@ -156,7 +157,7 @@ void UEnemyFSM::OnDamageProcess()
 
 		anim->PlayDamageAnim(TEXT("Die"));
 
-		UE_LOG(LogTemp, Warning, TEXT("Die"));
+		//UE_LOG(LogTemp, Warning, TEXT("Die"));
 
 	}
 	anim->animState = currentState;

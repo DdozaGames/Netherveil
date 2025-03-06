@@ -17,9 +17,9 @@ void UEnemyFSM_ShroudfiendMelee::BeginPlay()
 	//target = Cast<ANetherveilPlayer>(actor);
 	me = Cast<AEnemyShroudfiendMelee>(GetOwner());
 
-	anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
+	//anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
 
-	ai = Cast<AAIController>(me->GetController());
+	//ai = Cast<AAIController>(me->GetController());
 }
 
 void UEnemyFSM_ShroudfiendMelee::AttackState()
@@ -45,4 +45,5 @@ void UEnemyFSM_ShroudfiendMelee::AttackState()
 void UEnemyFSM_ShroudfiendMelee::OnDamageProcess()
 {
 	Super::OnDamageProcess();
+	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM_ShroudfiendMelee::OnDamageProcess()!"));
 }

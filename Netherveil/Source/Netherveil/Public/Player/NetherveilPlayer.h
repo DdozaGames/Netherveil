@@ -97,5 +97,24 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = Sound)
 	class USoundBase* bulletSound;
 
+	//총 변경 시 호출되는 이벤트 함수
+	UFUNCTION(BlueprintImplementableEvent,BlueprintCallable,Category=Gun)
+	void OnUsingGrenade(bool isGrenade);
 
+	//------------------------Damage------------------------------
+
+	//현재 체력
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite,Category=Health)
+	int32 hp;
+
+	//초기 hp 값
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category=Health)
+	int32 initialHp = 10;
+
+	UFUNCTION(BlueprintCallable, Category=Health)
+	void OnHitEvent();
+
+	//게임 오버
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable,Category=Health)
+	void OnGameOver();
 };

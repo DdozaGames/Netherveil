@@ -5,12 +5,18 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/TestMap.umap",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyShroudfiendMelee.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/ABP_Enemy.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/ABP_EnemyShroudFiendMelee.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Animations/ABP_Player.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_Enemy.uasset"
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Animations/Fire_Rifle_Ironsights_Montage.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/TestMap.umap",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/ABP_EnemyShroudFiendMelee.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Creep/Animations/Attack.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Blueprints/BP_NetherveilPlayer.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/UI/RT_minimap.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/UI/UI_Screen.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Creep/uploads_files_4240643_Creep__2__Skeleton.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/UI/M_minimap.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/UI/WBP_Crosshair.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/UI/SceneCapture2D_Blueprint.uasset"
 			]
 		}
 	]

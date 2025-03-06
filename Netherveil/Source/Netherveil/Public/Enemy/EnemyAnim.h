@@ -28,4 +28,5 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = FSM)
 	bool bDieDone = false;
+
 };

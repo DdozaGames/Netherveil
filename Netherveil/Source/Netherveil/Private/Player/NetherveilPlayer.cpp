@@ -6,10 +6,10 @@
 #include "Camera/CameraComponent.h"
 #include "Enemy/EnemyFSM.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/Bullet.h"
 #include "Player/PlayerAnim.h"
+#include "Kismet/GameplayStatics.h"
 
 ANetherveilPlayer::ANetherveilPlayer()
 {
@@ -68,6 +68,8 @@ ANetherveilPlayer::ANetherveilPlayer()
 void ANetherveilPlayer::BeginPlay()
 {
 	Super::BeginPlay();
+
+	hp = initialHp;
 
 	_sniperUI = CreateWidget(GetWorld(), sniperUIFactory);
 	_crosshairUI = CreateWidget(GetWorld(), crosshairUIFactory);
@@ -187,10 +189,12 @@ void ANetherveilPlayer::InputFire()
 
 		if (bHit)
 		{
+			//파티클 생성 
 			FTransform bulletTrans;
 			bulletTrans.SetLocation(hitInfo.ImpactPoint);
 			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), bulletEffectFactory, bulletTrans);
 
+			//오브젝트 날리기 
 			auto hitComp = hitInfo.GetComponent();
 			if (hitComp && hitComp->IsSimulatingPhysics())
 			{
@@ -213,6 +217,7 @@ void ANetherveilPlayer::ChangeToGrenadeGun()
 	bUsingGrenadeGun = true;
 	sniperGunComp->SetVisibility(false);
 	granadeGunComp->SetVisibility(true);
+	OnUsingGrenade(bUsingGrenadeGun);
 }
 
 void ANetherveilPlayer::ChangeToSniperGun()
@@ -220,6 +225,7 @@ void ANetherveilPlayer::ChangeToSniperGun()
 	bUsingGrenadeGun = false;
 	sniperGunComp->SetVisibility(true);
 	granadeGunComp->SetVisibility(false);
+	OnUsingGrenade(bUsingGrenadeGun);
 }
 
 void ANetherveilPlayer::SniperAim()
@@ -229,7 +235,6 @@ void ANetherveilPlayer::SniperAim()
 		return;
 	}
 
-	// 개별 로그 추가 (어떤 변수가 NULL인지 확인)
 	if (!_sniperUI)
 	{
 		UE_LOG(LogTemp, Error, TEXT("SniperAim: _sniperUI is NULL!"));
@@ -263,6 +268,24 @@ void ANetherveilPlayer::SniperAim()
 		CamComp->SetFieldOfView(90.0f);
 		_crosshairUI->AddToViewport();
 	}
+}
+
+void ANetherveilPlayer::OnHitEvent()
+{
+	hp--;
+	//UE_LOG(LogTemp, Error, TEXT("Player get damaged"));
+
+	if (hp<=0)
+	{
+		//UE_LOG(LogTemp, Error, TEXT("Player is dead"));
+		OnGameOver();
+	}
+}
+
+void ANetherveilPlayer::OnGameOver_Implementation()
+{
+	//게임 오버 시 일시 정지
+	UGameplayStatics::SetGamePaused(GetWorld(), true);
 }
 
 
