@@ -10,6 +10,8 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 // Cross Module References
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UPlayerAnim();
@@ -47,6 +49,14 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_attackAnimMontage_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_attackAnimMontage;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LeftHandTransform_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_LeftHandTransform;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_RightHandRotation_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_RightHandRotation;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -98,11 +108,27 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UPlayerAnim_Statics::NewProp_attackAnimMontage = { "attackAnimMontage", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerAnim, attackAnimMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerAnim_Statics::NewProp_attackAnimMontage_MetaData), Z_Construct_UClass_UPlayerAnim_Statics::NewProp_attackAnimMontage_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerAnim_Statics::NewProp_LeftHandTransform_MetaData[] = {
+		{ "Category", "Attack" },
+		{ "ModuleRelativePath", "Public/Player/PlayerAnim.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UPlayerAnim_Statics::NewProp_LeftHandTransform = { "LeftHandTransform", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerAnim, LeftHandTransform), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerAnim_Statics::NewProp_LeftHandTransform_MetaData), Z_Construct_UClass_UPlayerAnim_Statics::NewProp_LeftHandTransform_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerAnim_Statics::NewProp_RightHandRotation_MetaData[] = {
+		{ "Category", "Attack" },
+		{ "ModuleRelativePath", "Public/Player/PlayerAnim.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UPlayerAnim_Statics::NewProp_RightHandRotation = { "RightHandRotation", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerAnim, RightHandRotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerAnim_Statics::NewProp_RightHandRotation_MetaData), Z_Construct_UClass_UPlayerAnim_Statics::NewProp_RightHandRotation_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UPlayerAnim_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerAnim_Statics::NewProp_speed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerAnim_Statics::NewProp_direction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerAnim_Statics::NewProp_isInAir,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerAnim_Statics::NewProp_attackAnimMontage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerAnim_Statics::NewProp_LeftHandTransform,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerAnim_Statics::NewProp_RightHandRotation,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UPlayerAnim_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UPlayerAnim>::IsAbstract,
@@ -143,9 +169,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerAnim, UPlayerAnim::StaticClass, TEXT("UPlayerAnim"), &Z_Registration_Info_UClass_UPlayerAnim, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerAnim), 2138471628U) },
+		{ Z_Construct_UClass_UPlayerAnim, UPlayerAnim::StaticClass, TEXT("UPlayerAnim"), &Z_Registration_Info_UClass_UPlayerAnim, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerAnim), 2401307909U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_2093042232(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_2417773038(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -114,6 +114,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category=Health)
 	void OnHitEvent();
 
+	// Crosshair Aim 맞추기 
+	FVector GetHitTarget();
+
 	//게임 오버
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable,Category=Health)
 	void OnGameOver();

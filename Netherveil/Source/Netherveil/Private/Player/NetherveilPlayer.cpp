@@ -10,6 +10,7 @@
 #include "Player/Bullet.h"
 #include "Player/PlayerAnim.h"
 #include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetMathLibrary.h"
 
 ANetherveilPlayer::ANetherveilPlayer()
 {
@@ -91,6 +92,7 @@ void ANetherveilPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	Move();
+
 }
 
 void ANetherveilPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -174,6 +176,7 @@ void ANetherveilPlayer::InputFire()
 	{
 		FTransform firePosition = granadeGunComp->GetSocketTransform(TEXT("FirePosition"));
 		GetWorld()->SpawnActor<ABullet>(bulletFactory, firePosition);
+
 	}
 
 
@@ -248,7 +251,7 @@ void ANetherveilPlayer::SniperAim()
 		UE_LOG(LogTemp, Error, TEXT("SniperAim: CamComp is NULL!"));
 	}
 
-	// NULL이 있으면 크래시 방지를 위해 리턴
+	
 	if (!_sniperUI || !_crosshairUI || !CamComp)
 	{
 		return;
@@ -289,3 +292,24 @@ void ANetherveilPlayer::OnGameOver_Implementation()
 }
 
 
+FVector ANetherveilPlayer::GetHitTarget()
+{
+
+	FVector startPos = CamComp->GetComponentLocation();
+	FVector endPos = CamComp->GetComponentLocation() + CamComp->GetForwardVector() * 5000;
+	FHitResult hitInfo;
+	FCollisionQueryParams params;
+	params.AddIgnoredActor(this);
+
+	bool bHit = GetWorld()->LineTraceSingleByChannel(hitInfo, startPos, endPos, ECC_Visibility, params);
+
+	// 레이 트레이스 실행
+	if (bHit)
+	{
+		// 충돌한 경우: 충돌 지점 반환
+		return hitInfo.ImpactPoint;
+	}
+
+	// 충돌하지 않은 경우: 최대 거리 반환
+	return endPos;
+}

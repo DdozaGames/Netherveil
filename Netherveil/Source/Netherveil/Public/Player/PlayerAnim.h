@@ -30,4 +30,13 @@ public:
 
 	void PlayAttackAnim();
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Attack)
+	FTransform LeftHandTransform;
+
+	FTransform RightHandTransform;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category = Attack)
+	FRotator RightHandRotation;
+	
+	
 };
