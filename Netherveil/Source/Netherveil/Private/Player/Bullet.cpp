@@ -3,7 +3,10 @@
 
 #include "Player/Bullet.h"
 #include "Components/SphereComponent.h"
+#include "Enemy/Enemy.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include <Enemy/EnemyFSM.h>
+#include "Kismet/GameplayStatics.h"
 
 ABullet::ABullet()
 {
@@ -36,12 +39,38 @@ ABullet::ABullet()
 void ABullet::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	collisionComp->OnComponentBeginOverlap.AddDynamic(this, &ABullet::OnBeginOverlap);
 }
 
 void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+
+	
+	auto enemy = OtherActor->GetDefaultSubobjectByName(TEXT("FSM"));
+	if (OtherActor->IsA<AEnemy>())
+	{
+		auto enemyFSM = Cast<UEnemyFSM>(enemy);
+		enemyFSM->OnDamageProcess();
+		UE_LOG(LogTemp, Warning, TEXT("Overlap"));
+
+		//파티클 생성 
+		FTransform bulletTrans;
+		bulletTrans.SetLocation(SweepResult.ImpactPoint);
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), bulletEffectFactory, bulletTrans);
+
+		this->Destroy();
+
+	}
+
+	
+	
 }
 

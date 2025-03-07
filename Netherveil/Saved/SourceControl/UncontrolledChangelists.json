@@ -23,7 +23,13 @@
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Weapon/GrenadeGun/Mesh/SK_FPGun.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Material/NewMaterial.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Material/NewMaterial1.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Weapon/GrenadeGun/Mesh/SK_FPGun_Skeleton1.uasset"
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Weapon/GrenadeGun/Mesh/SK_FPGun_Skeleton1.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyShroudfiendMelee.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Blueprints/BP_Bullet.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_Enemy.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/Attack_Montage.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/EnemyAttackMontage.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/ABP_Enemy.uasset"
 			]
 		}
 	]
