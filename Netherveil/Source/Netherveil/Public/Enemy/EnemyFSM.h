@@ -49,12 +49,18 @@ public:
 	UPROPERTY()
 	class AEnemy* me;
 
+	//=========================Attack============================
+
+
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float attackRange = 250.0f;
 
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float attackDelayTime = 3.0f;
 
+	void PlayAttack();
+
+	//=========================Damage==============================
 	virtual void OnDamageProcess();
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = FSM)
@@ -62,6 +68,8 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float damageDelayTime = 2.0f;
+
+	//=======================================================
 
 	UPROPERTY()
 	class UEnemyAnim* anim;

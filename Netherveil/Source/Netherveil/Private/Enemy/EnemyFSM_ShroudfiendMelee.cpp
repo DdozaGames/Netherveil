@@ -13,25 +13,24 @@ void UEnemyFSM_ShroudfiendMelee::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//auto actor = UGameplayStatics::GetActorOfClass(GetWorld(), ANetherveilPlayer::StaticClass());
-	//target = Cast<ANetherveilPlayer>(actor);
 	me = Cast<AEnemyShroudfiendMelee>(GetOwner());
-
-	//anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
-
-	//ai = Cast<AAIController>(me->GetController());
+	
 }
 
 void UEnemyFSM_ShroudfiendMelee::AttackState()
 {
 	//Super::AttackState();
 
+	
+
+	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::AttackState()"));
+
 	currentTime += GetWorld()->DeltaTimeSeconds;
 	if (currentTime > attackDelayTime)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Melee Attack!"));
+		UE_LOG(LogTemp, Warning, TEXT("Attack!"));
 		currentTime = 0;
-		anim->bAttackPlay = true;
+		PlayAttack();
 	}
 
 	float distance = FVector::Distance(target->GetActorLocation(), me->GetActorLocation());
@@ -39,6 +38,7 @@ void UEnemyFSM_ShroudfiendMelee::AttackState()
 	{
 		currentState = EEnemyState::Move;
 		anim->animState = currentState;
+
 	}
 }
 

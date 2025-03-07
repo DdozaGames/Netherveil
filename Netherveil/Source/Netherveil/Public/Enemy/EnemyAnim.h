@@ -20,6 +20,12 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = FSM)
 	bool bAttackPlay = false;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = FSM)
+	bool bAttackEnd = true;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = FSMEvent)
+	void PlayAttackAnim(FName sectionName);
+
 	UFUNCTION(BlueprintCallable, Category = FSMEvent)
 	void OnEndAttackAnimation();
 

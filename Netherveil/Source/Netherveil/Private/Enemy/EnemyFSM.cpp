@@ -68,8 +68,6 @@ void UEnemyFSM::IdleState()
 		if (anim)
 		{
 			anim->animState = currentState;
-			UE_LOG(LogTemp, Warning, TEXT("Idle Anim"));
-
 		}
 	}
 }
@@ -80,7 +78,7 @@ void UEnemyFSM::MoveState()
 	FVector dir = destination - me->GetActorLocation();
 	//me->AddMovementInput(dir.GetSafeNormal());
 	ai->MoveToLocation(destination);
-
+	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
 
 	if(dir.Size() < attackRange)
 	{
@@ -97,13 +95,15 @@ void UEnemyFSM::AttackState()
 	currentTime += GetWorld()->DeltaTimeSeconds;
 	if (currentTime > attackDelayTime)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Attack!"));
 		currentTime = 0;
 		anim->bAttackPlay = true;
+		anim->bAttackEnd = false;
 	}
 
 	float distance = FVector::Distance(target->GetActorLocation(), me->GetActorLocation());
-	if (distance > attackRange)
+	//Attack -> Move 넘어갈 때 공격 애니메이션 다 끝나면 전환되도록
+	//anim noitfy 로 제어 
+	if (distance > attackRange && anim->bAttackEnd)
 	{
 		currentState = EEnemyState::Move;
 		anim->animState = currentState;
@@ -132,6 +132,17 @@ void UEnemyFSM::DieState()
 		return;
 	}
 	me->Destroy();
+}
+
+
+void UEnemyFSM::PlayAttack()
+{
+	//Attack -> Move 넘어갈 때 공격 애니메이션 다 끝나면 전환되도록
+	//몽타주로 제어
+
+	//int32 index = FMath::RandRange(0, 1);
+	FString sectionName = FString::Printf(TEXT("Attack0"));
+	anim->PlayAttackAnim(FName(*sectionName));
 }
 
 void UEnemyFSM::OnDamageProcess()
