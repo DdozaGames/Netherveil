@@ -101,6 +101,13 @@ public:
 	UFUNCTION(BlueprintImplementableEvent,BlueprintCallable,Category=Gun)
 	void OnUsingGrenade(bool isGrenade);
 
+	//탄약 수 
+	int32 grenadeMaxAmmo = 5;
+	int32 grenadeCurrentAmmo = grenadeMaxAmmo;
+
+	//총알 발사 시 애니메이션, 사운드, 파티클을 생성
+	void PlayFireEffects();
+
 	//------------------------Damage------------------------------
 
 	//현재 체력
@@ -120,4 +127,13 @@ public:
 	//게임 오버
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable,Category=Health)
 	void OnGameOver();
+
+	//-----------------------Item----------------------------------
+
+	//체력 회복
+	void Heal(int32 healAmount);
+
+	//체력 UI 업데이트
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Health)
+	void UpdateHpUI();
 };

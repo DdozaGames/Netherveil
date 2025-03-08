@@ -53,7 +53,6 @@ void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 
-	
 	auto enemy = OtherActor->GetDefaultSubobjectByName(TEXT("FSM"));
 	if (OtherActor->IsA<AEnemy>())
 	{

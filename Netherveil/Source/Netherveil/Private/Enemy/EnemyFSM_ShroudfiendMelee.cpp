@@ -21,14 +21,12 @@ void UEnemyFSM_ShroudfiendMelee::AttackState()
 {
 	//Super::AttackState();
 
-	
-
-	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::AttackState()"));
+	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::AttackState()"));
 
 	currentTime += GetWorld()->DeltaTimeSeconds;
 	if (currentTime > attackDelayTime)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Attack!"));
+		//UE_LOG(LogTemp, Warning, TEXT("Attack!"));
 		currentTime = 0;
 		PlayAttack();
 	}

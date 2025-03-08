@@ -158,25 +158,25 @@ void ANetherveilPlayer::Move()
 
 void ANetherveilPlayer::InputFire()
 {
-	//애니메이션 몽타주 재생
-	if (anim)
-	{
-		anim->PlayAttackAnim();
-	}
-
-	//사운드 재생 
-	UGameplayStatics::PlaySound2D(GetWorld(), bulletSound);
-
-	//카메라 셰이크 재생
-	auto controller = GetWorld()->GetFirstPlayerController();
-	controller->PlayerCameraManager->StartCameraShake(cameraShake);
 
 
 	if (bUsingGrenadeGun)
 	{
-		FTransform firePosition = granadeGunComp->GetSocketTransform(TEXT("FirePosition"));
-		GetWorld()->SpawnActor<ABullet>(bulletFactory, firePosition);
+		if (grenadeCurrentAmmo > 0)
+		{
+			PlayFireEffects();
 
+			//총알 스폰 
+			FTransform firePosition = granadeGunComp->GetSocketTransform(TEXT("FirePosition"));
+			GetWorld()->SpawnActor<ABullet>(bulletFactory, firePosition);
+			//탄약 소비 
+			grenadeCurrentAmmo--;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("No more ammo"));
+		}
+		
 	}
 
 
@@ -213,6 +213,8 @@ void ANetherveilPlayer::InputFire()
 			}
 		}
 	}
+
+	
 }
 
 void ANetherveilPlayer::ChangeToGrenadeGun()
@@ -273,6 +275,22 @@ void ANetherveilPlayer::SniperAim()
 	}
 }
 
+void ANetherveilPlayer::PlayFireEffects()
+{
+	//애니메이션 몽타주 재생
+	if (anim)
+	{
+		anim->PlayAttackAnim();
+	}
+
+	//사운드 재생 
+	UGameplayStatics::PlaySound2D(GetWorld(), bulletSound);
+
+	//카메라 셰이크 재생
+	auto controller = GetWorld()->GetFirstPlayerController();
+	controller->PlayerCameraManager->StartCameraShake(cameraShake);
+}
+
 void ANetherveilPlayer::OnHitEvent()
 {
 	hp--;
@@ -312,4 +330,10 @@ FVector ANetherveilPlayer::GetHitTarget()
 
 	// 충돌하지 않은 경우: 최대 거리 반환
 	return endPos;
+}
+
+void ANetherveilPlayer::Heal(int32 healAmount)
+{
+	hp += healAmount;
+	UpdateHpUI();
 }

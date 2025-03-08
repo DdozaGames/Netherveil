@@ -75,6 +75,15 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyShroudfiendMelee.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <Filter Include="Source\Netherveil\Private\Item">
+      <UniqueIdentifier>{45A5E0F1-3876-3136-BE70-2292ED1EF8B7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Item\HealthItem.cpp">
+      <Filter>Source\Netherveil\Private\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Item\Item.cpp">
+      <Filter>Source\Netherveil\Private\Item</Filter>
+    </ClCompile>
     <Filter Include="Source\Netherveil\Private\Player">
       <UniqueIdentifier>{8370BC1E-C5D4-3C70-876E-46F0D26B0235}</UniqueIdentifier>
     </Filter>
@@ -107,6 +116,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <Filter Include="Source\Netherveil\Public\Item">
+      <UniqueIdentifier>{2BD5C6A2-5ACD-3D01-A429-EE0F42B2AE92}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Item\HealthItem.h">
+      <Filter>Source\Netherveil\Public\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Item\Item.h">
+      <Filter>Source\Netherveil\Public\Item</Filter>
     </ClInclude>
     <Filter Include="Source\Netherveil\Public\Player">
       <UniqueIdentifier>{2037C054-31A2-35B9-B927-73EF08D07940}</UniqueIdentifier>

@@ -4,6 +4,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Enemy/Enemy.h"
 #include "Enemy/EnemyAnim.h"
+#include "Item/Item.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/NetherveilPlayer.h"
 #include "Runtime/AIModule/Classes/AIController.h"
@@ -78,7 +79,7 @@ void UEnemyFSM::MoveState()
 	FVector dir = destination - me->GetActorLocation();
 	//me->AddMovementInput(dir.GetSafeNormal());
 	ai->MoveToLocation(destination);
-	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
+	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
 
 	if(dir.Size() < attackRange)
 	{
@@ -131,6 +132,7 @@ void UEnemyFSM::DieState()
 		//UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
 		return;
 	}
+	DropItem();
 	me->Destroy();
 }
 
@@ -173,5 +175,16 @@ void UEnemyFSM::OnDamageProcess()
 	}
 	anim->animState = currentState;
 	ai->StopMovement();
+}
+
+void UEnemyFSM::DropItem()
+{
+	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItem()"));
+
+	//ÃÑ¾Ë ½ºÆù 
+	FTransform itemPosition = me->GetActorTransform();
+
+	GetWorld()->SpawnActor<AItem>(itemFactory, itemPosition);
+
 }
 

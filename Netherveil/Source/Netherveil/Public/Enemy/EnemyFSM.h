@@ -49,6 +49,12 @@ public:
 	UPROPERTY()
 	class AEnemy* me;
 
+	UPROPERTY()
+	class UEnemyAnim* anim;
+
+	UPROPERTY()
+	class AAIController* ai;
+
 	//=========================Attack============================
 
 
@@ -69,11 +75,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float damageDelayTime = 2.0f;
 
-	//=======================================================
+	//=============================Item===============================
 
-	UPROPERTY()
-	class UEnemyAnim* anim;
+	//아이템 드랍
+	void DropItem();
 
-	UPROPERTY()
-	class AAIController* ai;
+	UPROPERTY(EditDefaultsOnly, Category = Item)
+	TSubclassOf<class AItem> itemFactory;
 };
