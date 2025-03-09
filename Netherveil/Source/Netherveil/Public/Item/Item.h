@@ -3,7 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Player/NetherveilPlayer.h"
+class ANetherveilPlayer;
 #include "Item.generated.h"
 
 UCLASS()

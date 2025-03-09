@@ -78,6 +78,9 @@
     <Filter Include="Source\Netherveil\Private\Item">
       <UniqueIdentifier>{45A5E0F1-3876-3136-BE70-2292ED1EF8B7}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Item\AmmoItem.cpp">
+      <Filter>Source\Netherveil\Private\Item</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Item\HealthItem.cpp">
       <Filter>Source\Netherveil\Private\Item</Filter>
     </ClCompile>
@@ -120,6 +123,9 @@
     <Filter Include="Source\Netherveil\Public\Item">
       <UniqueIdentifier>{2BD5C6A2-5ACD-3D01-A429-EE0F42B2AE92}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Item\AmmoItem.h">
+      <Filter>Source\Netherveil\Public\Item</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\HealthItem.h">
       <Filter>Source\Netherveil\Public\Item</Filter>
     </ClInclude>

@@ -12,8 +12,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM() {}
 	AIMODULE_API UClass* Z_Construct_UClass_AAIController_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
+	NETHERVEIL_API UClass* Z_Construct_UClass_AAmmoItem_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemy_NoRegister();
-	NETHERVEIL_API UClass* Z_Construct_UClass_AItem_NoRegister();
+	NETHERVEIL_API UClass* Z_Construct_UClass_AHealthItem_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_ANetherveilPlayer_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyAnim_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyFSM();
@@ -136,9 +137,17 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_damageDelayTime;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_itemFactory_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_healthItemFactory_MetaData[];
 #endif
-		static const UECodeGen_Private::FClassPropertyParams NewProp_itemFactory;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_healthItemFactory;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_grenadeAmmoItemFactory_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_grenadeAmmoItemFactory;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_sniperAmmoItemFactory_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_sniperAmmoItemFactory;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -231,12 +240,26 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UEnemyFSM_Statics::NewProp_damageDelayTime = { "damageDelayTime", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEnemyFSM, damageDelayTime), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Statics::NewProp_damageDelayTime_MetaData), Z_Construct_UClass_UEnemyFSM_Statics::NewProp_damageDelayTime_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UEnemyFSM_Statics::NewProp_itemFactory_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UEnemyFSM_Statics::NewProp_healthItemFactory_MetaData[] = {
 		{ "Category", "Item" },
 		{ "ModuleRelativePath", "Public/Enemy/EnemyFSM.h" },
 	};
 #endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UEnemyFSM_Statics::NewProp_itemFactory = { "itemFactory", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEnemyFSM, itemFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Statics::NewProp_itemFactory_MetaData), Z_Construct_UClass_UEnemyFSM_Statics::NewProp_itemFactory_MetaData) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UEnemyFSM_Statics::NewProp_healthItemFactory = { "healthItemFactory", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEnemyFSM, healthItemFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AHealthItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Statics::NewProp_healthItemFactory_MetaData), Z_Construct_UClass_UEnemyFSM_Statics::NewProp_healthItemFactory_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UEnemyFSM_Statics::NewProp_grenadeAmmoItemFactory_MetaData[] = {
+		{ "Category", "Item" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyFSM.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UEnemyFSM_Statics::NewProp_grenadeAmmoItemFactory = { "grenadeAmmoItemFactory", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEnemyFSM, grenadeAmmoItemFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AAmmoItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Statics::NewProp_grenadeAmmoItemFactory_MetaData), Z_Construct_UClass_UEnemyFSM_Statics::NewProp_grenadeAmmoItemFactory_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UEnemyFSM_Statics::NewProp_sniperAmmoItemFactory_MetaData[] = {
+		{ "Category", "Item" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyFSM.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UEnemyFSM_Statics::NewProp_sniperAmmoItemFactory = { "sniperAmmoItemFactory", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEnemyFSM, sniperAmmoItemFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AAmmoItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Statics::NewProp_sniperAmmoItemFactory_MetaData), Z_Construct_UClass_UEnemyFSM_Statics::NewProp_sniperAmmoItemFactory_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UEnemyFSM_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_currentState_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_currentState,
@@ -249,7 +272,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_attackDelayTime,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_hp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_damageDelayTime,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_itemFactory,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_healthItemFactory,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_grenadeAmmoItemFactory,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Statics::NewProp_sniperAmmoItemFactory,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UEnemyFSM_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UEnemyFSM>::IsAbstract,
@@ -293,9 +318,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM() {}
 		{ EEnemyState_StaticEnum, TEXT("EEnemyState"), &Z_Registration_Info_UEnum_EEnemyState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2800084703U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UEnemyFSM, UEnemyFSM::StaticClass, TEXT("UEnemyFSM"), &Z_Registration_Info_UClass_UEnemyFSM, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEnemyFSM), 2859953016U) },
+		{ Z_Construct_UClass_UEnemyFSM, UEnemyFSM::StaticClass, TEXT("UEnemyFSM"), &Z_Registration_Info_UClass_UEnemyFSM, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEnemyFSM), 3474517628U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_h_3303900052(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_h_3713029937(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_h_Statics::EnumInfo));

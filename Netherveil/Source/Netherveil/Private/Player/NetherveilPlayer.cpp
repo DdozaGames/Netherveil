@@ -11,6 +11,7 @@
 #include "Player/PlayerAnim.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Item/AmmoItem.h"
 
 ANetherveilPlayer::ANetherveilPlayer()
 {
@@ -335,5 +336,40 @@ FVector ANetherveilPlayer::GetHitTarget()
 void ANetherveilPlayer::Heal(int32 healAmount)
 {
 	hp += healAmount;
+	//최대 hp 넘지 않도록
+	if (hp>initialHp)
+	{
+		hp = initialHp;
+	}
 	UpdateHpUI();
+}
+
+void ANetherveilPlayer::AddAmmo(EAmmoType ammoType, int32 amount)
+{
+
+	
+	if (ammoType == EAmmoType::Grenade)
+	{
+		grenadeCurrentAmmo += amount;
+		UE_LOG(LogTemp, Error, TEXT("Add Grenade Ammo "));
+
+		if (grenadeCurrentAmmo>grenadeMaxAmmo)
+		{
+			grenadeCurrentAmmo = grenadeMaxAmmo;
+			UE_LOG(LogTemp, Error, TEXT("Ammo is full"));
+		}
+	}
+
+	else
+	{
+		sniperCurrentAmmo += amount;
+		UE_LOG(LogTemp, Error, TEXT("Add Sniper Ammo "));
+
+
+		if (sniperCurrentAmmo>sniperMaxAmmo)
+		{
+			sniperCurrentAmmo = sniperMaxAmmo;
+			UE_LOG(LogTemp, Error, TEXT("Ammo is full"));
+		}
+	}
 }

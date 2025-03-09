@@ -55,6 +55,11 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		Parms.isGrenade=isGrenade ? true : false;
 		ProcessEvent(FindFunctionChecked(NAME_ANetherveilPlayer_OnUsingGrenade),&Parms);
 	}
+	static FName NAME_ANetherveilPlayer_UpdateAmmoUI = FName(TEXT("UpdateAmmoUI"));
+	void ANetherveilPlayer::UpdateAmmoUI()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ANetherveilPlayer_UpdateAmmoUI),NULL);
+	}
 	static FName NAME_ANetherveilPlayer_UpdateHpUI = FName(TEXT("UpdateHpUI"));
 	void ANetherveilPlayer::UpdateHpUI()
 	{
@@ -163,6 +168,29 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Health" },
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANetherveilPlayer, nullptr, "UpdateAmmoUI", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ANetherveilPlayer_UpdateHpUI_Statics
 	{
 #if WITH_METADATA
@@ -265,6 +293,22 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_bulletSound;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_grenadeMaxAmmo_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_grenadeMaxAmmo;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_grenadeCurrentAmmo_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_grenadeCurrentAmmo;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_sniperMaxAmmo_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_sniperMaxAmmo;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_sniperCurrentAmmo_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_sniperCurrentAmmo;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_hp_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_hp;
@@ -285,6 +329,7 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnGameOver, "OnGameOver" }, // 1446480415
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent, "OnHitEvent" }, // 314406478
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade, "OnUsingGrenade" }, // 1320040687
+		{ &Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI, "UpdateAmmoUI" }, // 1310199998
 		{ &Z_Construct_UFunction_ANetherveilPlayer_UpdateHpUI, "UpdateHpUI" }, // 3047591697
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::FuncInfo) < 2048);
@@ -423,6 +468,40 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound = { "bulletSound", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, bulletSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeMaxAmmo_MetaData[] = {
+		{ "Category", "Ammo" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xc5\xba\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xc5\xba\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeMaxAmmo = { "grenadeMaxAmmo", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, grenadeMaxAmmo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeMaxAmmo_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeMaxAmmo_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeCurrentAmmo_MetaData[] = {
+		{ "Category", "Ammo" },
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeCurrentAmmo = { "grenadeCurrentAmmo", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, grenadeCurrentAmmo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeCurrentAmmo_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeCurrentAmmo_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperMaxAmmo_MetaData[] = {
+		{ "Category", "Ammo" },
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperMaxAmmo = { "sniperMaxAmmo", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, sniperMaxAmmo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperMaxAmmo_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperMaxAmmo_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperCurrentAmmo_MetaData[] = {
+		{ "Category", "Ammo" },
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperCurrentAmmo = { "sniperCurrentAmmo", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilPlayer, sniperCurrentAmmo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperCurrentAmmo_MetaData), Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperCurrentAmmo_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_hp_MetaData[] = {
 		{ "Category", "Health" },
 #if !UE_BUILD_SHIPPING
@@ -464,6 +543,10 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp__crosshairUI,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_cameraShake,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_bulletSound,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeMaxAmmo,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_grenadeCurrentAmmo,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperMaxAmmo,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_sniperCurrentAmmo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_hp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilPlayer_Statics::NewProp_initialHp,
 	};
@@ -505,9 +588,9 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 333780101U) },
+		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 1171171790U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_2636523245(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_2032965481(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

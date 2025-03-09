@@ -81,5 +81,11 @@ public:
 	void DropItem();
 
 	UPROPERTY(EditDefaultsOnly, Category = Item)
-	TSubclassOf<class AItem> itemFactory;
+	TSubclassOf<class AHealthItem> healthItemFactory;
+
+	UPROPERTY(EditDefaultsOnly, Category = Item)
+	TSubclassOf<class AAmmoItem> grenadeAmmoItemFactory;
+
+	UPROPERTY(EditDefaultsOnly, Category = Item)
+	TSubclassOf<class AAmmoItem> sniperAmmoItemFactory;
 };

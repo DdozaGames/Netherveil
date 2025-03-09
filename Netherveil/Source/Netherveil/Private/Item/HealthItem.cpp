@@ -3,6 +3,8 @@
 
 #include "Item/HealthItem.h"
 
+#include "Player/NetherveilPlayer.h"
+
 
 void AHealthItem::ApplyEffect(ANetherveilPlayer* player)
 {

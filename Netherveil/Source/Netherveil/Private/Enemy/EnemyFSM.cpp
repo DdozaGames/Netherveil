@@ -4,6 +4,8 @@
 #include "Components/CapsuleComponent.h"
 #include "Enemy/Enemy.h"
 #include "Enemy/EnemyAnim.h"
+#include "Item/AmmoItem.h"
+#include "Item/HealthItem.h"
 #include "Item/Item.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/NetherveilPlayer.h"
@@ -179,12 +181,34 @@ void UEnemyFSM::OnDamageProcess()
 
 void UEnemyFSM::DropItem()
 {
-	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItem()"));
 
-	//ÃÑ¾Ë ½ºÆù 
+	int randNum = rand() % 100;
 	FTransform itemPosition = me->GetActorTransform();
 
-	GetWorld()->SpawnActor<AItem>(itemFactory, itemPosition);
+	if (randNum<50)
+	{
+		if (randNum<25)
+		{
+			AAmmoItem* item = GetWorld()->SpawnActor<AAmmoItem>(grenadeAmmoItemFactory, itemPosition);
+			if (item)
+			{
+				item->ammoType = EAmmoType::Grenade;
+			}
+		}
+		else
+		{
+			AAmmoItem* item = GetWorld()->SpawnActor<AAmmoItem>(sniperAmmoItemFactory, itemPosition);
+			if (item)
+			{
+				item->ammoType = EAmmoType::Sniper;
+			}
+		}
+	}
+	else
+	{
+		GetWorld()->SpawnActor<AHealthItem>(healthItemFactory, itemPosition);
+	}
+	
 
 }
 

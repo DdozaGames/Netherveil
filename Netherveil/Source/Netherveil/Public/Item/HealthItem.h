@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Item/Item.h"
 #include "HealthItem.generated.h"
-
+class ANetherveilPlayer;
 /**
  * 
  */

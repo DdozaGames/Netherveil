@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\unrealeditor\\inc\\netherveil\\uht\\ammoitem.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\x64\\netherveileditor\\debuggame\\unrealed\\sharedpch.unrealed.nonoptimized.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\netherveil\\definitions.netherveil.h",
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\source\\netherveil\\public\\item\\ammoitem.h",
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\source\\netherveil\\public\\item\\item.h",
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\unrealeditor\\inc\\netherveil\\uht\\item.generated.h",
+            "c:\\users\\pc_1m\\desktop\\unrealproject\\netherveil\\netherveil\\intermediate\\build\\win64\\unrealeditor\\inc\\netherveil\\uht\\ammoitem.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

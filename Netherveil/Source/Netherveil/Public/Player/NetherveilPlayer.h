@@ -3,6 +3,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "NetherveilPlayer.generated.h"
+enum class EAmmoType : uint8;
+class AAmmoItem;
 
 UCLASS()
 class NETHERVEIL_API ANetherveilPlayer : public ACharacter
@@ -101,9 +103,18 @@ public:
 	UFUNCTION(BlueprintImplementableEvent,BlueprintCallable,Category=Gun)
 	void OnUsingGrenade(bool isGrenade);
 
-	//탄약 수 
-	int32 grenadeMaxAmmo = 5;
+	//탄약 수
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
+	int32 grenadeMaxAmmo = 30;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
 	int32 grenadeCurrentAmmo = grenadeMaxAmmo;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
+	int32 sniperMaxAmmo = 20;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
+	int32 sniperCurrentAmmo = sniperMaxAmmo;
 
 	//총알 발사 시 애니메이션, 사운드, 파티클을 생성
 	void PlayFireEffects();
@@ -136,4 +147,11 @@ public:
 	//체력 UI 업데이트
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Health)
 	void UpdateHpUI();
+
+	//탄창 추가
+	void AddAmmo(EAmmoType ammoType, int32 amount);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Health)
+	void UpdateAmmoUI();
+
 };
