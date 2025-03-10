@@ -111,6 +111,8 @@ void ANetherveilPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 	PlayerInputComponent->BindAction(TEXT("SniperGun"), IE_Pressed, this, &ANetherveilPlayer::ChangeToSniperGun);
 	PlayerInputComponent->BindAction(TEXT("Sniper"), IE_Pressed, this, &ANetherveilPlayer::SniperAim);
 	PlayerInputComponent->BindAction(TEXT("Sniper"), IE_Released, this, &ANetherveilPlayer::SniperAim);
+	PlayerInputComponent->BindAction(TEXT("Reload"), IE_Pressed, this, &ANetherveilPlayer::Reload);
+
 }
 
 void ANetherveilPlayer::Turn(float value)
@@ -183,6 +185,10 @@ void ANetherveilPlayer::InputFire()
 
 	else
 	{
+		PlayFireEffects();
+
+		sniperCurrentAmmo--;
+
 		FVector startPos = CamComp->GetComponentLocation();
 		FVector endPos = CamComp->GetComponentLocation() + CamComp->GetForwardVector() * 5000;
 		FHitResult hitInfo;
@@ -191,8 +197,11 @@ void ANetherveilPlayer::InputFire()
 
 		bool bHit = GetWorld()->LineTraceSingleByChannel(hitInfo, startPos, endPos, ECC_Visibility, params);
 
+		
+
 		if (bHit)
 		{
+
 			//파티클 생성 
 			FTransform bulletTrans;
 			bulletTrans.SetLocation(hitInfo.ImpactPoint);
@@ -276,6 +285,45 @@ void ANetherveilPlayer::SniperAim()
 	}
 }
 
+void ANetherveilPlayer::Reload()
+{
+	if (bUsingGrenadeGun)
+	{
+		if (grenadeRemaingAmmo>=30)
+		{
+			grenadeCurrentAmmo += 30;
+			grenadeRemaingAmmo -= 30;
+		}
+		else if (grenadeRemaingAmmo>0)
+		{
+			grenadeCurrentAmmo += grenadeRemaingAmmo;
+			grenadeRemaingAmmo = 0;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("No more GrenadeAmmo"));
+		}
+	}
+	else
+	{
+		if (sniperRemaingAmmo>=30)
+		{
+			sniperCurrentAmmo += 30;
+			sniperRemaingAmmo -= 30;
+		}
+		else if (sniperRemaingAmmo>0)
+		{
+			sniperCurrentAmmo += sniperRemaingAmmo;
+			sniperRemaingAmmo = 0;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("No more SniperAmmo"));
+		}
+	}
+	UpdateAmmoUI();
+}
+
 void ANetherveilPlayer::PlayFireEffects()
 {
 	//애니메이션 몽타주 재생
@@ -290,6 +338,8 @@ void ANetherveilPlayer::PlayFireEffects()
 	//카메라 셰이크 재생
 	auto controller = GetWorld()->GetFirstPlayerController();
 	controller->PlayerCameraManager->StartCameraShake(cameraShake);
+
+	UpdateAmmoUI();
 }
 
 void ANetherveilPlayer::OnHitEvent()
@@ -350,26 +400,28 @@ void ANetherveilPlayer::AddAmmo(EAmmoType ammoType, int32 amount)
 	
 	if (ammoType == EAmmoType::Grenade)
 	{
-		grenadeCurrentAmmo += amount;
+		grenadeRemaingAmmo += amount;
 		UE_LOG(LogTemp, Error, TEXT("Add Grenade Ammo "));
 
-		if (grenadeCurrentAmmo>grenadeMaxAmmo)
+		if (grenadeRemaingAmmo>grenadeMaxAmmo)
 		{
-			grenadeCurrentAmmo = grenadeMaxAmmo;
+			grenadeRemaingAmmo = grenadeMaxAmmo;
 			UE_LOG(LogTemp, Error, TEXT("Ammo is full"));
 		}
 	}
 
 	else
 	{
-		sniperCurrentAmmo += amount;
+		sniperRemaingAmmo += amount;
 		UE_LOG(LogTemp, Error, TEXT("Add Sniper Ammo "));
 
 
-		if (sniperCurrentAmmo>sniperMaxAmmo)
+		if (sniperRemaingAmmo >sniperMaxAmmo)
 		{
-			sniperCurrentAmmo = sniperMaxAmmo;
+			sniperRemaingAmmo = sniperMaxAmmo;
 			UE_LOG(LogTemp, Error, TEXT("Ammo is full"));
 		}
 	}
+
+	UpdateAmmoUI();
 }

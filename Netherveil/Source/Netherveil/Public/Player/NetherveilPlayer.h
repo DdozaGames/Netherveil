@@ -103,18 +103,30 @@ public:
 	UFUNCTION(BlueprintImplementableEvent,BlueprintCallable,Category=Gun)
 	void OnUsingGrenade(bool isGrenade);
 
-	//탄약 수
+	//탄약 관리
+	//최대 탄약 수
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
-	int32 grenadeMaxAmmo = 30;
+	int32 grenadeMaxAmmo = 120;
 
+	//남아 있는 탄약 수
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
+	int32 grenadeRemaingAmmo = 30;
+
+	//장전된 탄약 수
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
 	int32 grenadeCurrentAmmo = grenadeMaxAmmo;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
-	int32 sniperMaxAmmo = 20;
+	int32 sniperMaxAmmo = 120;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
+	int32 sniperRemaingAmmo = 30;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
 	int32 sniperCurrentAmmo = sniperMaxAmmo;
+
+	//재장전 
+	void Reload();
 
 	//총알 발사 시 애니메이션, 사운드, 파티클을 생성
 	void PlayFireEffects();
