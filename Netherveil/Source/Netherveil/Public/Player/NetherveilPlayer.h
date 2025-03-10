@@ -128,6 +128,10 @@ public:
 	//재장전 
 	void Reload();
 
+	//재장전 총알 개수
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Ammo)
+	int32 reloadingAmmo = 30;
+
 	//총알 발사 시 애니메이션, 사운드, 파티클을 생성
 	void PlayFireEffects();
 
@@ -151,6 +155,8 @@ public:
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable,Category=Health)
 	void OnGameOver();
 
+
+
 	//-----------------------Item----------------------------------
 
 	//체력 회복
@@ -166,4 +172,6 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Health)
 	void UpdateAmmoUI();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Health)
+	void DisplayFullHPMessage();
 };

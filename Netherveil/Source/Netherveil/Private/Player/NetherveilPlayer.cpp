@@ -162,6 +162,7 @@ void ANetherveilPlayer::Move()
 void ANetherveilPlayer::InputFire()
 {
 
+	UE_LOG(LogTemp, Error, TEXT("Fire!!"));
 
 	if (bUsingGrenadeGun)
 	{
@@ -289,12 +290,12 @@ void ANetherveilPlayer::Reload()
 {
 	if (bUsingGrenadeGun)
 	{
-		if (grenadeRemaingAmmo>=30)
+		if (grenadeRemaingAmmo >= reloadingAmmo)
 		{
-			grenadeCurrentAmmo += 30;
-			grenadeRemaingAmmo -= 30;
+			grenadeCurrentAmmo += reloadingAmmo;
+			grenadeRemaingAmmo -= reloadingAmmo;
 		}
-		else if (grenadeRemaingAmmo>0)
+		else if (grenadeRemaingAmmo < reloadingAmmo && grenadeRemaingAmmo>0)
 		{
 			grenadeCurrentAmmo += grenadeRemaingAmmo;
 			grenadeRemaingAmmo = 0;
@@ -306,12 +307,12 @@ void ANetherveilPlayer::Reload()
 	}
 	else
 	{
-		if (sniperRemaingAmmo>=30)
+		if (sniperRemaingAmmo >= reloadingAmmo)
 		{
-			sniperCurrentAmmo += 30;
-			sniperRemaingAmmo -= 30;
+			sniperCurrentAmmo += reloadingAmmo;
+			sniperRemaingAmmo -= reloadingAmmo;
 		}
-		else if (sniperRemaingAmmo>0)
+		else if (sniperRemaingAmmo< reloadingAmmo && sniperRemaingAmmo>0)
 		{
 			sniperCurrentAmmo += sniperRemaingAmmo;
 			sniperRemaingAmmo = 0;
@@ -385,23 +386,29 @@ FVector ANetherveilPlayer::GetHitTarget()
 
 void ANetherveilPlayer::Heal(int32 healAmount)
 {
+	//이미 체력이 꽉 차있다면 UI 메세지 띄우기
+	if (hp==initialHp)
+	{
+		DisplayFullHPMessage();
+	}
+
 	hp += healAmount;
 	//최대 hp 넘지 않도록
 	if (hp>initialHp)
 	{
 		hp = initialHp;
 	}
+	
 	UpdateHpUI();
 }
 
 void ANetherveilPlayer::AddAmmo(EAmmoType ammoType, int32 amount)
 {
 
-	
 	if (ammoType == EAmmoType::Grenade)
 	{
 		grenadeRemaingAmmo += amount;
-		UE_LOG(LogTemp, Error, TEXT("Add Grenade Ammo "));
+		//UE_LOG(LogTemp, Error, TEXT("Add Grenade Ammo "));
 
 		if (grenadeRemaingAmmo>grenadeMaxAmmo)
 		{
@@ -413,8 +420,7 @@ void ANetherveilPlayer::AddAmmo(EAmmoType ammoType, int32 amount)
 	else
 	{
 		sniperRemaingAmmo += amount;
-		UE_LOG(LogTemp, Error, TEXT("Add Sniper Ammo "));
-
+		//UE_LOG(LogTemp, Error, TEXT("Add Sniper Ammo "));
 
 		if (sniperRemaingAmmo >sniperMaxAmmo)
 		{

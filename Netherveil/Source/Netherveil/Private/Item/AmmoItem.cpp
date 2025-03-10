@@ -11,11 +11,11 @@ void AAmmoItem::ApplyEffect(ANetherveilPlayer* player)
 
 	if (ammoType == EAmmoType::Grenade)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Grenade Ammo"));
+		UE_LOG(LogTemp, Warning, TEXT("AAmmoItem::Grenade Ammo"));
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("sniper Ammo"));
+		UE_LOG(LogTemp, Warning, TEXT("AAmmoItem::sniper Ammo"));
 
 	}
 
