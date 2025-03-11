@@ -144,6 +144,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAnim_Spider.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -154,7 +159,17 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM_Spider.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyShroudfiendMelee.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemySpider.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
@@ -191,9 +206,12 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\Enemy.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim_Spider.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_ShroudfiendMelee.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_Spider.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpider.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\AmmoItem.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\HealthItem.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\Item.h"/>

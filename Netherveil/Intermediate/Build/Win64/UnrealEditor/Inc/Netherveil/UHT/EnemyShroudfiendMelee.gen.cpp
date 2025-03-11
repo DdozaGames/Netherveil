@@ -76,7 +76,6 @@ void EmptyLinkFunctionForGeneratedCodeEnemyShroudfiendMelee() {}
 	{
 		return AEnemyShroudfiendMelee::StaticClass();
 	}
-	AEnemyShroudfiendMelee::AEnemyShroudfiendMelee() {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemyShroudfiendMelee);
 	AEnemyShroudfiendMelee::~AEnemyShroudfiendMelee() {}
 	struct Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyShroudfiendMelee_h_Statics

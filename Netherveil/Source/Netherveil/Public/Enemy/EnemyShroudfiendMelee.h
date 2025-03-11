@@ -16,5 +16,6 @@ class NETHERVEIL_API AEnemyShroudfiendMelee : public AEnemy
 
 public:
 
+	AEnemyShroudfiendMelee();
 	
 };

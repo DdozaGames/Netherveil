@@ -6,4 +6,5 @@
 void UEnemyAnim::OnEndAttackAnimation()
 {
 	bAttackPlay = false;
+	bAttackEnd = true;
 }

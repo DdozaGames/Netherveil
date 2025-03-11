@@ -66,13 +66,22 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAnim.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAnim_Spider.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM_ShroudfiendMelee.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM_Spider.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyShroudfiendMelee.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemySpider.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
     <Filter Include="Source\Netherveil\Private\Item">
@@ -111,13 +120,22 @@
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim_Spider.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_ShroudfiendMelee.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_Spider.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpider.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <Filter Include="Source\Netherveil\Public\Item">

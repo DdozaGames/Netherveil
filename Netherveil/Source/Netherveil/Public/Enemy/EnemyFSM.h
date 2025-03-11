@@ -33,11 +33,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = FSM)
 	EEnemyState currentState = EEnemyState::Idle;
 
-	void IdleState();
-	void MoveState();
+	virtual void IdleState();
+	virtual void MoveState();
 	virtual void AttackState();
-	void DamageState();
-	void DieState();
+	virtual void DamageState();
+	virtual void DieState();
 
 	UPROPERTY(EditDefaultsOnly, Category = FSM)
 	float idleDelayTime = 2.0f;

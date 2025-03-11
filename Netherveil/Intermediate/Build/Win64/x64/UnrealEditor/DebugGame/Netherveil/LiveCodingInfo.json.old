@@ -1,0 +1,39 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.Netherveil.cpp.obj": [
+			"AmmoItem.gen.cpp.obj",
+			"Bullet.gen.cpp.obj",
+			"Enemy.gen.cpp.obj",
+			"EnemyAnim.gen.cpp.obj",
+			"EnemyFSM.gen.cpp.obj",
+			"EnemyFSM_ShroudfiendMelee.gen.cpp.obj",
+			"EnemyFSM_Spider.gen.cpp.obj",
+			"EnemyShroudfiendMelee.gen.cpp.obj",
+			"EnemySpider.gen.cpp.obj",
+			"HealthItem.gen.cpp.obj",
+			"Item.gen.cpp.obj",
+			"Netherveil.init.gen.cpp.obj",
+			"NetherveilCharacter.gen.cpp.obj",
+			"NetherveilGameMode.gen.cpp.obj",
+			"NetherveilPlayer.gen.cpp.obj",
+			"PlayerAnim.gen.cpp.obj",
+			"Netherveil.cpp.obj",
+			"NetherveilCharacter.cpp.obj",
+			"NetherveilGameMode.cpp.obj",
+			"Enemy.cpp.obj",
+			"EnemyAnim.cpp.obj",
+			"EnemyFSM.cpp.obj",
+			"EnemyFSM_ShroudfiendMelee.cpp.obj",
+			"EnemyFSM_Spider.cpp.obj",
+			"EnemyShroudfiendMelee.cpp.obj",
+			"EnemySpider.cpp.obj",
+			"AmmoItem.cpp.obj",
+			"HealthItem.cpp.obj",
+			"Item.cpp.obj",
+			"Bullet.cpp.obj",
+			"NetherveilPlayer.cpp.obj",
+			"PlayerAnim.cpp.obj"
+		]
+	}
+}
