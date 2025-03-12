@@ -19,25 +19,25 @@ void UEnemyFSM_ShroudfiendMelee::BeginPlay()
 
 void UEnemyFSM_ShroudfiendMelee::AttackState()
 {
-	//Super::AttackState();
+	Super::AttackState();
 
 	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::AttackState()"));
+	//몽타주 재생 시 
+	//currentTime += GetWorld()->DeltaTimeSeconds;
+	//if (currentTime > attackDelayTime)
+	//{
+	//	//UE_LOG(LogTemp, Warning, TEXT("Attack!"));
+	//	currentTime = 0;
+	//	PlayAttack();
+	//}
 
-	currentTime += GetWorld()->DeltaTimeSeconds;
-	if (currentTime > attackDelayTime)
-	{
-		//UE_LOG(LogTemp, Warning, TEXT("Attack!"));
-		currentTime = 0;
-		PlayAttack();
-	}
+	//float distance = FVector::Distance(target->GetActorLocation(), me->GetActorLocation());
+	//if (distance > attackRange)
+	//{
+	//	currentState = EEnemyState::Move;
+	//	anim->animState = currentState;
 
-	float distance = FVector::Distance(target->GetActorLocation(), me->GetActorLocation());
-	if (distance > attackRange)
-	{
-		currentState = EEnemyState::Move;
-		anim->animState = currentState;
-
-	}
+	//}
 }
 
 void UEnemyFSM_ShroudfiendMelee::OnDamageProcess()

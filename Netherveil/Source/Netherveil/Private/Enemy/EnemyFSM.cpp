@@ -181,7 +181,7 @@ void UEnemyFSM::OnDamageProcess()
 
 void UEnemyFSM::DropItem()
 {
-
+	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItem()"));
 	int randNum = rand() % 100;
 	FTransform itemPosition = me->GetActorTransform();
 
