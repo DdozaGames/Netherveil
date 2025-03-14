@@ -185,6 +185,10 @@ void UEnemyFSM::DropItem()
 	int randNum = rand() % 100;
 	FTransform itemPosition = me->GetActorTransform();
 
+	if (!grenadeAmmoItemFactory) {
+		UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItemClass is Null"));
+		return;
+	}
 	if (randNum<50)
 	{
 		if (randNum<25)
