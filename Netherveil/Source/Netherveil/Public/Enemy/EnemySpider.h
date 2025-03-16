@@ -13,5 +13,13 @@ UCLASS()
 class NETHERVEIL_API AEnemySpider : public AEnemy
 {
 	GENERATED_BODY()
-	
+
+public:
+
+	UFUNCTION(BlueprintCallable, Category = Attack)
+	void Fire();
+
+	UPROPERTY(EditDefaultsOnly, Category = BulletFactory)
+	TSubclassOf<class AEnemyAttackBullet> bulletFactory;
+
 };

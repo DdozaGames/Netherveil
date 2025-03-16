@@ -14,7 +14,6 @@ ABullet::ABullet()
 
 	//�浹ü 
 	collisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionComp"));
-	collisionComp->SetCollisionProfileName(TEXT("BlockAll"));
 	collisionComp->SetSphereRadius(13);
 	RootComponent = collisionComp;
 

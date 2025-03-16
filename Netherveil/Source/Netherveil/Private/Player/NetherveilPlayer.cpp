@@ -346,7 +346,8 @@ void ANetherveilPlayer::PlayFireEffects()
 void ANetherveilPlayer::OnHitEvent()
 {
 	hp--;
-	//UE_LOG(LogTemp, Error, TEXT("Player get damaged"));
+	UE_LOG(LogTemp, Error, TEXT("Player get damaged"));
+	UpdateHpUI();
 
 	if (hp<=0)
 	{

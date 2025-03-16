@@ -69,6 +69,9 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAnim_Spider.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAttackBullet.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
@@ -121,6 +124,9 @@
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim_Spider.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAttackBullet.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h">

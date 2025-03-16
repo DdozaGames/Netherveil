@@ -3,3 +3,12 @@
 
 #include "Enemy/EnemySpider.h"
 
+#include "Enemy/EnemyAttackBullet.h"
+
+
+void AEnemySpider::Fire()
+{
+	// ÃÑ¾Ë ½ºÆù
+	FTransform firePosition = GetMesh()->GetSocketTransform(TEXT("FirePosition"));
+	GetWorld()->SpawnActor<AEnemyAttackBullet>(bulletFactory, firePosition);
+}
