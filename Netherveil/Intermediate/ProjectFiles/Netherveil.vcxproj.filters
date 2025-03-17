@@ -42,12 +42,6 @@
     <ClInclude Include="..\..\Source\Netherveil\Netherveil.h">
       <Filter>Source\Netherveil</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Netherveil\NetherveilCharacter.cpp">
-      <Filter>Source\Netherveil</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Netherveil\NetherveilCharacter.h">
-      <Filter>Source\Netherveil</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Netherveil\NetherveilGameMode.cpp">
       <Filter>Source\Netherveil</Filter>
     </ClCompile>
@@ -111,6 +105,18 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Player\PlayerAnim.cpp">
       <Filter>Source\Netherveil\Private\Player</Filter>
     </ClCompile>
+    <Filter Include="Source\Netherveil\Private\Quest">
+      <UniqueIdentifier>{522CF2A8-3894-3A6B-B7BF-83330D28964C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Quest\QuestData.cpp">
+      <Filter>Source\Netherveil\Private\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Quest\QuestManager.cpp">
+      <Filter>Source\Netherveil\Private\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Quest\Rift.cpp">
+      <Filter>Source\Netherveil\Private\Quest</Filter>
+    </ClCompile>
     <Filter Include="Source\Netherveil\Public">
       <UniqueIdentifier>{0C6BC1A1-747D-3A7A-9661-8848B64BA299}</UniqueIdentifier>
     </Filter>
@@ -167,6 +173,18 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Player\PlayerAnim.h">
       <Filter>Source\Netherveil\Public\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\Netherveil\Public\Quest">
+      <UniqueIdentifier>{CA3E76F3-8371-3619-B28A-100A9E8099B5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Quest\QuestData.h">
+      <Filter>Source\Netherveil\Public\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Quest\QuestManager.h">
+      <Filter>Source\Netherveil\Public\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Quest\Rift.h">
+      <Filter>Source\Netherveil\Public\Quest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

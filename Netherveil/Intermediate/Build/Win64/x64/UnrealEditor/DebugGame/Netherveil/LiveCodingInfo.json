@@ -16,12 +16,13 @@
 			"HealthItem.gen.cpp.obj",
 			"Item.gen.cpp.obj",
 			"Netherveil.init.gen.cpp.obj",
-			"NetherveilCharacter.gen.cpp.obj",
 			"NetherveilGameMode.gen.cpp.obj",
 			"NetherveilPlayer.gen.cpp.obj",
 			"PlayerAnim.gen.cpp.obj",
+			"QuestData.gen.cpp.obj",
+			"QuestManager.gen.cpp.obj",
+			"Rift.gen.cpp.obj",
 			"Netherveil.cpp.obj",
-			"NetherveilCharacter.cpp.obj",
 			"NetherveilGameMode.cpp.obj",
 			"Enemy.cpp.obj",
 			"EnemyAnim.cpp.obj",
@@ -37,7 +38,10 @@
 			"Item.cpp.obj",
 			"Bullet.cpp.obj",
 			"NetherveilPlayer.cpp.obj",
-			"PlayerAnim.cpp.obj"
+			"PlayerAnim.cpp.obj",
+			"QuestData.cpp.obj",
+			"QuestManager.cpp.obj",
+			"Rift.cpp.obj"
 		]
 	}
 }

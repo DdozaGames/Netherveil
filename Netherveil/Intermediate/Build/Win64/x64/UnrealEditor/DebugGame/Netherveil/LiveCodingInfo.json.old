@@ -7,6 +7,7 @@
 			"Enemy.gen.cpp.obj",
 			"EnemyAnim.gen.cpp.obj",
 			"EnemyAnim_Spider.gen.cpp.obj",
+			"EnemyAttackBullet.gen.cpp.obj",
 			"EnemyFSM.gen.cpp.obj",
 			"EnemyFSM_ShroudfiendMelee.gen.cpp.obj",
 			"EnemyFSM_Spider.gen.cpp.obj",
@@ -15,16 +16,17 @@
 			"HealthItem.gen.cpp.obj",
 			"Item.gen.cpp.obj",
 			"Netherveil.init.gen.cpp.obj",
-			"NetherveilCharacter.gen.cpp.obj",
 			"NetherveilGameMode.gen.cpp.obj",
 			"NetherveilPlayer.gen.cpp.obj",
 			"PlayerAnim.gen.cpp.obj",
+			"QuestManager.gen.cpp.obj",
+			"Rift.gen.cpp.obj",
 			"Netherveil.cpp.obj",
-			"NetherveilCharacter.cpp.obj",
 			"NetherveilGameMode.cpp.obj",
 			"Enemy.cpp.obj",
 			"EnemyAnim.cpp.obj",
 			"EnemyAnim_Spider.cpp.obj",
+			"EnemyAttackBullet.cpp.obj",
 			"EnemyFSM.cpp.obj",
 			"EnemyFSM_ShroudfiendMelee.cpp.obj",
 			"EnemyFSM_Spider.cpp.obj",
@@ -35,7 +37,9 @@
 			"Item.cpp.obj",
 			"Bullet.cpp.obj",
 			"NetherveilPlayer.cpp.obj",
-			"PlayerAnim.cpp.obj"
+			"PlayerAnim.cpp.obj",
+			"QuestManager.cpp.obj",
+			"Rift.cpp.obj"
 		]
 	}
 }
