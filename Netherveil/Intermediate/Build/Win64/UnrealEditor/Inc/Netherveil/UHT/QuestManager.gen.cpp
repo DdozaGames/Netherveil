@@ -15,6 +15,13 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 	NETHERVEIL_API UClass* Z_Construct_UClass_AQuestManager_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Netherveil();
 // End Cross Module References
+	DEFINE_FUNCTION(AQuestManager::execOnRiftDestroyed)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRiftDestroyed();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AQuestManager::execCompleteQuest)
 	{
 		P_FINISH;
@@ -35,6 +42,7 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 		UClass* Class = AQuestManager::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "CompleteQuest", &AQuestManager::execCompleteQuest },
+			{ "OnRiftDestroyed", &AQuestManager::execOnRiftDestroyed },
 			{ "StartQuest", &AQuestManager::execStartQuest },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -59,6 +67,28 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AQuestManager_CompleteQuest_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AQuestManager_OnRiftDestroyed_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AQuestManager_OnRiftDestroyed_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Quest/QuestManager.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AQuestManager_OnRiftDestroyed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AQuestManager, nullptr, "OnRiftDestroyed", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AQuestManager_OnRiftDestroyed_Statics::Function_MetaDataParams), Z_Construct_UFunction_AQuestManager_OnRiftDestroyed_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_AQuestManager_OnRiftDestroyed()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AQuestManager_OnRiftDestroyed_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -124,6 +154,7 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AQuestManager_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AQuestManager_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AQuestManager_CompleteQuest, "CompleteQuest" }, // 1678252235
+		{ &Z_Construct_UFunction_AQuestManager_OnRiftDestroyed, "OnRiftDestroyed" }, // 1243687324
 		{ &Z_Construct_UFunction_AQuestManager_StartQuest, "StartQuest" }, // 179458941
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AQuestManager_Statics::FuncInfo) < 2048);
@@ -181,9 +212,9 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AQuestManager, AQuestManager::StaticClass, TEXT("AQuestManager"), &Z_Registration_Info_UClass_AQuestManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AQuestManager), 1219022563U) },
+		{ Z_Construct_UClass_AQuestManager, AQuestManager::StaticClass, TEXT("AQuestManager"), &Z_Registration_Info_UClass_AQuestManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AQuestManager), 3725472798U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_3297657869(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_574724669(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

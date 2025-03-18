@@ -7,6 +7,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include <Enemy/EnemyFSM.h>
 #include "Kismet/GameplayStatics.h"
+#include "Quest/Rift.h"
 
 ABullet::ABullet()
 {
@@ -68,7 +69,17 @@ void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 
 	}
 
-	
+	else if (OtherActor->IsA<ARift>())
+	{
+		auto rift = Cast<ARift>(OtherActor);
+		if (rift)
+		{
+			rift->TakeDamage();
+			this->Destroy();
+
+		}
+
+	}
 	
 }
 

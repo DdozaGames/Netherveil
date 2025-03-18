@@ -162,7 +162,7 @@ void ANetherveilPlayer::Move()
 void ANetherveilPlayer::InputFire()
 {
 
-	UE_LOG(LogTemp, Error, TEXT("Fire!!"));
+	//UE_LOG(LogTemp, Error, TEXT("Fire!!"));
 
 	if (bUsingGrenadeGun)
 	{

@@ -18,5 +18,6 @@ struct FQuestData :public FTableRowBase
     FText QuestName;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quest")
-    TSubclassOf<class ARift> TargetRift;
+    FName TargetRiftID;  // 특정 균열 ID 추가
+
 };

@@ -37,5 +37,6 @@ public:
 private:
 	FName CurrentQuestID;
 
+	UFUNCTION()
 	void OnRiftDestroyed();
 };

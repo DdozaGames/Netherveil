@@ -42,22 +42,33 @@ void AQuestManager::StartQuest(FName QuestID)
 
     if (Quest)
     {
-        UE_LOG(LogTemp, Warning, TEXT("퀘스트 시작: %s"), *Quest->QuestName.ToString());
+        UE_LOG(LogTemp, Warning, TEXT("Start Quest: %s"), *Quest->QuestName.ToString());
 
         CurrentQuestID = QuestID;
 
         // 균열 찾기
         TArray<AActor*> FoundRifts;
-        UGameplayStatics::GetAllActorsOfClass(GetWorld(), Quest->TargetRift, FoundRifts);
+        UGameplayStatics::GetAllActorsOfClass(GetWorld(), ARift::StaticClass(), FoundRifts);
 
-        if (FoundRifts.Num() > 0)
+        for (AActor* Actor : FoundRifts)
         {
-            ARift* TargetRift = Cast<ARift>(FoundRifts[0]);
-            if (TargetRift)
+            ARift* Rift = Cast<ARift>(Actor);
+            if (Rift)
             {
-                UE_LOG(LogTemp, Warning, TEXT("균열 파괴 이벤트"));
-                // 균열 파괴 이벤트 연결
-                //TargetRift->OnRiftDestroyed.AddDynamic(this, &AQuestManager::OnRiftDestroyed);
+                if (Rift->RiftID == Quest->TargetRiftID)
+                {
+                    //  현재 퀘스트의 목표 균열만 활성화
+                    Rift->OnRiftDestroyed.AddDynamic(this, &AQuestManager::OnRiftDestroyed);
+                    UE_LOG(LogTemp, Warning, TEXT("Activate Rift: %s"), *Rift->RiftID.ToString());
+                    Rift->SetActorHiddenInGame(false);
+                    Rift->SetActorEnableCollision(true);
+                }
+                else
+                {
+                    // 다른 균열은 비활성화
+                    Rift->SetActorHiddenInGame(true);
+                    Rift->SetActorEnableCollision(false);
+                }
             }
         }
     }
@@ -65,11 +76,27 @@ void AQuestManager::StartQuest(FName QuestID)
 
 void AQuestManager::CompleteQuest()
 {
+    if (!QuestDataTable) return;
+
+    // 현재 퀘스트 완료 후 다음 퀘스트 찾기
+    TArray<FName> RowNames = QuestDataTable->GetRowNames();
+    int32 CurrentIndex = RowNames.Find(CurrentQuestID);
+
+    if (CurrentIndex != INDEX_NONE && CurrentIndex + 1 < RowNames.Num())
+    {
+        StartQuest(RowNames[CurrentIndex + 1]);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("No More Quest!"));
+    }
 
 }
 
 void AQuestManager::OnRiftDestroyed()
 {
+    UE_LOG(LogTemp, Warning, TEXT("Complete Quest!"));
+    CompleteQuest();
 }
 
 

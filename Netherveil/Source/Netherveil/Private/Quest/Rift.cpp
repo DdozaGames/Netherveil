@@ -30,3 +30,21 @@ void ARift::Tick(float DeltaTime)
 
 }
 
+
+void ARift::DestroyRift()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Rift is Destroyed!: %s"), *RiftID.ToString());
+	collisionComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	OnRiftDestroyed.Broadcast();
+	//Destroy();
+}
+
+void ARift::TakeDamage()
+{
+	riftHP--;
+	if (riftHP <= 0)
+	{
+		DestroyRift();
+	}
+}
+
