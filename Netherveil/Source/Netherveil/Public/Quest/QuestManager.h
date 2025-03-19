@@ -34,6 +34,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Quest")
 	void CompleteQuest();
 
+	FName RiftID;
+
 private:
 	FName CurrentQuestID;
 

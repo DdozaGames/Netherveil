@@ -36,10 +36,12 @@ void ARift::DestroyRift()
 	UE_LOG(LogTemp, Warning, TEXT("Rift is Destroyed!: %s"), *RiftID.ToString());
 	collisionComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	OnRiftDestroyed.Broadcast();
+
+	//파괴 애니메이션 재생 
 	//Destroy();
 }
 
-void ARift::TakeDamage()
+void ARift::OnDamageProcess()
 {
 	riftHP--;
 	if (riftHP <= 0)

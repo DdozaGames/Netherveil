@@ -2,6 +2,7 @@
 
 #include "Quest/QuestManager.h"
 #include "Kismet/GameplayStatics.h"
+#include "Player/NetherveilPlayer.h"
 #include "Quest/QuestData.h"
 #include "Quest/Rift.h"
 
@@ -62,6 +63,7 @@ void AQuestManager::StartQuest(FName QuestID)
                     UE_LOG(LogTemp, Warning, TEXT("Activate Rift: %s"), *Rift->RiftID.ToString());
                     Rift->SetActorHiddenInGame(false);
                     Rift->SetActorEnableCollision(true);
+                    this->RiftID = Rift->RiftID;
                 }
                 else
                 {
@@ -96,6 +98,14 @@ void AQuestManager::CompleteQuest()
 void AQuestManager::OnRiftDestroyed()
 {
     UE_LOG(LogTemp, Warning, TEXT("Complete Quest!"));
+    
+    auto actor = UGameplayStatics::GetActorOfClass(GetWorld(), ANetherveilPlayer::StaticClass());
+    auto player = Cast<ANetherveilPlayer>(actor);
+    if (player)
+    {
+        player->CompleteQuestUI(RiftID);
+        UE_LOG(LogTemp, Warning, TEXT("player->CompleteQuestUI"));
+    }
     CompleteQuest();
 }
 

@@ -174,4 +174,10 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Health)
 	void DisplayFullHPMessage();
+
+	//-----------------------Quest----------------------------------
+	//퀘스트 완료 UI로 변경
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category=Quest)
+	void CompleteQuestUI(FName RiftID);
+
 };

@@ -39,10 +39,21 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		P_THIS->OnHitEvent();
 		P_NATIVE_END;
 	}
+	struct NetherveilPlayer_eventCompleteQuestUI_Parms
+	{
+		FName RiftID;
+	};
 	struct NetherveilPlayer_eventOnUsingGrenade_Parms
 	{
 		bool isGrenade;
 	};
+	static FName NAME_ANetherveilPlayer_CompleteQuestUI = FName(TEXT("CompleteQuestUI"));
+	void ANetherveilPlayer::CompleteQuestUI(FName RiftID)
+	{
+		NetherveilPlayer_eventCompleteQuestUI_Parms Parms;
+		Parms.RiftID=RiftID;
+		ProcessEvent(FindFunctionChecked(NAME_ANetherveilPlayer_CompleteQuestUI),&Parms);
+	}
 	static FName NAME_ANetherveilPlayer_DisplayFullHPMessage = FName(TEXT("DisplayFullHPMessage"));
 	void ANetherveilPlayer::DisplayFullHPMessage()
 	{
@@ -78,6 +89,43 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 			{ "OnHitEvent", &ANetherveilPlayer::execOnHitEvent },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics
+	{
+		static const UECodeGen_Private::FNamePropertyParams NewProp_RiftID;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::NewProp_RiftID = { "RiftID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(NetherveilPlayer_eventCompleteQuestUI_Parms, RiftID), METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::NewProp_RiftID,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Quest" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//-----------------------Quest----------------------------------\n//\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xcf\xb7\xef\xbf\xbd UI\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "-----------------------Quest----------------------------------\n\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xcf\xb7\xef\xbf\xbd UI\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANetherveilPlayer, nullptr, "CompleteQuestUI", nullptr, nullptr, Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::PropPointers), sizeof(NetherveilPlayer_eventCompleteQuestUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::PropPointers) < 2048);
+	static_assert(sizeof(NetherveilPlayer_eventCompleteQuestUI_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ANetherveilPlayer_DisplayFullHPMessage_Statics
 	{
@@ -366,6 +414,7 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilPlayer_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ANetherveilPlayer_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ANetherveilPlayer_CompleteQuestUI, "CompleteQuestUI" }, // 2410605430
 		{ &Z_Construct_UFunction_ANetherveilPlayer_DisplayFullHPMessage, "DisplayFullHPMessage" }, // 2910254499
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnGameOver, "OnGameOver" }, // 1446480415
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent, "OnHitEvent" }, // 314406478
@@ -671,9 +720,9 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 2474911356U) },
+		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 2108447740U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_2286502597(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_4155262415(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

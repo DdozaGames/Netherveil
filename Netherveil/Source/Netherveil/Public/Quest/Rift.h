@@ -44,5 +44,5 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	int32 riftHP = 5;
 
-	void TakeDamage();
+	void OnDamageProcess();
 };

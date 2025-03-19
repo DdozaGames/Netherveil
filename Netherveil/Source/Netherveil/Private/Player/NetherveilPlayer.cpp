@@ -12,6 +12,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Item/AmmoItem.h"
+#include "Quest/Rift.h"
 
 ANetherveilPlayer::ANetherveilPlayer()
 {
@@ -221,6 +222,12 @@ void ANetherveilPlayer::InputFire()
 			{
 				auto enemyFSM = Cast<UEnemyFSM>(enemy);
 				enemyFSM->OnDamageProcess();
+			}
+
+			auto rift = Cast<ARift>(hitInfo.GetActor());
+			if (rift)
+			{
+				rift->OnDamageProcess();
 			}
 		}
 	}

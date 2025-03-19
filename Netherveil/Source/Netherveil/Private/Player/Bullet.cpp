@@ -74,7 +74,7 @@ void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 		auto rift = Cast<ARift>(OtherActor);
 		if (rift)
 		{
-			rift->TakeDamage();
+			rift->OnDamageProcess();
 			this->Destroy();
 
 		}
