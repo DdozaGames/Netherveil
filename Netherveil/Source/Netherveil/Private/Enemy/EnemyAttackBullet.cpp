@@ -27,8 +27,8 @@ AEnemyAttackBullet::AEnemyAttackBullet()
 	//발사체
 	movementComp = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("MovementComp"));
 	movementComp->SetUpdatedComponent(collisionComp);
-	movementComp->InitialSpeed = 2000;
-	movementComp->MaxSpeed = 2000;
+	movementComp->InitialSpeed = 2500;
+	movementComp->MaxSpeed = 2500;
 	movementComp->bShouldBounce = true; //반동여부
 	movementComp->Bounciness = 0.3f; //반동 값
 

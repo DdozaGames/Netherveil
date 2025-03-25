@@ -64,7 +64,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float attackDelayTime = 3.0f;
 
-	void PlayAttack();
 
 	//=========================Damage==============================
 	virtual void OnDamageProcess();

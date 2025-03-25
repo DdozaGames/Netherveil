@@ -19,7 +19,7 @@ void UEnemyFSM_Spider::BeginPlay()
 		anim = Cast<UEnemyAnim_Spider>(me->GetMesh()->GetAnimInstance());
 		ai = Cast<AAIController>(me->GetController());
 	}
-	attackRange = 1000.f;
+	attackRange = 1500.f;
 	attackDelayTime = 5.0f;
 }
 

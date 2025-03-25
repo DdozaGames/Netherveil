@@ -139,15 +139,6 @@ void UEnemyFSM::DieState()
 }
 
 
-void UEnemyFSM::PlayAttack()
-{
-	//Attack -> Move 넘어갈 때 공격 애니메이션 다 끝나면 전환되도록
-	//몽타주로 제어
-
-	//int32 index = FMath::RandRange(0, 1);
-	FString sectionName = FString::Printf(TEXT("Attack0"));
-	anim->PlayAttackAnim(FName(*sectionName));
-}
 
 void UEnemyFSM::OnDamageProcess()
 {

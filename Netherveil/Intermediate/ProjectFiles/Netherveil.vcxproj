@@ -110,6 +110,7 @@
     <None Include="..\..\Source\Netherveil.Target.cs"/>
     <None Include="..\..\Source\NetherveilEditor.Target.cs"/>
     <None Include="..\..\.vsconfig"/>
+    <None Include="..\..\Gothic_Cathedral.png"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
@@ -138,6 +139,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAnimBoss.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyAnim_Spider.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -148,7 +154,17 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyBoss.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM_Boss.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
@@ -220,9 +236,12 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\Enemy.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnimBoss.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAnim_Spider.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyAttackBullet.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyBoss.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_Boss.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_ShroudfiendMelee.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_Spider.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h"/>
