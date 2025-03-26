@@ -62,6 +62,7 @@ void UEnemyFSM::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 void UEnemyFSM::IdleState()
 {
 	currentTime += GetWorld()->DeltaTimeSeconds;
+	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::IdleState()"));
 
 	if (currentTime > idleDelayTime)
 	{
@@ -81,7 +82,7 @@ void UEnemyFSM::MoveState()
 	FVector dir = destination - me->GetActorLocation();
 	//me->AddMovementInput(dir.GetSafeNormal());
 	ai->MoveToLocation(destination);
-	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
+	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
 
 	if(dir.Size() < attackRange)
 	{
@@ -116,7 +117,7 @@ void UEnemyFSM::AttackState()
 void UEnemyFSM::DamageState()
 {
 	currentTime += GetWorld()->DeltaTimeSeconds;
-	//UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
+	UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
 
 	if (currentTime > damageDelayTime)
 	{

@@ -3,3 +3,13 @@
 
 #include "Enemy/EnemyAnimBoss.h"
 
+void UEnemyAnimBoss::OnEndAttackAnimation()
+{
+	Super::OnEndAttackAnimation();
+
+	int32 index = FMath::RandRange(0, 1);
+	FString sectionName = FString::Printf(TEXT("AttackWait%d"), index);
+	PlayAttackWaitAnim(FName(*sectionName));
+	bAttackWaitEnd = false;
+}
+

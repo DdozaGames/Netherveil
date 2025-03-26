@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "EnemyAnimBoss.h"
 #include "Enemy/EnemyFSM.h"
 #include "EnemyFSM_Boss.generated.h"
 
@@ -20,6 +21,12 @@ public:
 
 	void PlayAttack();
 
+	void PlayAttackWait();
 
-	//void OnDamageProcess() override;
+	UPROPERTY()
+	UEnemyAnimBoss* bossAnim;
+
+	void OnDamageProcess() override;
+
+	void DieState() override;
 };

@@ -13,5 +13,14 @@ UCLASS()
 class NETHERVEIL_API UEnemyAnimBoss : public UEnemyAnim
 {
 	GENERATED_BODY()
+
+public:
 	
+	virtual void OnEndAttackAnimation() override;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = FSMEvent)
+	void PlayAttackWaitAnim(FName sectionName);
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = FSM)
+	bool bAttackWaitEnd = true;
 };
