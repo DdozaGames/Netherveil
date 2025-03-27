@@ -62,7 +62,7 @@ void UEnemyFSM::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 void UEnemyFSM::IdleState()
 {
 	currentTime += GetWorld()->DeltaTimeSeconds;
-	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::IdleState()"));
+	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::IdleState()"));
 
 	if (currentTime > idleDelayTime)
 	{
@@ -84,7 +84,7 @@ void UEnemyFSM::MoveState()
 	ai->MoveToLocation(destination);
 	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
 
-	if(dir.Size() < attackRange)
+	if(dir.Size() < attackRange )
 	{
 		ai->StopMovement();
 		currentState = EEnemyState::Attack;
@@ -173,7 +173,7 @@ void UEnemyFSM::OnDamageProcess()
 
 void UEnemyFSM::DropItem()
 {
-	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItem()"));
+	///UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItem()"));
 	int randNum = rand() % 100;
 	FTransform itemPosition = me->GetActorTransform();
 

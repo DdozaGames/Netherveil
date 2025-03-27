@@ -13,5 +13,14 @@ UCLASS()
 class NETHERVEIL_API AEnemyBoss : public AEnemy
 {
 	GENERATED_BODY()
+public:
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+	TSubclassOf<class AEnemyBossAttack_EnergyWave> EnergyWaveFactory;
+
+
+	UFUNCTION(BlueprintCallable, Category ="Attack")
+	void FireEnergyWave();
+
 	
 };
