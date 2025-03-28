@@ -210,12 +210,12 @@ void ANetherveilPlayer::InputFire()
 			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), bulletEffectFactory, bulletTrans);
 
 			//오브젝트 날리기 
-			auto hitComp = hitInfo.GetComponent();
+			/*auto hitComp = hitInfo.GetComponent();
 			if (hitComp && hitComp->IsSimulatingPhysics())
 			{
 				FVector force = -hitInfo.ImpactNormal * hitComp->GetMass() * 500000;
 				hitComp->AddForce(force);
-			}
+			}*/
 
 			auto enemy = hitInfo.GetActor()->GetDefaultSubobjectByName(TEXT("FSM"));
 			if (enemy)

@@ -76,6 +76,9 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyBossAttack_EnergyWave.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyBossAttack_Fireball.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyFSM.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
@@ -155,6 +158,9 @@
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyBossAttack_EnergyWave.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyBossAttack_Fireball.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM.h">

@@ -7,6 +7,7 @@
 #include "Enemy/EnemyAnimBoss.h"
 #include "Enemy/EnemyBoss.h"
 #include "Enemy/EnemyBossAttack_EnergyWave.h"
+#include "Enemy/EnemyBossAttack_Fireball.h"
 #include "Player/NetherveilPlayer.h"
 
 
@@ -31,6 +32,14 @@ void UEnemyFSM_Boss::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 
 	if (bIsDashing)
 	{
+		// 돌진 애니메이션 실행 (한 번만 실행되도록)
+		if (!bIsDashAnimPlaying)
+		{
+			FString DashSection = TEXT("Dash");
+			bossAnim->PlayAttackAnim(FName(*DashSection));
+			bIsDashAnimPlaying = true;
+		}
+
 		DashTimeElapsed += DeltaTime;
 		float Alpha = FMath::Clamp(DashTimeElapsed / DashDuration, 0.0f, 1.0f);
 		FVector NewLocation = FMath::Lerp(DashStartLocation, DashTargetLocation, Alpha);
@@ -83,14 +92,23 @@ void UEnemyFSM_Boss::PlayAttack()
 	int32 index = FMath::RandRange(0,2);
 	FString sectionName = FString::Printf(TEXT("Attack%d"),index);
 
+	//에너지파 공격
+	if (index==0)
+	{
+		bossAnim->PlayAttackAnim(FName(*sectionName));
+	}
+
 	//근거리 공격 
-	if (index==1)
+	else if (index==1)
 	{
 		StartDash();
 	}
+
+	//불덩이 공격
 	else
 	{
 		bossAnim->PlayAttackAnim(FName(*sectionName));
+		//불덩이 우수수 떨어짐
 	}
 	
 }
@@ -154,10 +172,12 @@ void UEnemyFSM_Boss::RotateToPlayer()
 void UEnemyFSM_Boss::StartDash()
 {
 	DashStartLocation = me->GetActorLocation();
-	DashTargetLocation = DashStartLocation + (me->GetActorForwardVector() * 800.0f); // 8m 돌진
+	DashTargetLocation = DashStartLocation + (me->GetActorForwardVector() * 1000.0f); // 8m 돌진
 	bIsDashing = true;
 	DashTimeElapsed = 0.0f;
 	bAttackAfterDash = true; // 돌진 후 공격 실행
+	bIsDashAnimPlaying = true;
 
 	UE_LOG(LogTemp, Warning, TEXT("start rush!"));
 }
+

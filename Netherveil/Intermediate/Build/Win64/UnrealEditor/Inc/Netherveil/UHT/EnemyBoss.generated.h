@@ -9,6 +9,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef NETHERVEIL_EnemyBoss_generated_h
 #error "EnemyBoss.generated.h already included, missing '#pragma once' in EnemyBoss.h"
 #endif
@@ -19,7 +22,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_15_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execFireEnergyWave);
+	DECLARE_FUNCTION(execSpawnFireBall); \
+	DECLARE_FUNCTION(execFireEnergyWave); \
+	DECLARE_FUNCTION(execOnBeginOverlap);
 
 
 #define FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_15_ACCESSORS

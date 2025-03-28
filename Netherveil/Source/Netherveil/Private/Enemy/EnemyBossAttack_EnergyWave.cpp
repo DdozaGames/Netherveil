@@ -57,7 +57,7 @@ void AEnemyBossAttack_EnergyWave::CheckCollision()
         StartLocation,
         EndLocation,
         FQuat::Identity,
-        ECC_GameTraceChannel4,  // 캐릭터 감지
+        ECC_Visibility,  
         SweepShape
     );
 
@@ -66,19 +66,26 @@ void AEnemyBossAttack_EnergyWave::CheckCollision()
 
     if (bHit)
     {
-        
-        AActor* HitActor = HitResult.GetActor();
-        if (HitActor && HitActor->IsA(ANetherveilPlayer::StaticClass()))  // 플레이어 감지만 허용
+        auto player = Cast<ANetherveilPlayer>(HitResult.GetActor());
+        if (player)
         {
-            UE_LOG(LogTemp, Warning, TEXT(" AEnemyBossAttack_EnergyWave::hit player"));
-            auto player = Cast<ANetherveilPlayer>(HitActor);
-            //데미지 적용
             player->OnHitEvent();
-
             bCanDetect = false;
-            // 타격 후 즉시 제거 (옵션)
-            //Destroy();
+            UE_LOG(LogTemp, Warning, TEXT(" AEnemyBossAttack_EnergyWave::hit player"));
         }
+
+        //AActor* HitActor = HitResult.GetActor();
+        //if (HitActor && HitActor->IsA(ANetherveilPlayer::StaticClass()))  // 플레이어 감지만 허용
+        //{
+        //    UE_LOG(LogTemp, Warning, TEXT(" AEnemyBossAttack_EnergyWave::hit player"));
+        //    auto player = Cast<ANetherveilPlayer>(HitActor);
+        //    //데미지 적용
+        //    player->OnHitEvent();
+
+        //    bCanDetect = false;
+        //    // 타격 후 즉시 제거 (옵션)
+        //    //Destroy();
+        //}
     }
 }
 

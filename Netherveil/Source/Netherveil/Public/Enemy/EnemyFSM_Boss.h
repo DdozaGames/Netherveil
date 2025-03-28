@@ -37,12 +37,13 @@ public:
 
 	void StartRushAttack();
 
-	;
-
 	bool bIsDashing = false;
 	FVector DashStartLocation;
 	FVector DashTargetLocation;
 	float DashTimeElapsed = 0.0f;
-	float DashDuration = 0.5f; // 0.3초 동안 돌진
+	float DashDuration = 0.7f; // x초 동안 돌진
 	bool bAttackAfterDash = false; // 돌진 후 공격할지 여부
+	bool bIsDashAnimPlaying = false; //돌진 애니메이션 재생 여부
+
+	
 };

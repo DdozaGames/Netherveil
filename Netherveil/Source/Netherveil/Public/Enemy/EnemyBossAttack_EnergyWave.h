@@ -32,7 +32,7 @@ public:
 
     // 충격파 범위
     UPROPERTY(EditDefaultsOnly, Category = "Combat")
-    float WaveRadius = 400.0f;
+    float WaveRadius = 450.0f;
 
     // 데미지 값
     UPROPERTY(EditDefaultsOnly, Category = "Combat")

@@ -15,6 +15,12 @@ class NETHERVEIL_API AEnemyBoss : public AEnemy
 	GENERATED_BODY()
 public:
 
+	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+
 	UPROPERTY(EditDefaultsOnly, Category = "Attack")
 	TSubclassOf<class AEnemyBossAttack_EnergyWave> EnergyWaveFactory;
 
@@ -22,5 +28,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category ="Attack")
 	void FireEnergyWave();
 
+	UFUNCTION(BlueprintCallable, Category = "Attack")
+	void SpawnFireBall();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Attack")
+	TSubclassOf<class AEnemyBossAttack_Fireball> FireballFactory; // 불덩이 액터 블루프린트
+
+	FTimerHandle FireballTimerHandle; // 불덩이 생성 타이머
 	
 };
