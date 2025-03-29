@@ -5,14 +5,26 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyBoss.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/TestMap.umap",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyBossAttack_EnergyWave.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Boss/Animations/BossAttackMontage.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyBossAttack_Fireball.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Animations/ABP_Boss.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Blueprints/BP_NetherveilPlayer.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Boss/SK_Mesh/SK_Mesh_Monster_1_Skeleton.uasset"
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Boss/Textures/lavaRock.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Boss/Textures/M_LavaRock.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_2.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_1.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_1_Base_Color.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_1_Emissive.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_1_Glossiness.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_1_Normal.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_1_occlusion.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Rock_1_Specular.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_1.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_2.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_1_Base_Color.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_1_Emissive.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_1_Glossiness.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_1_Normal.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_1_occlusion.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/LavaRock/Rock_1_Specular.uasset"
 			]
 		}
 	]

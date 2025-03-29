@@ -19,14 +19,23 @@ AEnemyBossAttack_Fireball::AEnemyBossAttack_Fireball()
 	bodyMeshComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	bodyMeshComp->SetRelativeScale3D(FVector(0.25f));
 
-	//생명 시간 주기
-	InitialLifeSpan = 4.0f;
 }
 
 void AEnemyBossAttack_Fireball::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// 불덩이를 6초 후에 자동 삭제
+	SetLifeSpan(6.0f);
+
 	collisionComp->OnComponentBeginOverlap.AddDynamic(this, &AEnemyBossAttack_Fireball::OnBeginOverlap);
+
+	UPrimitiveComponent* RootComp = Cast<UPrimitiveComponent>(GetRootComponent());
+	if (RootComp)
+	{
+		RootComp->SetSimulatePhysics(true);
+		RootComp->SetEnableGravity(true); // 중력 활성화
+	}
 }
 
 void AEnemyBossAttack_Fireball::Tick(float DeltaTime)

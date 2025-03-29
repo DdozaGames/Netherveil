@@ -32,14 +32,12 @@ void UEnemyFSM_Boss::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 
 	if (bIsDashing)
 	{
-		// 돌진 애니메이션 실행 (한 번만 실행되도록)
-		if (!bIsDashAnimPlaying)
+		if (bAttackAfterDash) 
 		{
-			FString DashSection = TEXT("Dash");
-			bossAnim->PlayAttackAnim(FName(*DashSection));
-			bIsDashAnimPlaying = true;
+			FString sectionName = TEXT("Attack1");
+			bossAnim->PlayAttackAnim(FName(*sectionName));
+			bAttackAfterDash = false; // 공격 1회만 실행
 		}
-
 		DashTimeElapsed += DeltaTime;
 		float Alpha = FMath::Clamp(DashTimeElapsed / DashDuration, 0.0f, 1.0f);
 		FVector NewLocation = FMath::Lerp(DashStartLocation, DashTargetLocation, Alpha);
@@ -48,14 +46,6 @@ void UEnemyFSM_Boss::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 		if (Alpha >= 1.0f) // 돌진 완료
 		{
 			bIsDashing = false;
-
-			if (bAttackAfterDash) // 돌진 후 공격 실행
-			{
-				FString sectionName = TEXT("Attack1");
-				bossAnim->PlayAttackAnim(FName(*sectionName));
-				UE_LOG(LogTemp, Warning, TEXT("Attack After Rush"));
-				bAttackAfterDash = false; // 공격 1회만 실행
-			}
 		}
 	}
 }
@@ -89,27 +79,22 @@ void UEnemyFSM_Boss::PlayAttack()
 	//Attack -> Move 넘어갈 때 공격 애니메이션 다 끝나면 전환되도록
 	//몽타주로 제어
 
-	int32 index = FMath::RandRange(0,2);
-	FString sectionName = FString::Printf(TEXT("Attack%d"),index);
+	//int32 index = FMath::RandRange(0,2);
+	//FString sectionName = FString::Printf(TEXT("Attack%d"),index);
+	FString sectionName = FString::Printf(TEXT("Attack2"));
+	bossAnim->PlayAttackAnim(FName(*sectionName));
 
-	//에너지파 공격
-	if (index==0)
-	{
-		bossAnim->PlayAttackAnim(FName(*sectionName));
-	}
+	////근거리 공격 
+	//if (index==1)
+	//{
+	//	StartDash();
+	//}
 
-	//근거리 공격 
-	else if (index==1)
-	{
-		StartDash();
-	}
-
-	//불덩이 공격
-	else
-	{
-		bossAnim->PlayAttackAnim(FName(*sectionName));
-		//불덩이 우수수 떨어짐
-	}
+	//else
+	//{
+	//	bossAnim->PlayAttackAnim(FName(*sectionName));
+	//	
+	//}
 	
 }
 

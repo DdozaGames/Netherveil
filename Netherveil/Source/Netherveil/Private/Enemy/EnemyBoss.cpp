@@ -35,31 +35,39 @@ void AEnemyBoss::FireEnergyWave()
 }
 void AEnemyBoss::SpawnFireBall()
 {
-	if (!FireballFactory) return;
+    if (!FireballFactory) return;
 
-	float SpawnRadius = 400.0f; // 불덩이 생성 범위
-	float TotalDuration = 3.0f; // 총 3초 동안 생성
-	float SpawnInterval = 0.3f; // 0.3초마다 생성
+    float SpawnRadius = 4000.0f; // 불덩이 생성 범위
+    float TotalDuration = 3.0f; // 총 3초 동안 생성
+    float SpawnInterval = 0.1f; // 0.3초마다 생성
+    int32 SpawnCount = TotalDuration / SpawnInterval; // 총 생성 횟수
 
-	float ElapsedTime = 0.0f;
+    int32 CurrentSpawn = 0;
 
-	while (ElapsedTime < TotalDuration)
-	{
-		float RandomX = FMath::RandRange(-SpawnRadius, SpawnRadius);
-		float RandomY = FMath::RandRange(-SpawnRadius, SpawnRadius);
-		FVector SpawnLocation = GetActorLocation() + FVector(RandomX, RandomY, 100.0f);
-		FRotator SpawnRotation = FRotator::ZeroRotator;
+    UE_LOG(LogTemp, Warning, TEXT("Starting Fireball Spawn..."));
 
-		// 일정 시간 간격으로 불덩이 생성
-		GetWorld()->GetTimerManager().SetTimer(FireballTimerHandle, FTimerDelegate::CreateLambda([this, SpawnLocation, SpawnRotation]()
-			{
-				AEnemyBossAttack_Fireball* Fireball = GetWorld()->SpawnActor<AEnemyBossAttack_Fireball>(FireballFactory, SpawnLocation, SpawnRotation);
-				if (Fireball)
-				{
-					UE_LOG(LogTemp, Warning, TEXT("s"));
-				}
-			}), ElapsedTime, false);
+    GetWorld()->GetTimerManager().SetTimer(FireballTimerHandle, FTimerDelegate::CreateLambda([this, SpawnRadius, SpawnInterval, SpawnCount, &CurrentSpawn]()
+        {
+            if (CurrentSpawn >= SpawnCount)
+            {
+                GetWorld()->GetTimerManager().ClearTimer(FireballTimerHandle);
+                return;
+            }
 
-		ElapsedTime += SpawnInterval;
-	}
+            float RandomX = FMath::RandRange(-SpawnRadius, SpawnRadius);
+            float RandomY = FMath::RandRange(-SpawnRadius, SpawnRadius);
+            FVector SpawnLocation = GetActorLocation() + FVector(RandomX, RandomY, 2000.0f);
+            FRotator SpawnRotation = FRotator::ZeroRotator;
+
+            UE_LOG(LogTemp, Warning, TEXT("Spawning Fireball at: %s"), *SpawnLocation.ToString());
+
+            AEnemyBossAttack_Fireball* Fireball = GetWorld()->SpawnActor<AEnemyBossAttack_Fireball>(FireballFactory, SpawnLocation, SpawnRotation);
+            if (Fireball)
+            {
+                UE_LOG(LogTemp, Warning, TEXT("Fireball Spawned!"));
+            }
+
+            ++CurrentSpawn;
+
+        }), SpawnInterval, true);
 }
