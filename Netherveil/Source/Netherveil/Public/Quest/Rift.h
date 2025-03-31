@@ -41,8 +41,11 @@ public:
 	UFUNCTION()
 	void DestroyRift();  // ÆÄ±« ½Ã È£Ãâ
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float riftInitialHP = 5.0;
+
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	int32 riftHP = 5;
+	float riftCurrentHP = riftInitialHP;
 
 	void OnDamageProcess();
 };

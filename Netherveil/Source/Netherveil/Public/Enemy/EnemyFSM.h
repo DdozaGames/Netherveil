@@ -70,7 +70,7 @@ public:
 	virtual void OnDamageProcess();
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = FSM)
-	int32 hp = 3;
+	float hp = 3.0;
 
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float damageDelayTime = 2.0f;

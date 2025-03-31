@@ -25,11 +25,22 @@ void AQuestManager::BeginPlay()
             StartQuest(RowNames[0]);
         }
     }
+    auto actor = UGameplayStatics::GetActorOfClass(GetWorld(), ANetherveilPlayer::StaticClass());
+    player = Cast<ANetherveilPlayer>(actor);
 }
 
 void AQuestManager::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+    if (player)
+    {
+        if (currentRift && bStartQuest)
+        {
+            player->questProgress = currentRift->riftCurrentHP / currentRift->riftInitialHP;
+        }
+       
+    }
 
 }
 
@@ -64,6 +75,8 @@ void AQuestManager::StartQuest(FName QuestID)
                     Rift->SetActorHiddenInGame(false);
                     Rift->SetActorEnableCollision(true);
                     this->RiftID = Rift->RiftID;
+                    currentRift = Cast<ARift>(Rift);
+                    bStartQuest = true;
                 }
                 else
                 {
@@ -91,6 +104,7 @@ void AQuestManager::CompleteQuest()
     else
     {
         UE_LOG(LogTemp, Warning, TEXT("No More Quest!"));
+        player->bAllQuestsDone = true;
     }
 
 }
@@ -98,9 +112,9 @@ void AQuestManager::CompleteQuest()
 void AQuestManager::OnRiftDestroyed()
 {
     UE_LOG(LogTemp, Warning, TEXT("Complete Quest!"));
-    
-    auto actor = UGameplayStatics::GetActorOfClass(GetWorld(), ANetherveilPlayer::StaticClass());
-    auto player = Cast<ANetherveilPlayer>(actor);
+
+    /*auto actor = UGameplayStatics::GetActorOfClass(GetWorld(), ANetherveilPlayer::StaticClass());
+    auto player = Cast<ANetherveilPlayer>(actor);*/
     if (player)
     {
         player->CompleteQuestUI(RiftID);

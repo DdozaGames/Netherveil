@@ -23,12 +23,17 @@ void UEnemyFSM_Boss::BeginPlay()
 	}
 	attackRange = 1500.f;
 	attackDelayTime = 5.0f;
-	hp = 10;
+	hp = initialHP;
 }
 
 void UEnemyFSM_Boss::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	if (target)
+	{
+		target->bossProgress = hp / initialHP;
+	}
 
 	if (bIsDashing)
 	{
@@ -139,7 +144,8 @@ void UEnemyFSM_Boss::DieState()
 {
 	//Super::DieState();
 
-	//엔딩 시퀀스 재생 
+	target->bAllStageDone = true;
+
 }
 
 void UEnemyFSM_Boss::RotateToPlayer()

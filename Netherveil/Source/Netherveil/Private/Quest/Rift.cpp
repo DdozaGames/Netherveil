@@ -43,8 +43,8 @@ void ARift::DestroyRift()
 
 void ARift::OnDamageProcess()
 {
-	riftHP--;
-	if (riftHP <= 0)
+	riftCurrentHP--;
+	if (riftCurrentHP <= 0)
 	{
 		DestroyRift();
 	}

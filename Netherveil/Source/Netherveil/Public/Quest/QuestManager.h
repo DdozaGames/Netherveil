@@ -8,6 +8,8 @@
 #include "Quest/QuestData.h"
 #include "QuestManager.generated.h"
 
+class ANetherveilPlayer;
+
 UCLASS()
 class NETHERVEIL_API AQuestManager : public AActor
 {
@@ -35,6 +37,14 @@ public:
 	void CompleteQuest();
 
 	FName RiftID;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quest")
+	class ANetherveilPlayer* player;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quest")
+	class ARift* currentRift;
+
+	bool bStartQuest = false;
 
 private:
 	FName CurrentQuestID;

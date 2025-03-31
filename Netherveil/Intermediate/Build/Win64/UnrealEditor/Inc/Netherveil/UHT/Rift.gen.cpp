@@ -109,9 +109,13 @@ void FOnRiftDestroyed_DelegateWrapper(const FMulticastScriptDelegate& OnRiftDest
 #endif
 		static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnRiftDestroyed;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_riftHP_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_riftInitialHP_MetaData[];
 #endif
-		static const UECodeGen_Private::FIntPropertyParams NewProp_riftHP;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_riftInitialHP;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_riftCurrentHP_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_riftCurrentHP;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -179,7 +183,7 @@ void FOnRiftDestroyed_DelegateWrapper(const FMulticastScriptDelegate& OnRiftDest
 #endif
 	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_ARift_Statics::NewProp_OnRiftDestroyed = { "OnRiftDestroyed", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARift, OnRiftDestroyed), Z_Construct_UDelegateFunction_Netherveil_OnRiftDestroyed__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARift_Statics::NewProp_OnRiftDestroyed_MetaData), Z_Construct_UClass_ARift_Statics::NewProp_OnRiftDestroyed_MetaData) }; // 2307186294
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARift_Statics::NewProp_riftHP_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARift_Statics::NewProp_riftInitialHP_MetaData[] = {
 		{ "Category", "Rift" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// \xef\xbf\xbd\xc4\xb1\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xc8\xa3\xef\xbf\xbd\xef\xbf\xbd\n" },
@@ -190,13 +194,21 @@ void FOnRiftDestroyed_DelegateWrapper(const FMulticastScriptDelegate& OnRiftDest
 #endif
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ARift_Statics::NewProp_riftHP = { "riftHP", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARift, riftHP), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARift_Statics::NewProp_riftHP_MetaData), Z_Construct_UClass_ARift_Statics::NewProp_riftHP_MetaData) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ARift_Statics::NewProp_riftInitialHP = { "riftInitialHP", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARift, riftInitialHP), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARift_Statics::NewProp_riftInitialHP_MetaData), Z_Construct_UClass_ARift_Statics::NewProp_riftInitialHP_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARift_Statics::NewProp_riftCurrentHP_MetaData[] = {
+		{ "Category", "Rift" },
+		{ "ModuleRelativePath", "Public/Quest/Rift.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ARift_Statics::NewProp_riftCurrentHP = { "riftCurrentHP", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARift, riftCurrentHP), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARift_Statics::NewProp_riftCurrentHP_MetaData), Z_Construct_UClass_ARift_Statics::NewProp_riftCurrentHP_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARift_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARift_Statics::NewProp_collisionComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARift_Statics::NewProp_bodyMeshComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARift_Statics::NewProp_RiftID,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARift_Statics::NewProp_OnRiftDestroyed,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARift_Statics::NewProp_riftHP,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARift_Statics::NewProp_riftInitialHP,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARift_Statics::NewProp_riftCurrentHP,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ARift_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ARift>::IsAbstract,
@@ -236,9 +248,9 @@ void FOnRiftDestroyed_DelegateWrapper(const FMulticastScriptDelegate& OnRiftDest
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_Rift_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ARift, ARift::StaticClass, TEXT("ARift"), &Z_Registration_Info_UClass_ARift, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARift), 942202199U) },
+		{ Z_Construct_UClass_ARift, ARift::StaticClass, TEXT("ARift"), &Z_Registration_Info_UClass_ARift, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARift), 4180258576U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_Rift_h_3866145639(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_Rift_h_3806560025(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_Rift_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_Rift_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

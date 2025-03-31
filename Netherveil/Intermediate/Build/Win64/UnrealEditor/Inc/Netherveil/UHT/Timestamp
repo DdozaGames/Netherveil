@@ -1,13 +1,11 @@
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\Enemy.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyAnim.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyAnimBoss.h
-C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyAnim_Spider.h
-C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyBoss.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyAttackBullet.h
-C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyBossAttack_Fireball.h
+C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyBoss.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyBossAttack_EnergyWave.h
-C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyFSM.h
-C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyFSM_Boss.h
+C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyBossAttack_Fireball.h
+C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyAnim_Spider.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyFSM_ShroudfiendMelee.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyFSM_Spider.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h
@@ -21,4 +19,6 @@ C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Pub
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Quest\QuestData.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Quest\QuestManager.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Quest\Rift.h
+C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyFSM.h
+C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\Public\Enemy\EnemyFSM_Boss.h
 C:\Users\PC_1M\Desktop\UnrealProject\Netherveil\Netherveil\Source\Netherveil\NetherveilGameMode.h

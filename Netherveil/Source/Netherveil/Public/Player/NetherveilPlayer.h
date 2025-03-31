@@ -180,4 +180,13 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category=Quest)
 	void CompleteQuestUI(FName RiftID);
 
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category=Quest)
+	float questProgress = 0;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Quest)
+	float bossProgress = 0;
+
+	bool bAllQuestsDone = false;
+
+	bool bAllStageDone = false;
 };

@@ -11,8 +11,10 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
+	NETHERVEIL_API UClass* Z_Construct_UClass_ANetherveilPlayer_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AQuestManager();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AQuestManager_NoRegister();
+	NETHERVEIL_API UClass* Z_Construct_UClass_ARift_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Netherveil();
 // End Cross Module References
 	DEFINE_FUNCTION(AQuestManager::execOnRiftDestroyed)
@@ -143,6 +145,14 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_QuestDataTable_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_QuestDataTable;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_player_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_player;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_currentRift_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_currentRift;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -171,8 +181,24 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AQuestManager_Statics::NewProp_QuestDataTable = { "QuestDataTable", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AQuestManager, QuestDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AQuestManager_Statics::NewProp_QuestDataTable_MetaData), Z_Construct_UClass_AQuestManager_Statics::NewProp_QuestDataTable_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AQuestManager_Statics::NewProp_player_MetaData[] = {
+		{ "Category", "Quest" },
+		{ "ModuleRelativePath", "Public/Quest/QuestManager.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AQuestManager_Statics::NewProp_player = { "player", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AQuestManager, player), Z_Construct_UClass_ANetherveilPlayer_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AQuestManager_Statics::NewProp_player_MetaData), Z_Construct_UClass_AQuestManager_Statics::NewProp_player_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AQuestManager_Statics::NewProp_currentRift_MetaData[] = {
+		{ "Category", "Quest" },
+		{ "ModuleRelativePath", "Public/Quest/QuestManager.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AQuestManager_Statics::NewProp_currentRift = { "currentRift", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AQuestManager, currentRift), Z_Construct_UClass_ARift_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AQuestManager_Statics::NewProp_currentRift_MetaData), Z_Construct_UClass_AQuestManager_Statics::NewProp_currentRift_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AQuestManager_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AQuestManager_Statics::NewProp_QuestDataTable,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AQuestManager_Statics::NewProp_player,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AQuestManager_Statics::NewProp_currentRift,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AQuestManager_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AQuestManager>::IsAbstract,
@@ -212,9 +238,9 @@ void EmptyLinkFunctionForGeneratedCodeQuestManager() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AQuestManager, AQuestManager::StaticClass, TEXT("AQuestManager"), &Z_Registration_Info_UClass_AQuestManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AQuestManager), 3725472798U) },
+		{ Z_Construct_UClass_AQuestManager, AQuestManager::StaticClass, TEXT("AQuestManager"), &Z_Registration_Info_UClass_AQuestManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AQuestManager), 2521276880U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_574724669(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_3735689684(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_QuestManager_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
