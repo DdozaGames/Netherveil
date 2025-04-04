@@ -21,6 +21,7 @@ void UEnemyFSM_Spider::BeginPlay()
 	}
 	attackRange = 1500.f;
 	attackDelayTime = 5.0f;
+	hp = 1800.0f;
 }
 
 void UEnemyFSM_Spider::AttackState()
@@ -46,11 +47,11 @@ void UEnemyFSM_Spider::AttackState()
 	//}
 }
 
-void UEnemyFSM_Spider::OnDamageProcess()
+void UEnemyFSM_Spider::OnDamageProcess(float amount)
 {
 	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM_Spider::OnDamageProcess()!"));
 
-	hp--;
+	hp-=amount;
 
 	if (hp > 0)
 	{

@@ -17,7 +17,4 @@ class NETHERVEIL_API UEnemyFSM_ShroudfiendMelee : public UEnemyFSM
 public:
 	virtual void BeginPlay() override;
 
-	virtual void AttackState() override;
-
-	virtual void OnDamageProcess() override;
 };

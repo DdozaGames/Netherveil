@@ -19,7 +19,7 @@ public:
 
 	virtual void AttackState() override;
 
-	void OnDamageProcess() override;
+	void OnDamageProcess(float amount) override;
 
 
 };

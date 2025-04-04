@@ -57,8 +57,9 @@ void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 	if (OtherActor->IsA<AEnemy>())
 	{
 		auto enemyFSM = Cast<UEnemyFSM>(enemy);
-		enemyFSM->OnDamageProcess();
-		UE_LOG(LogTemp, Warning, TEXT("Overlap"));
+		float damage = FMath::RandRange(30, 80);
+		enemyFSM->OnDamageProcess(damage);
+		//UE_LOG(LogTemp, Warning, TEXT("Overlap"));
 
 		//파티클 생성 
 		FTransform bulletTrans;

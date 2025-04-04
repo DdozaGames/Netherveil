@@ -23,12 +23,13 @@ void UEnemyFSM_Boss::BeginPlay()
 	}
 	attackRange = 1500.f;
 	attackDelayTime = 5.0f;
-	hp = initialHP;
+	hp = 5000.0f;
 }
 
 void UEnemyFSM_Boss::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	UE_LOG(LogTemp, Warning, TEXT("%f"), hp);
 
 	if (target)
 	{
@@ -84,29 +85,29 @@ void UEnemyFSM_Boss::PlayAttack()
 	//Attack -> Move 넘어갈 때 공격 애니메이션 다 끝나면 전환되도록
 	//몽타주로 제어
 
-	//int32 index = FMath::RandRange(0,2);
-	//FString sectionName = FString::Printf(TEXT("Attack%d"),index);
-	FString sectionName = FString::Printf(TEXT("Attack2"));
-	bossAnim->PlayAttackAnim(FName(*sectionName));
+	int32 index = FMath::RandRange(0,2);
+	FString sectionName = FString::Printf(TEXT("Attack%d"),index);
+	//FString sectionName = FString::Printf(TEXT("Attack2"));
+	//bossAnim->PlayAttackAnim(FName(*sectionName));
 
-	////근거리 공격 
-	//if (index==1)
-	//{
-	//	StartDash();
-	//}
+	//근거리 공격 
+	if (index==1)
+	{
+		StartDash();
+	}
 
-	//else
-	//{
-	//	bossAnim->PlayAttackAnim(FName(*sectionName));
-	//	
-	//}
+	else
+	{
+		bossAnim->PlayAttackAnim(FName(*sectionName));
+		
+	}
 	
 }
 
-void UEnemyFSM_Boss::OnDamageProcess()
+void UEnemyFSM_Boss::OnDamageProcess(float amount)
 {
 	//Super::OnDamageProcess();
-	hp--;
+	hp-=amount;
 
 	if (hp > 0)
 	{

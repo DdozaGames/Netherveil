@@ -28,7 +28,7 @@ public:
 	UPROPERTY()
 	UEnemyAnimBoss* bossAnim;
 
-	void OnDamageProcess() override;
+	void OnDamageProcess(float amount) override;
 
 	void DieState() override;
 
@@ -45,5 +45,6 @@ public:
 	bool bAttackAfterDash = false; // 돌진 후 공격할지 여부
 	bool bIsDashAnimPlaying = false; //돌진 애니메이션 재생 여부
 
-	float initialHP = 10;
+	float initialHP = 5000.0f;
+	
 };

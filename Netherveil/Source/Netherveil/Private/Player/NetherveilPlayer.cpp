@@ -229,7 +229,8 @@ void ANetherveilPlayer::InputFire()
 			if (enemy)
 			{
 				auto enemyFSM = Cast<UEnemyFSM>(enemy);
-				enemyFSM->OnDamageProcess();
+				float damage = FMath::RandRange(30, 80);
+				enemyFSM->OnDamageProcess(damage);
 			}
 
 			auto rift = Cast<ARift>(hitInfo.GetActor());
@@ -361,7 +362,7 @@ void ANetherveilPlayer::PlayFireEffects()
 void ANetherveilPlayer::OnHitEvent()
 {
 	hp--;
-	UE_LOG(LogTemp, Error, TEXT("Player get damaged"));
+	//UE_LOG(LogTemp, Error, TEXT("Player get damaged"));
 	UpdateHpUI();
 
 	if (hp<=0)

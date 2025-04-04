@@ -33,7 +33,7 @@ public:
 	void LookUp(float value);
 
 	UPROPERTY(EditAnywhere, Category = PlayerSetting)
-	float walkSpeed = 600;
+	float walkSpeed = 1200;
 
 	UPROPERTY(VisibleAnywhere, Category = PlayerSetting)
 	float SprintSpeedMultiplier = 2.0f;

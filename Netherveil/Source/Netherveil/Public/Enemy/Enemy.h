@@ -28,4 +28,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = FSMComponent)
 	class UEnemyFSM* fsm;
+
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = FSM)
+	void DisplayDamageUI(float damage);
+
 };

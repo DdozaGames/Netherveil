@@ -82,7 +82,7 @@ void UEnemyFSM::MoveState()
 	FVector dir = destination - me->GetActorLocation();
 	//me->AddMovementInput(dir.GetSafeNormal());
 	ai->MoveToLocation(destination);
-	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
+	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
 
 	if(dir.Size() < attackRange )
 	{
@@ -117,7 +117,7 @@ void UEnemyFSM::AttackState()
 void UEnemyFSM::DamageState()
 {
 	currentTime += GetWorld()->DeltaTimeSeconds;
-	UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
+	//UE_LOG(LogTemp, Warning, TEXT("DamageState!"));
 
 	if (currentTime > damageDelayTime)
 	{
@@ -141,9 +141,10 @@ void UEnemyFSM::DieState()
 
 
 
-void UEnemyFSM::OnDamageProcess()
+void UEnemyFSM::OnDamageProcess(float amount)
 {
-	hp--;
+	hp -= amount;
+	me->DisplayDamageUI(amount);
 
 	if (hp > 0)
 	{
