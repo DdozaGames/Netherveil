@@ -83,9 +83,9 @@ void EmptyLinkFunctionForGeneratedCodeHealthItem() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Item_HealthItem_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AHealthItem, AHealthItem::StaticClass, TEXT("AHealthItem"), &Z_Registration_Info_UClass_AHealthItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHealthItem), 2854026244U) },
+		{ Z_Construct_UClass_AHealthItem, AHealthItem::StaticClass, TEXT("AHealthItem"), &Z_Registration_Info_UClass_AHealthItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHealthItem), 1826183095U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Item_HealthItem_h_1937041281(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Item_HealthItem_h_1680813139(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Item_HealthItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Item_HealthItem_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

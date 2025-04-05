@@ -178,6 +178,10 @@ void UEnemyFSM::DropItem()
 	int randNum = rand() % 100;
 	FTransform itemPosition = me->GetActorTransform();
 
+	FVector adjustedLocation = itemPosition.GetLocation();
+	adjustedLocation.Z -= 100.0f;
+	itemPosition.SetLocation(adjustedLocation);
+
 	if (!grenadeAmmoItemFactory) {
 		UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItemClass is Null"));
 		return;

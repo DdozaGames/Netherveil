@@ -30,8 +30,8 @@ public:
 	class UBoxComponent* collisionComp;
 
 	//외관 컴포넌트
-	UPROPERTY(VisibleAnywhere, Category = BodyMesh)
-	class UStaticMeshComponent* itemMeshComp;
+	/*UPROPERTY(VisibleAnywhere, Category = BodyMesh)
+	class UStaticMeshComponent* itemMeshComp;*/
 
 	//플레이어가 아이템을 먹었을 때 실행
 	virtual void OnPickup(ANetherveilPlayer* player);

@@ -12,10 +12,10 @@ AItem::AItem()
 	RootComponent = collisionComp;
 
 	//¿Ü°ü
-	itemMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("itemMeshComp"));
+	/*itemMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("itemMeshComp"));
 	itemMeshComp->SetupAttachment(collisionComp);
 	itemMeshComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	itemMeshComp->SetRelativeScale3D(FVector(0.25f));
+	itemMeshComp->SetRelativeScale3D(FVector(0.25f));*/
 
 }
 
