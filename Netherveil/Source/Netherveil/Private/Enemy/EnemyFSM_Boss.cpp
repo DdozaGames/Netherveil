@@ -29,7 +29,6 @@ void UEnemyFSM_Boss::BeginPlay()
 void UEnemyFSM_Boss::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	UE_LOG(LogTemp, Warning, TEXT("%f"), hp);
 
 	if (target)
 	{

@@ -30,6 +30,11 @@ void UEnemyFSM::BeginPlay()
 	{
 		anim = Cast<UEnemyAnim>(me->GetMesh()->GetAnimInstance());
 		ai = Cast<AAIController>(me->GetController());
+
+		if (target && anim && ai)
+		{
+			bIsReady = true; // FSM 작동 준비 완료
+		}
 	}
 }
 
@@ -37,6 +42,8 @@ void UEnemyFSM::BeginPlay()
 void UEnemyFSM::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	if (!bIsReady) return;
 
 	switch (currentState)
 	{
@@ -61,6 +68,12 @@ void UEnemyFSM::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 void UEnemyFSM::IdleState()
 {
+	if (!IsValid(target) || !IsValid(me) || !IsValid(ai) || !IsValid(anim))
+	{
+		UE_LOG(LogTemp, Error, TEXT("IdleState(): component is nullptr"));
+		return;
+	}
+
 	currentTime += GetWorld()->DeltaTimeSeconds;
 	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::IdleState()"));
 
@@ -78,6 +91,12 @@ void UEnemyFSM::IdleState()
 
 void UEnemyFSM::MoveState()
 {
+	if (!IsValid(target) || !IsValid(me) || !IsValid(ai) || !IsValid(anim))
+	{
+		UE_LOG(LogTemp, Error, TEXT("MoveState(): component is nullptr"));
+		return;
+	}
+
 	FVector destination = target->GetActorLocation();
 	FVector dir = destination - me->GetActorLocation();
 	//me->AddMovementInput(dir.GetSafeNormal());

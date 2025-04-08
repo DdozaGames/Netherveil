@@ -12,7 +12,6 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.vsconfig" />
-    <None Include="..\..\Gothic_Cathedral.png" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -94,6 +93,9 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyShroudfiendMelee.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemySpawner.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemySpider.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
@@ -131,6 +133,9 @@
       <Filter>Source\Netherveil\Private\Quest</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Quest\Rift.cpp">
+      <Filter>Source\Netherveil\Private\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Quest\StageTriggerVolume.cpp">
       <Filter>Source\Netherveil\Private\Quest</Filter>
     </ClCompile>
     <Filter Include="Source\Netherveil\Public">
@@ -178,6 +183,9 @@
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpawner.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpider.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
@@ -215,6 +223,9 @@
       <Filter>Source\Netherveil\Public\Quest</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Quest\Rift.h">
+      <Filter>Source\Netherveil\Public\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Quest\StageTriggerVolume.h">
       <Filter>Source\Netherveil\Public\Quest</Filter>
     </ClInclude>
   </ItemGroup>

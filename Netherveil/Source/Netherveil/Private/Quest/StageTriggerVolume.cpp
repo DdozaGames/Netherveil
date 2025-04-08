@@ -1,0 +1,27 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "Quest/StageTriggerVolume.h"
+
+#include "Kismet/GameplayStatics.h"
+#include "Netherveil/NetherveilGameMode.h"
+#include "Player/NetherveilPlayer.h"
+
+void AStageTriggerVolume::BeginPlay()
+{
+	Super::BeginPlay();
+	OnActorBeginOverlap.AddDynamic(this, &AStageTriggerVolume::OnPlayerEnter);
+}
+
+void AStageTriggerVolume::OnPlayerEnter(class AActor* OverlappedActor, class AActor* OtherActor)
+{
+    if (OtherActor->IsA<ANetherveilPlayer>())  // 플레이어 캐릭터만 반응
+    {
+        auto gameMode = Cast<ANetherveilGameMode>(UGameplayStatics::GetGameMode(this));
+        if (gameMode)
+        {
+            gameMode->StartStage(StageIndex);
+            SetActorEnableCollision(false);  // 다시 못 밟게 막기
+        }
+    }
+}

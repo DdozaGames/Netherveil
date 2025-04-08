@@ -27,7 +27,10 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-public:	
+public:
+	//초기화 완료 여부 
+	bool bIsReady = false;
+
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = FSM)

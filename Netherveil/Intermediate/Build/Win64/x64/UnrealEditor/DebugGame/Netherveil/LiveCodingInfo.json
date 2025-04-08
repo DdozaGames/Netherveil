@@ -17,6 +17,7 @@
 			"EnemyFSM_ShroudfiendMelee.gen.cpp.obj",
 			"EnemyFSM_Spider.gen.cpp.obj",
 			"EnemyShroudfiendMelee.gen.cpp.obj",
+			"EnemySpawner.gen.cpp.obj",
 			"EnemySpider.gen.cpp.obj",
 			"HealthItem.gen.cpp.obj",
 			"Item.gen.cpp.obj",
@@ -27,6 +28,7 @@
 			"QuestData.gen.cpp.obj",
 			"QuestManager.gen.cpp.obj",
 			"Rift.gen.cpp.obj",
+			"StageTriggerVolume.gen.cpp.obj",
 			"Netherveil.cpp.obj",
 			"NetherveilGameMode.cpp.obj",
 			"Enemy.cpp.obj",
@@ -42,6 +44,7 @@
 			"EnemyFSM_ShroudfiendMelee.cpp.obj",
 			"EnemyFSM_Spider.cpp.obj",
 			"EnemyShroudfiendMelee.cpp.obj",
+			"EnemySpawner.cpp.obj",
 			"EnemySpider.cpp.obj",
 			"AmmoItem.cpp.obj",
 			"HealthItem.cpp.obj",
@@ -51,7 +54,8 @@
 			"PlayerAnim.cpp.obj",
 			"QuestData.cpp.obj",
 			"QuestManager.cpp.obj",
-			"Rift.cpp.obj"
+			"Rift.cpp.obj",
+			"StageTriggerVolume.cpp.obj"
 		]
 	}
 }
