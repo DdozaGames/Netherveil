@@ -1,7 +1,12 @@
 
 
 #include "Quest/QuestManager.h"
+
+#include "Enemy/Enemy.h"
+#include "Enemy/EnemyFSM.h"
+#include "Enemy/EnemySpawner.h"
 #include "Kismet/GameplayStatics.h"
+#include "Netherveil/NetherveilGameMode.h"
 #include "Player/NetherveilPlayer.h"
 #include "Quest/QuestData.h"
 #include "Quest/Rift.h"
@@ -67,10 +72,21 @@ void AQuestManager::StartQuest(FName QuestID)
             ARift* Rift = Cast<ARift>(Actor);
             if (Rift)
             {
+            	//  현재 퀘스트의 목표 균열만 활성화
                 if (Rift->RiftID == Quest->TargetRiftID)
                 {
-                    //  현재 퀘스트의 목표 균열만 활성화
+                    //==============================델리게이트 바인딩==================================
+
+                    //균열 파괴 시 퀘스트 매니저 호출
+                    //적 스폰 중지
+                    Rift->OnRiftDestroyed.AddDynamic(this, &AQuestManager::OnStopSpawningEnemies);
+                    //레벨 내 모든 적 destroy
+                    Rift->OnRiftDestroyed.AddDynamic(this, &AQuestManager::OnDestroyAllEnemies);
+                    //다음 퀘스트 활성화 
                     Rift->OnRiftDestroyed.AddDynamic(this, &AQuestManager::OnRiftDestroyed);
+
+                    //==================================================================================
+
                     UE_LOG(LogTemp, Warning, TEXT("Activate Rift: %s"), *Rift->RiftID.ToString());
                     Rift->SetActorHiddenInGame(false);
                     Rift->SetActorEnableCollision(true);
@@ -113,14 +129,40 @@ void AQuestManager::OnRiftDestroyed()
 {
     UE_LOG(LogTemp, Warning, TEXT("Complete Quest!"));
 
-    /*auto actor = UGameplayStatics::GetActorOfClass(GetWorld(), ANetherveilPlayer::StaticClass());
-    auto player = Cast<ANetherveilPlayer>(actor);*/
+    
     if (player)
     {
         player->CompleteQuestUI(RiftID);
         UE_LOG(LogTemp, Warning, TEXT("player->CompleteQuestUI"));
     }
     CompleteQuest();
+}
+
+void AQuestManager::OnStopSpawningEnemies()
+{
+    //균열 파괴 시 적 스폰 중지
+    auto gameMode = Cast<ANetherveilGameMode>(UGameplayStatics::GetGameMode(this));
+    gameMode->StopSpawning();
+}
+
+void AQuestManager::OnDestroyAllEnemies()
+{
+    TArray<AActor*> FoundEnemies;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemy::StaticClass(), FoundEnemies);
+
+    for (AActor* EnemyActor : FoundEnemies)
+    {
+        AEnemy* Enemy = Cast<AEnemy>(EnemyActor);
+        if (!Enemy || Enemy->IsPendingKill()) continue;
+
+        // FSM 컴포넌트 가져오기
+        UEnemyFSM* FSM = Enemy->FindComponentByClass<UEnemyFSM>();
+        if (FSM)
+        {
+            FSM->OnDamageProcess(10000.0);
+            
+        }
+    }
 }
 
 

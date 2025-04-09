@@ -51,4 +51,10 @@ private:
 
 	UFUNCTION()
 	void OnRiftDestroyed();
+
+	UFUNCTION()
+	void OnStopSpawningEnemies();
+
+	UFUNCTION()
+	void OnDestroyAllEnemies();
 };

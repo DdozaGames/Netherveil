@@ -18,13 +18,16 @@ public:
     TArray< AEnemySpawner*> StageSpawners;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    int32 CurrentStage = 1;
+    int32 CurrentStage = 0;
 
 	UFUNCTION(BlueprintCallable)
     void StartStage(int32 StageIndex);
 
     UFUNCTION()
     void OnStageClear();
+
+    UFUNCTION()
+    void StopSpawning();
 
 protected:
     virtual void BeginPlay() override;

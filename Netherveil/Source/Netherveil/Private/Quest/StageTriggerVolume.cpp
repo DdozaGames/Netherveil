@@ -22,6 +22,7 @@ void AStageTriggerVolume::OnPlayerEnter(class AActor* OverlappedActor, class AAc
         {
             gameMode->StartStage(StageIndex);
             SetActorEnableCollision(false);  // 다시 못 밟게 막기
+            StageIndex++;
         }
     }
 }

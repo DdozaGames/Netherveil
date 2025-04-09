@@ -5,6 +5,7 @@
 #include "Enemy/EnemySpawner.h"
 #include "Kismet/GameplayStatics.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Quest/Rift.h"
 
 void ANetherveilGameMode::BeginPlay()
 {
@@ -41,3 +42,12 @@ void ANetherveilGameMode::OnStageClear()
 
     StartStage(CurrentStage + 1);
 }
+
+void ANetherveilGameMode::StopSpawning()
+{
+    if (StageSpawners.IsValidIndex(CurrentStage))
+    {
+        StageSpawners[CurrentStage]->StopSpawning();
+    }
+}
+

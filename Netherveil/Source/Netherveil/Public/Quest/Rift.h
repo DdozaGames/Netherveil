@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Rift.generated.h"
 
+//Rift 파괴 시 호출되도록 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnRiftDestroyed);
 
 UCLASS()

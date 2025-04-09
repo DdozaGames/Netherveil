@@ -41,6 +41,7 @@ public:
 
 	void SpawnEnemies();
 
+	UFUNCTION()
 	void StopSpawning();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stage")

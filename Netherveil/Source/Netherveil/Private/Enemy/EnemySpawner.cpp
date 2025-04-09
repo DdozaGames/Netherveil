@@ -52,6 +52,7 @@ void AEnemySpawner::SpawnEnemies()
 
 void AEnemySpawner::StopSpawning()
 {
+	UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::StopSpawning()"));
 	GetWorld()->GetTimerManager().ClearTimer(SpawnTimerHandle);
 	bIsActive = false;
 }
