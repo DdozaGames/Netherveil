@@ -9,7 +9,11 @@
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyShroudfiendMelee.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Gothic_Cathedral/Maps/Gothic_Cathedral.umap",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Quest/BP_StagePortal.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Blueprints/BP_NetherveilPlayer.uasset"
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Blueprints/BP_NetherveilPlayer.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemySpider.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/TestMap.umap",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyBoss.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/NewMaterial.uasset"
 			]
 		}
 	]

@@ -20,9 +20,8 @@ void AStageTriggerVolume::OnPlayerEnter(class AActor* OverlappedActor, class AAc
         auto gameMode = Cast<ANetherveilGameMode>(UGameplayStatics::GetGameMode(this));
         if (gameMode)
         {
-            gameMode->StartStage(StageIndex);
+            gameMode->StartStage(StageIndex); // StageIndex 는 BP에서 지정
             SetActorEnableCollision(false);  // 다시 못 밟게 막기
-            StageIndex++;
         }
     }
 }

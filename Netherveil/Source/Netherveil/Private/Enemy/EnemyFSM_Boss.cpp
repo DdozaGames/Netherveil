@@ -21,7 +21,7 @@ void UEnemyFSM_Boss::BeginPlay()
 		bossAnim = Cast<UEnemyAnimBoss>(me->GetMesh()->GetAnimInstance());
 		ai = Cast<AAIController>(me->GetController());
 	}
-	attackRange = 1500.f;
+	attackRange = 3000.f;
 	attackDelayTime = 5.0f;
 	hp = 5000.0f;
 }

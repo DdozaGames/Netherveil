@@ -2,6 +2,7 @@
 
 
 #include "Enemy/EnemySpawner.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values
 AEnemySpawner::AEnemySpawner()
@@ -15,7 +16,17 @@ AEnemySpawner::AEnemySpawner()
 void AEnemySpawner::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	DrawDebugSphere(
+		GetWorld(),
+		GetActorLocation(),    // 중심 위치
+		SpawnRadius,           // 반지름
+		32,                    // 세그먼트 수 (조밀도)
+		FColor::Green,         // 색상
+		true,                  // persistentLines: true로 하면 꺼질 때까지 유지됨
+		0.f,                   //  lifeTime: 0이면 영구
+		0,                     // Depth Priority
+		1.f                    // 선 두께
+	);
 }
 
 // Called every frame
@@ -41,13 +52,22 @@ void AEnemySpawner::ActivateSpawner()
 void AEnemySpawner::SpawnEnemies()
 {
 	// 스폰 종료 조건 추가하기 !! -> 퀘스트 완료 시
-	if (!bIsActive || !EnemyFactory) {
+	if (!bIsActive ) {
 		StopSpawning();
 		return;
 	}
-	FVector SpawnLocation = GetActorLocation() + FMath::VRand() * SpawnRadius;
-	GetWorld()->SpawnActor<AActor>(EnemyFactory, SpawnLocation, FRotator::ZeroRotator);
+	if (EnemyShroudFiendFactory)
+	{
+		FVector SpawnLocation1 = GetActorLocation() + FMath::VRand() * SpawnRadius;
+		GetWorld()->SpawnActor<AActor>(EnemyShroudFiendFactory, SpawnLocation1, FRotator::ZeroRotator);
 
+	}
+	if (EnemySpiderFactory)
+	{
+		FVector SpawnLocation2 = GetActorLocation() + FMath::VRand() * SpawnRadius;
+		GetWorld()->SpawnActor<AActor>(EnemySpiderFactory, SpawnLocation2, FRotator::ZeroRotator);
+	}
+	
 }
 
 void AEnemySpawner::StopSpawning()

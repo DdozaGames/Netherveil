@@ -3,14 +3,18 @@
 
 #include "Enemy/EnemyBoss.h"
 
+#include "Components/CapsuleComponent.h"
 #include "Enemy/EnemyBossAttack_EnergyWave.h"
 #include "Enemy/EnemyBossAttack_Fireball.h"
+#include "Kismet/GameplayStatics.h"
 #include "Player/NetherveilPlayer.h"
+
 
 void AEnemyBoss::BeginPlay()
 {
 	Super::BeginPlay();
-	//->OnComponentBeginOverlap.AddDynamic(this, &AEnemyBoss::OnBeginOverlap);
+    
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AEnemyBoss::OnBeginOverlap);
 }
 
 void AEnemyBoss::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,

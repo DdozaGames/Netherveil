@@ -3,6 +3,7 @@
 #include "Quest/QuestManager.h"
 
 #include "Enemy/Enemy.h"
+#include "Enemy/EnemyBoss.h"
 #include "Enemy/EnemyFSM.h"
 #include "Enemy/EnemySpawner.h"
 #include "Kismet/GameplayStatics.h"
@@ -155,6 +156,7 @@ void AQuestManager::OnDestroyAllEnemies()
         AEnemy* Enemy = Cast<AEnemy>(EnemyActor);
         if (!Enemy || Enemy->IsPendingKill()) continue;
 
+        if (Enemy->IsA<AEnemyBoss>()) continue; // 보스 제외
         // FSM 컴포넌트 가져오기
         UEnemyFSM* FSM = Enemy->FindComponentByClass<UEnemyFSM>();
         if (FSM)

@@ -28,30 +28,21 @@ void UEnemyFSM_Spider::AttackState()
 {
 	Super::AttackState();
 	
-	//currentTime += GetWorld()->DeltaTimeSeconds;
-	//if (currentTime > attackDelayTime)
-	//{
-	//	UE_LOG(LogTemp, Warning, TEXT(" UEnemyFSM_Spider::Attack!"));
-	//	currentTime = 0;
-	//	//PlayAttack();
-	//	anim->bAttackPlay = true;
-	//	anim->bAttackEnd = false;
-	//}
+	FVector Direction = (target->GetActorLocation() - me->GetActorLocation()).GetSafeNormal();
 
-	//float distance = FVector::Distance(target->GetActorLocation(), me->GetActorLocation());
-	//if (distance > attackRange && anim->bAttackEnd)
-	//{
-	//	currentState = EEnemyState::Move;
-	//	anim->animState = currentState;
+	FRotator NewRotation = FRotationMatrix::MakeFromX(Direction).Rotator();
+	NewRotation.Pitch = 0.0f;  // 상하 기울기 방지 (필요 시 제거)
+	NewRotation.Roll = 0.0f;   // 롤 방지
 
-	//}
+	me->SetActorRotation(NewRotation);
 }
 
 void UEnemyFSM_Spider::OnDamageProcess(float amount)
 {
-	UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM_Spider::OnDamageProcess()!"));
+	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM_Spider::OnDamageProcess()!"));
 
 	hp-=amount;
+	me->DisplayDamageUI(amount);
 
 	if (hp > 0)
 	{

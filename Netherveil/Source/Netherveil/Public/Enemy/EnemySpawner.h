@@ -24,7 +24,11 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> EnemyFactory;
+	TSubclassOf<AActor> EnemyShroudFiendFactory;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> EnemySpiderFactory;
+
 
 	FTimerHandle SpawnTimerHandle;
 
