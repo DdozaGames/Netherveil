@@ -47,6 +47,7 @@ void AEnemySpawner::ActivateSpawner(int Index)
 		SpawnInterval,
 		true // 반복
 	);
+	//보스 스테이지일 경우 보스 스폰 
 	if (Index==2 && !bSpawnBoss)
 	{
 		SpawnBoss();

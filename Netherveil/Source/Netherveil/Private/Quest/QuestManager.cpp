@@ -88,7 +88,7 @@ void AQuestManager::StartQuest(FName QuestID)
 
                     //==================================================================================
 
-                    UE_LOG(LogTemp, Warning, TEXT("Activate Rift: %s"), *Rift->RiftID.ToString());
+                    //UE_LOG(LogTemp, Warning, TEXT("Activate Rift: %s"), *Rift->RiftID.ToString());
                     Rift->SetActorHiddenInGame(false);
                     Rift->SetActorEnableCollision(true);
                     this->RiftID = Rift->RiftID;
@@ -98,7 +98,7 @@ void AQuestManager::StartQuest(FName QuestID)
                 else
                 {
                     // 다른 균열은 비활성화
-                    Rift->SetActorHiddenInGame(true);
+                    //Rift->SetActorHiddenInGame(true);
                     Rift->SetActorEnableCollision(false);
                 }
             }
