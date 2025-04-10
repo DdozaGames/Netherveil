@@ -36,7 +36,7 @@ void AEnemySpawner::Tick(float DeltaTime)
 
 }
 
-void AEnemySpawner::ActivateSpawner()
+void AEnemySpawner::ActivateSpawner(int Index)
 {
 	bIsActive = true;
 	SpawnEnemies();
@@ -47,6 +47,11 @@ void AEnemySpawner::ActivateSpawner()
 		SpawnInterval,
 		true // นÝบน
 	);
+	if (Index==2 && !bSpawnBoss)
+	{
+		SpawnBoss();
+		bSpawnBoss = true;
+	}
 }
 
 void AEnemySpawner::SpawnEnemies()
@@ -68,6 +73,16 @@ void AEnemySpawner::SpawnEnemies()
 		GetWorld()->SpawnActor<AActor>(EnemySpiderFactory, SpawnLocation2, FRotator::ZeroRotator);
 	}
 	
+}
+
+void AEnemySpawner::SpawnBoss()
+{
+	if (EnemyBossFactory)
+	{
+		FVector SpawnBossLocation = GetActorLocation();
+		GetWorld()->SpawnActor<AActor>(EnemyBossFactory, SpawnBossLocation, FRotator::ZeroRotator);
+
+	}
 }
 
 void AEnemySpawner::StopSpawning()

@@ -21,7 +21,7 @@ void UEnemyFSM_Spider::BeginPlay()
 	}
 	attackRange = 1500.f;
 	attackDelayTime = 5.0f;
-	hp = 1800.0f;
+	hp = 400.0f;
 }
 
 void UEnemyFSM_Spider::AttackState()

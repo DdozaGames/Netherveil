@@ -29,6 +29,8 @@ public:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> EnemySpiderFactory;
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> EnemyBossFactory;
 
 	FTimerHandle SpawnTimerHandle;
 
@@ -41,9 +43,13 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	bool bIsActive = false;
 
-	void ActivateSpawner();
+	void ActivateSpawner(int Index);
 
 	void SpawnEnemies();
+
+	void SpawnBoss();
+
+	bool bSpawnBoss = false;
 
 	UFUNCTION()
 	void StopSpawning();

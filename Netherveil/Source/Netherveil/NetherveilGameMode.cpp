@@ -23,7 +23,6 @@ void ANetherveilGameMode::BeginPlay()
         }
     }
 
-   UE_LOG(LogTemp, Warning, TEXT(" %d"), StageSpawners.Num());
 }
 
 void ANetherveilGameMode::StartStage(int32 StageIndex)
@@ -32,14 +31,15 @@ void ANetherveilGameMode::StartStage(int32 StageIndex)
 
 	CurrentStage = StageIndex;
 
+
     for (AEnemySpawner* Spawner : StageSpawners)
     {
         if (Spawner && Spawner->StageIndex == StageIndex)
         {
-            Spawner->ActivateSpawner();
-            UE_LOG(LogTemp, Warning, TEXT("스포너 %s 활성화됨 (StageIndex: %d)"), *Spawner->GetName(), Spawner->StageIndex);
+            Spawner->ActivateSpawner(StageIndex);
         }
     }
+    
 }
 
 void ANetherveilGameMode::OnStageClear()

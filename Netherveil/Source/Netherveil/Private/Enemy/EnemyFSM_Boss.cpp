@@ -23,7 +23,7 @@ void UEnemyFSM_Boss::BeginPlay()
 	}
 	attackRange = 3000.f;
 	attackDelayTime = 5.0f;
-	hp = 5000.0f;
+	hp = initialHP;
 }
 
 void UEnemyFSM_Boss::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)

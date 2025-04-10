@@ -74,6 +74,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemySpawner() {}
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_EnemySpiderFactory;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_EnemyBossFactory_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_EnemyBossFactory;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpawnInterval_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_SpawnInterval;
@@ -124,6 +128,13 @@ void EmptyLinkFunctionForGeneratedCodeEnemySpawner() {}
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemySpiderFactory = { "EnemySpiderFactory", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemySpawner, EnemySpiderFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemySpiderFactory_MetaData), Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemySpiderFactory_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemyBossFactory_MetaData[] = {
+		{ "Category", "EnemySpawner" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemySpawner.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemyBossFactory = { "EnemyBossFactory", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemySpawner, EnemyBossFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemyBossFactory_MetaData), Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemyBossFactory_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemySpawner_Statics::NewProp_SpawnInterval_MetaData[] = {
 		{ "Category", "EnemySpawner" },
 		{ "ModuleRelativePath", "Public/Enemy/EnemySpawner.h" },
@@ -158,6 +169,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemySpawner() {}
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemySpawner_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemyShroudFiendFactory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemySpiderFactory,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemySpawner_Statics::NewProp_EnemyBossFactory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemySpawner_Statics::NewProp_SpawnInterval,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemySpawner_Statics::NewProp_SpawnRadius,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemySpawner_Statics::NewProp_bIsActive,
@@ -201,9 +213,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemySpawner() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemySpawner_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemySpawner, AEnemySpawner::StaticClass, TEXT("AEnemySpawner"), &Z_Registration_Info_UClass_AEnemySpawner, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemySpawner), 3879016584U) },
+		{ Z_Construct_UClass_AEnemySpawner, AEnemySpawner::StaticClass, TEXT("AEnemySpawner"), &Z_Registration_Info_UClass_AEnemySpawner, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemySpawner), 1176374883U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemySpawner_h_2111876616(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemySpawner_h_3132773729(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemySpawner_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemySpawner_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

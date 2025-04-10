@@ -189,4 +189,8 @@ public:
 	bool bAllQuestsDone = false;
 
 	bool bAllStageDone = false;
+
+	//스테이지 입장 시 UI 팝업
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Quest)
+	void EnterNewStageUI(int stageIndex);
 };

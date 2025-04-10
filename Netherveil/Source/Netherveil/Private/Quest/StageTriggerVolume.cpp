@@ -22,6 +22,12 @@ void AStageTriggerVolume::OnPlayerEnter(class AActor* OverlappedActor, class AAc
         {
             gameMode->StartStage(StageIndex); // StageIndex 는 BP에서 지정
             SetActorEnableCollision(false);  // 다시 못 밟게 막기
+            auto actor = UGameplayStatics::GetActorOfClass(GetWorld(), ANetherveilPlayer::StaticClass());
+            auto player = Cast<ANetherveilPlayer>(actor);
+            if (player)
+            {
+                player->EnterNewStageUI(StageIndex);
+            }
         }
     }
 }
