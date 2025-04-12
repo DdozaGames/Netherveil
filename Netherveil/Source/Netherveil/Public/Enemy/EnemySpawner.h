@@ -57,4 +57,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stage")
 	int32 StageIndex = 0;
 
+	
+
 };

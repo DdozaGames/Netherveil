@@ -50,7 +50,13 @@ void AEnemySpawner::ActivateSpawner(int Index)
 	//보스 스테이지일 경우 보스 스폰 
 	if (Index==2 && !bSpawnBoss)
 	{
-		SpawnBoss();
+		GetWorld()->GetTimerManager().SetTimer(
+			SpawnTimerHandle,
+			this,
+			&AEnemySpawner::SpawnBoss,
+			13.0f,
+			false
+		);
 		bSpawnBoss = true;
 	}
 }

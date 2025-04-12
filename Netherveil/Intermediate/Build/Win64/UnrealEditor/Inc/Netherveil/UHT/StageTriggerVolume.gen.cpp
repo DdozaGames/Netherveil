@@ -24,6 +24,11 @@ void EmptyLinkFunctionForGeneratedCodeStageTriggerVolume() {}
 		P_THIS->OnPlayerEnter(Z_Param_OverlappedActor,Z_Param_OtherActor);
 		P_NATIVE_END;
 	}
+	static FName NAME_AStageTriggerVolume_PlaySequencer_EnterBossStage = FName(TEXT("PlaySequencer_EnterBossStage"));
+	void AStageTriggerVolume::PlaySequencer_EnterBossStage()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AStageTriggerVolume_PlaySequencer_EnterBossStage),NULL);
+	}
 	void AStageTriggerVolume::StaticRegisterNativesAStageTriggerVolume()
 	{
 		UClass* Class = AStageTriggerVolume::StaticClass();
@@ -70,6 +75,28 @@ void EmptyLinkFunctionForGeneratedCodeStageTriggerVolume() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Quest/StageTriggerVolume.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AStageTriggerVolume, nullptr, "PlaySequencer_EnterBossStage", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C080800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage_Statics::Function_MetaDataParams), Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AStageTriggerVolume);
 	UClass* Z_Construct_UClass_AStageTriggerVolume_NoRegister()
 	{
@@ -97,6 +124,7 @@ void EmptyLinkFunctionForGeneratedCodeStageTriggerVolume() {}
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AStageTriggerVolume_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AStageTriggerVolume_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AStageTriggerVolume_OnPlayerEnter, "OnPlayerEnter" }, // 2895991921
+		{ &Z_Construct_UFunction_AStageTriggerVolume_PlaySequencer_EnterBossStage, "PlaySequencer_EnterBossStage" }, // 1007381072
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AStageTriggerVolume_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -154,9 +182,9 @@ void EmptyLinkFunctionForGeneratedCodeStageTriggerVolume() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AStageTriggerVolume, AStageTriggerVolume::StaticClass, TEXT("AStageTriggerVolume"), &Z_Registration_Info_UClass_AStageTriggerVolume, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AStageTriggerVolume), 4259096685U) },
+		{ Z_Construct_UClass_AStageTriggerVolume, AStageTriggerVolume::StaticClass, TEXT("AStageTriggerVolume"), &Z_Registration_Info_UClass_AStageTriggerVolume, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AStageTriggerVolume), 2093753797U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_3995932571(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_3174329985(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

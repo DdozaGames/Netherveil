@@ -22,4 +22,8 @@ protected:
 
     UFUNCTION()
     void OnPlayerEnter(class AActor* OverlappedActor, class AActor* OtherActor);
+
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void PlaySequencer_EnterBossStage();
+
 };

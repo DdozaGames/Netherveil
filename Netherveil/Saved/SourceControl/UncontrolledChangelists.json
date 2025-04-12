@@ -21,6 +21,9 @@
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/UI/UI_Screen.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyBossAttack_Fireball.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Cinematics/LS_EnterBossStage.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Quest/BP_StageTriggerVolume.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Boss/SK_Mesh/SK_Mesh_Monster_1.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Quest/BP_QuestManager.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/NewMaterial.uasset"
 			]
 		}
