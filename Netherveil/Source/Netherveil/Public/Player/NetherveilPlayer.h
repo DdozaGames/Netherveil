@@ -155,7 +155,7 @@ public:
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable,Category=Health)
 	void OnGameOver();
 
-
+	bool isAlive = true;
 
 	//-----------------------Item----------------------------------
 
@@ -193,4 +193,11 @@ public:
 	//스테이지 입장 시 UI 팝업
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Quest)
 	void EnterNewStageUI(int stageIndex);
+
+	//크로스헤어 UI 팝업 여부 
+	UFUNCTION(BlueprintCallable)
+	void SetCrosshairUIVisible();
+
+	UFUNCTION(BlueprintCallable)
+	void SetCrosshairUIhidden();
 };

@@ -18,8 +18,35 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 	NETHERVEIL_API UClass* Z_Construct_UClass_UPlayerAnim_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Netherveil();
 // End Cross Module References
+	static FName NAME_UPlayerAnim_PlayDieAnim = FName(TEXT("PlayDieAnim"));
+	void UPlayerAnim::PlayDieAnim()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_UPlayerAnim_PlayDieAnim),NULL);
+	}
 	void UPlayerAnim::StaticRegisterNativesUPlayerAnim()
 	{
+	}
+	struct Z_Construct_UFunction_UPlayerAnim_PlayDieAnim_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UPlayerAnim_PlayDieAnim_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Player/PlayerAnim.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerAnim_PlayDieAnim_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerAnim, nullptr, "PlayDieAnim", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerAnim_PlayDieAnim_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerAnim_PlayDieAnim_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_UPlayerAnim_PlayDieAnim()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerAnim_PlayDieAnim_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UPlayerAnim);
 	UClass* Z_Construct_UClass_UPlayerAnim_NoRegister()
@@ -29,6 +56,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 	struct Z_Construct_UClass_UPlayerAnim_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -66,6 +94,10 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Netherveil,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerAnim_Statics::DependentSingletons) < 16);
+	const FClassFunctionLinkInfo Z_Construct_UClass_UPlayerAnim_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UPlayerAnim_PlayDieAnim, "PlayDieAnim" }, // 2772822532
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerAnim_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerAnim_Statics::Class_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
@@ -138,11 +170,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 		nullptr,
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_UPlayerAnim_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerAnim_Statics::PropPointers),
 		0,
 		0x009000A8u,
@@ -169,9 +201,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnim() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerAnim, UPlayerAnim::StaticClass, TEXT("UPlayerAnim"), &Z_Registration_Info_UClass_UPlayerAnim, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerAnim), 2401307909U) },
+		{ Z_Construct_UClass_UPlayerAnim, UPlayerAnim::StaticClass, TEXT("UPlayerAnim"), &Z_Registration_Info_UClass_UPlayerAnim, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerAnim), 2670377990U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_2417773038(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_1029278711(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_PlayerAnim_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

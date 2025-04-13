@@ -25,6 +25,20 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Netherveil();
 // End Cross Module References
+	DEFINE_FUNCTION(ANetherveilPlayer::execSetCrosshairUIhidden)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetCrosshairUIhidden();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ANetherveilPlayer::execSetCrosshairUIVisible)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetCrosshairUIVisible();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ANetherveilPlayer::execOnGameOver)
 	{
 		P_FINISH;
@@ -98,6 +112,8 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "OnGameOver", &ANetherveilPlayer::execOnGameOver },
 			{ "OnHitEvent", &ANetherveilPlayer::execOnHitEvent },
+			{ "SetCrosshairUIhidden", &ANetherveilPlayer::execSetCrosshairUIhidden },
+			{ "SetCrosshairUIVisible", &ANetherveilPlayer::execSetCrosshairUIVisible },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -292,6 +308,56 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANetherveilPlayer, nullptr, "SetCrosshairUIhidden", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible_Statics::Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//\xc5\xa9\xef\xbf\xbd\xce\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd UI \xef\xbf\xbd\xcb\xbe\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \n" },
+#endif
+		{ "ModuleRelativePath", "Public/Player/NetherveilPlayer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xc5\xa9\xef\xbf\xbd\xce\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd UI \xef\xbf\xbd\xcb\xbe\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ANetherveilPlayer, nullptr, "SetCrosshairUIVisible", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible_Statics::Function_MetaDataParams), Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI_Statics
 	{
 #if WITH_METADATA
@@ -476,6 +542,8 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnGameOver, "OnGameOver" }, // 1446480415
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnHitEvent, "OnHitEvent" }, // 314406478
 		{ &Z_Construct_UFunction_ANetherveilPlayer_OnUsingGrenade, "OnUsingGrenade" }, // 1320040687
+		{ &Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIhidden, "SetCrosshairUIhidden" }, // 2970449207
+		{ &Z_Construct_UFunction_ANetherveilPlayer_SetCrosshairUIVisible, "SetCrosshairUIVisible" }, // 2457867618
 		{ &Z_Construct_UFunction_ANetherveilPlayer_UpdateAmmoUI, "UpdateAmmoUI" }, // 1310199998
 		{ &Z_Construct_UFunction_ANetherveilPlayer_UpdateHpUI, "UpdateHpUI" }, // 3047591697
 	};
@@ -793,9 +861,9 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilPlayer() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 518418277U) },
+		{ Z_Construct_UClass_ANetherveilPlayer, ANetherveilPlayer::StaticClass, TEXT("ANetherveilPlayer"), &Z_Registration_Info_UClass_ANetherveilPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilPlayer), 1797586058U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_425532408(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_1426158139(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

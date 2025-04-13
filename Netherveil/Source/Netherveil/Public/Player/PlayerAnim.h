@@ -37,6 +37,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite,Category = Attack)
 	FRotator RightHandRotation;
-	
+
+	UFUNCTION(BlueprintImplementableEvent,BlueprintCallable)
+	void PlayDieAnim();
+
 	
 };

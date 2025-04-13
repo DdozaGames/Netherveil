@@ -4,6 +4,7 @@
 #include "Blueprint/UserWidget.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Enemy/EnemyFSM.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -368,7 +369,18 @@ void ANetherveilPlayer::OnHitEvent()
 	if (hp<=0)
 	{
 		//UE_LOG(LogTemp, Error, TEXT("Player is dead"));
-		OnGameOver();
+		if (isAlive)
+		{
+			isAlive = false;
+			springArmComp->TargetArmLength = 350.0f;
+			CamComp->FieldOfView = 135.0f;
+			anim->PlayDieAnim();
+			GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+			APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0); 
+			DisableInput(PlayerController);
+		}
+		
+		//OnGameOver();
 	}
 }
 
@@ -447,4 +459,15 @@ void ANetherveilPlayer::AddAmmo(EAmmoType ammoType, int32 amount)
 	}
 
 	UpdateAmmoUI();
+}
+
+void ANetherveilPlayer::SetCrosshairUIVisible()
+{
+	_crosshairUI->SetVisibility(ESlateVisibility::Visible);
+}
+
+void ANetherveilPlayer::SetCrosshairUIhidden()
+{
+	_crosshairUI->SetVisibility(ESlateVisibility::Hidden);
+
 }

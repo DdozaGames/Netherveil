@@ -16,17 +16,17 @@ AEnemySpawner::AEnemySpawner()
 void AEnemySpawner::BeginPlay()
 {
 	Super::BeginPlay();
-	DrawDebugSphere(
-		GetWorld(),
-		GetActorLocation(),    // 중심 위치
-		SpawnRadius,           // 반지름
-		32,                    // 세그먼트 수 (조밀도)
-		FColor::Green,         // 색상
-		true,                  // persistentLines: true로 하면 꺼질 때까지 유지됨
-		0.f,                   //  lifeTime: 0이면 영구
-		0,                     // Depth Priority
-		1.f                    // 선 두께
-	);
+	//DrawDebugSphere(
+	//	GetWorld(),
+	//	GetActorLocation(),    // 중심 위치
+	//	SpawnRadius,           // 반지름
+	//	32,                    // 세그먼트 수 (조밀도)
+	//	FColor::Green,         // 색상
+	//	true,                  // persistentLines: true로 하면 꺼질 때까지 유지됨
+	//	0.f,                   //  lifeTime: 0이면 영구
+	//	0,                     // Depth Priority
+	//	1.f                    // 선 두께
+	//);
 }
 
 // Called every frame
@@ -54,7 +54,7 @@ void AEnemySpawner::ActivateSpawner(int Index)
 			SpawnTimerHandle,
 			this,
 			&AEnemySpawner::SpawnBoss,
-			13.0f,
+			12.5f,
 			false
 		);
 		bSpawnBoss = true;

@@ -20,6 +20,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Player_NetherveilPlayer_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void OnGameOver_Implementation(); \
  \
+	DECLARE_FUNCTION(execSetCrosshairUIhidden); \
+	DECLARE_FUNCTION(execSetCrosshairUIVisible); \
 	DECLARE_FUNCTION(execOnGameOver); \
 	DECLARE_FUNCTION(execOnHitEvent);
 
