@@ -40,7 +40,7 @@ void ARift::DestroyRift()
 	OnRiftDestroyed.Broadcast();
 
 	//파괴 애니메이션 재생 
-	//Destroy();
+	Destroy();
 }
 
 void ARift::OnDamageProcess()

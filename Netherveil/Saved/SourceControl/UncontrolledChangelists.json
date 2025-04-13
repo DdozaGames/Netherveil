@@ -25,12 +25,13 @@
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/Boss/SK_Mesh/SK_Mesh_Monster_1.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Quest/BP_QuestManager.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Quest/BP_Rift.uasset",
-				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Death_2.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Animations/Death_2.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Animations/Montage_Death.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Animations/ABP_Player.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Player/Animations/Anim_DeathPos.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Asset/ParagonLtBelica/Characters/Heroes/Belica/Meshes/Belica_Skeleton.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Enemy/Blueprints/BP_EnemyBossAttack_EnergyWave.uasset",
+				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Death_2.uasset",
 				"C:/Users/PC_1M/Desktop/UnrealProject/Netherveil/Netherveil/Content/Map/NewMaterial.uasset"
 			]
 		}
