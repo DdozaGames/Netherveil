@@ -40,15 +40,7 @@ public:
     UPROPERTY(EditDefaultsOnly)
     float WaveRadius = 450.0f;
 
-    // 데미지 값
-    UPROPERTY(EditDefaultsOnly)
-    float Damage = 5.0f;
-
-    // 충돌 감지 함수
-    void CheckCollision();
-
-    UPROPERTY(VisibleAnywhere)
-    bool bCanDetect = true;  // 감지 여부 (true면 감지 가능)
+  
 
 };
 

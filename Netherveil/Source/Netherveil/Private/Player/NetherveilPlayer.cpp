@@ -380,14 +380,14 @@ void ANetherveilPlayer::OnHitEvent()
 			DisableInput(PlayerController);
 		}
 		
-		//OnGameOver();
+		OnGameOver();
 	}
 }
 
 void ANetherveilPlayer::OnGameOver_Implementation()
 {
 	//게임 오버 시 일시 정지
-	UGameplayStatics::SetGamePaused(GetWorld(), true);
+	//UGameplayStatics::SetGamePaused(GetWorld(), true);
 }
 
 

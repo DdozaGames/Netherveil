@@ -151,15 +151,6 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBossAttack_EnergyWave() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_WaveRadius_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_WaveRadius;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_Damage;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_bCanDetect_MetaData[];
-#endif
-		static void NewProp_bCanDetect_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_bCanDetect;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -226,37 +217,11 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBossAttack_EnergyWave() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_WaveRadius = { "WaveRadius", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBossAttack_EnergyWave, WaveRadius), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_WaveRadius_MetaData), Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_WaveRadius_MetaData) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_Damage_MetaData[] = {
-		{ "Category", "EnemyBossAttack_EnergyWave" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\n" },
-#endif
-		{ "ModuleRelativePath", "Public/Enemy/EnemyBossAttack_EnergyWave.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd" },
-#endif
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0010000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBossAttack_EnergyWave, Damage), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_Damage_MetaData), Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_Damage_MetaData) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_bCanDetect_MetaData[] = {
-		{ "Category", "EnemyBossAttack_EnergyWave" },
-		{ "ModuleRelativePath", "Public/Enemy/EnemyBossAttack_EnergyWave.h" },
-	};
-#endif
-	void Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_bCanDetect_SetBit(void* Obj)
-	{
-		((AEnemyBossAttack_EnergyWave*)Obj)->bCanDetect = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_bCanDetect = { "bCanDetect", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AEnemyBossAttack_EnergyWave), &Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_bCanDetect_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_bCanDetect_MetaData), Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_bCanDetect_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_collisionComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_Speed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_MaxDistance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_WaveRadius,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_Damage,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::NewProp_bCanDetect,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyBossAttack_EnergyWave_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemyBossAttack_EnergyWave>::IsAbstract,
@@ -296,9 +261,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBossAttack_EnergyWave() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_EnergyWave_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyBossAttack_EnergyWave, AEnemyBossAttack_EnergyWave::StaticClass, TEXT("AEnemyBossAttack_EnergyWave"), &Z_Registration_Info_UClass_AEnemyBossAttack_EnergyWave, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBossAttack_EnergyWave), 1520492134U) },
+		{ Z_Construct_UClass_AEnemyBossAttack_EnergyWave, AEnemyBossAttack_EnergyWave::StaticClass, TEXT("AEnemyBossAttack_EnergyWave"), &Z_Registration_Info_UClass_AEnemyBossAttack_EnergyWave, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBossAttack_EnergyWave), 158019047U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_EnergyWave_h_1928905170(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_EnergyWave_h_3583455326(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_EnergyWave_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_EnergyWave_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
