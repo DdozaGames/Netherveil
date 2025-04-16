@@ -6,8 +6,9 @@
 #include "Enemy/EnemyAnim.h"
 #include "Item/AmmoItem.h"
 #include "Item/HealthItem.h"
-#include "Item/Item.h"
+#include <NavigationSystem.h>
 #include "Kismet/GameplayStatics.h"
+#include "Navigation/PathFollowingComponent.h"
 #include "Player/NetherveilPlayer.h"
 #include "Runtime/AIModule/Classes/AIController.h"
 
@@ -86,11 +87,14 @@ void UEnemyFSM::IdleState()
 		{
 			anim->animState = currentState;
 		}
+
+		GetRandomPositionInNavMesh(me->GetActorLocation(), 500, randomPos);
 	}
 }
 
 void UEnemyFSM::MoveState()
 {
+	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
 	if (!IsValid(target) || !IsValid(me) || !IsValid(ai) || !IsValid(anim))
 	{
 		UE_LOG(LogTemp, Error, TEXT("MoveState(): component is nullptr"));
@@ -100,8 +104,33 @@ void UEnemyFSM::MoveState()
 	FVector destination = target->GetActorLocation();
 	FVector dir = destination - me->GetActorLocation();
 	//me->AddMovementInput(dir.GetSafeNormal());
-	ai->MoveToLocation(destination);
-	//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::MoveState()"));
+
+	//NavigationSystem 객체 얻어오기
+	auto ns = UNavigationSystemV1::GetNavigationSystem(GetWorld());
+	//목적지 길 찾기 경로 데이터 검색
+	FPathFindingQuery query;
+	FAIMoveRequest req;
+
+	//목적지에서 인지할 수 있는 범위
+	req.SetAcceptanceRadius(3);
+	req.SetGoalLocation(destination);
+	//길 찾기를 위한 쿼리 생성
+	ai->BuildPathfindingQuery(req, query);
+	//길 찾기 결과 가져오기
+	FPathFindingResult r = ns->FindPathSync(query);
+
+	if (r.Result==ENavigationQueryResult::Success)
+	{
+		ai->MoveToLocation(destination);
+	}
+	else
+	{
+		auto result = ai->MoveToLocation(randomPos);
+		if (result == EPathFollowingRequestResult::AlreadyAtGoal)
+		{
+			GetRandomPositionInNavMesh(me->GetActorLocation(), 500, randomPos);
+		}
+	}
 
 	if(dir.Size() < attackRange )
 	{
@@ -130,6 +159,9 @@ void UEnemyFSM::AttackState()
 	{
 		currentState = EEnemyState::Move;
 		anim->animState = currentState;
+
+		GetRandomPositionInNavMesh(me->GetActorLocation(), 500, randomPos);
+
 	}
 }
 
@@ -159,6 +191,14 @@ void UEnemyFSM::DieState()
 }
 
 
+bool UEnemyFSM::GetRandomPositionInNavMesh(FVector centerLocation, float radius, FVector& dest)
+{
+	auto ns = UNavigationSystemV1::GetNavigationSystem(GetWorld());
+	FNavLocation loc;
+	bool result = ns->GetRandomReachablePointInRadius(centerLocation, radius, loc);
+	dest = loc.Location;
+	return result;
+}
 
 void UEnemyFSM::OnDamageProcess(float amount)
 {

@@ -58,6 +58,11 @@ public:
 	UPROPERTY()
 	class AAIController* ai;
 
+	//========================Move===============================
+	FVector randomPos;
+
+	bool GetRandomPositionInNavMesh(FVector centerLocation, float radius, FVector& dest);
+
 	//=========================Attack============================
 
 

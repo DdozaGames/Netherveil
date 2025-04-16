@@ -47,7 +47,7 @@ void AEnemySpawner::ActivateSpawner(int Index)
 		SpawnInterval,
 		true // 반복
 	);
-	//보스 스테이지일 경우 보스 스폰 
+	//보스 스테이지일 경우 시퀀스 재생 후 보스 & 적 스폰 
 	if (Index==2 && !bSpawnBoss)
 	{
 		GetWorld()->GetTimerManager().SetTimer(
@@ -58,6 +58,14 @@ void AEnemySpawner::ActivateSpawner(int Index)
 			false
 		);
 		bSpawnBoss = true;
+
+		GetWorld()->GetTimerManager().SetTimer(
+			SpawnTimerHandle,
+			this,
+			&AEnemySpawner::SpawnEnemies,
+			12.5f,
+			true 
+		);
 	}
 }
 
