@@ -13,7 +13,7 @@ class NETHERVEIL_API AStageTriggerVolume : public ATriggerBox
 	GENERATED_BODY()
 
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere,BlueprintReadWrite)
     int32 StageIndex=0;
 	
 

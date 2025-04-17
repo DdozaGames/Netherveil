@@ -57,6 +57,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stage")
 	int32 StageIndex = 0;
 
+	//스폰 시 한번만 스폰할지 계속 스폰할지
+	void SpawnTimer(bool bLoop);
 	
 
 };

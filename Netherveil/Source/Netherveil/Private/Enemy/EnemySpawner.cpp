@@ -39,16 +39,18 @@ void AEnemySpawner::Tick(float DeltaTime)
 void AEnemySpawner::ActivateSpawner(int Index)
 {
 	bIsActive = true;
-	SpawnEnemies();
-	GetWorld()->GetTimerManager().SetTimer(
-		SpawnTimerHandle,
-		this,
-		&AEnemySpawner::SpawnEnemies,
-		SpawnInterval,
-		true // 반복
-	);
+
+	
+	//메인 스테이지에서만 계속 스폰 
+	if (Index==0 || Index ==1 )
+	{
+		//일단 스폰 
+		SpawnEnemies();
+		SpawnTimer(true);
+	}
+
 	//보스 스테이지일 경우 시퀀스 재생 후 보스 & 적 스폰 
-	if (Index==2 && !bSpawnBoss)
+	else if (Index==2 && !bSpawnBoss)
 	{
 		GetWorld()->GetTimerManager().SetTimer(
 			SpawnTimerHandle,
@@ -59,13 +61,7 @@ void AEnemySpawner::ActivateSpawner(int Index)
 		);
 		bSpawnBoss = true;
 
-		GetWorld()->GetTimerManager().SetTimer(
-			SpawnTimerHandle,
-			this,
-			&AEnemySpawner::SpawnEnemies,
-			12.5f,
-			true 
-		);
+		SpawnTimer(true);
 	}
 }
 
@@ -80,6 +76,7 @@ void AEnemySpawner::SpawnEnemies()
 	{
 		FVector SpawnLocation1 = GetActorLocation() + FMath::VRand() * SpawnRadius;
 		GetWorld()->SpawnActor<AActor>(EnemyShroudFiendFactory, SpawnLocation1, FRotator::ZeroRotator);
+		
 
 	}
 	if (EnemySpiderFactory)
@@ -96,13 +93,28 @@ void AEnemySpawner::SpawnBoss()
 	{
 		FVector SpawnBossLocation = GetActorLocation();
 		GetWorld()->SpawnActor<AActor>(EnemyBossFactory, SpawnBossLocation, FRotator::ZeroRotator);
-
+		UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::SpawnBoss()"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::Fail Boss Spawn"));
 	}
 }
 
 void AEnemySpawner::StopSpawning()
 {
-	UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::StopSpawning()"));
+	UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::StopSpawning()-index : %d"),StageIndex);
 	GetWorld()->GetTimerManager().ClearTimer(SpawnTimerHandle);
 	bIsActive = false;
+}
+
+void AEnemySpawner::SpawnTimer(bool bLoop)
+{
+	GetWorld()->GetTimerManager().SetTimer(
+		SpawnTimerHandle,
+		this,
+		&AEnemySpawner::SpawnEnemies,
+		SpawnInterval,
+		bLoop 
+	);
 }

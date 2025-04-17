@@ -139,7 +139,7 @@ void EmptyLinkFunctionForGeneratedCodeStageTriggerVolume() {}
 		{ "ModuleRelativePath", "Public/Quest/StageTriggerVolume.h" },
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AStageTriggerVolume_Statics::NewProp_StageIndex = { "StageIndex", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AStageTriggerVolume, StageIndex), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AStageTriggerVolume_Statics::NewProp_StageIndex_MetaData), Z_Construct_UClass_AStageTriggerVolume_Statics::NewProp_StageIndex_MetaData) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AStageTriggerVolume_Statics::NewProp_StageIndex = { "StageIndex", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AStageTriggerVolume, StageIndex), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AStageTriggerVolume_Statics::NewProp_StageIndex_MetaData), Z_Construct_UClass_AStageTriggerVolume_Statics::NewProp_StageIndex_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AStageTriggerVolume_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AStageTriggerVolume_Statics::NewProp_StageIndex,
 	};
@@ -182,9 +182,9 @@ void EmptyLinkFunctionForGeneratedCodeStageTriggerVolume() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AStageTriggerVolume, AStageTriggerVolume::StaticClass, TEXT("AStageTriggerVolume"), &Z_Registration_Info_UClass_AStageTriggerVolume, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AStageTriggerVolume), 2093753797U) },
+		{ Z_Construct_UClass_AStageTriggerVolume, AStageTriggerVolume::StaticClass, TEXT("AStageTriggerVolume"), &Z_Registration_Info_UClass_AStageTriggerVolume, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AStageTriggerVolume), 1272995041U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_3174329985(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_429731995(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Quest_StageTriggerVolume_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

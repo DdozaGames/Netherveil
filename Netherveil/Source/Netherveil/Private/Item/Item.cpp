@@ -50,7 +50,7 @@ void AItem::OnPickup(ANetherveilPlayer* player)
 
 void AItem::ApplyEffect(ANetherveilPlayer* player)
 {
-	UE_LOG(LogTemp, Warning, TEXT("AItem::ApplyEffect"));
+	//UE_LOG(LogTemp, Warning, TEXT("AItem::ApplyEffect"));
 
 }
 
