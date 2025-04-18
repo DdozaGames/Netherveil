@@ -96,14 +96,6 @@ void ANetherveilPlayer::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	Move();
 
-	if (bAllStageDone && bAllQuestsDone)
-	{
-		UE_LOG(LogTemp, Error, TEXT("Game clear!"));
-		//엔딩 시퀀스 재생
-
-		bAllQuestsDone = false;
-		bAllStageDone = false;
-	}
 }
 
 void ANetherveilPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

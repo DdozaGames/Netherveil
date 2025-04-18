@@ -200,4 +200,6 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetCrosshairUIhidden();
+
+	
 };

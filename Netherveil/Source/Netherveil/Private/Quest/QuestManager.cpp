@@ -48,6 +48,14 @@ void AQuestManager::Tick(float DeltaTime)
        
     }
 
+    if (player->bAllStageDone && player->bAllQuestsDone)
+    {
+        UE_LOG(LogTemp, Error, TEXT("Game clear!"));
+        //엔딩 시퀀스 재생
+        PlaySequencer_ClearBossStage();
+        player->bAllQuestsDone = false;
+        player->bAllStageDone = false;
+    }
 }
 
 void AQuestManager::StartQuest(FName QuestID)

@@ -61,14 +61,14 @@ void AEnemyBoss::SpawnFireBall()
                 {
                     GetWorld()->GetTimerManager().ClearTimer(FireballTimerHandle);
                     delete CurrentSpawn; // 메모리 해제
-                    UE_LOG(LogTemp, Warning, TEXT("Fireball spawning complete."));
+                    //UE_LOG(LogTemp, Warning, TEXT("Fireball spawning complete."));
                     return;
                 }
 
                 FVector RandomOffset = FVector(
                     FMath::RandRange(-SpawnRadius, SpawnRadius),
                     FMath::RandRange(-SpawnRadius, SpawnRadius),
-                    2000.0f // 공중
+                    2000.0f
                 );
 
                 FVector SpawnLocation = GetActorLocation() + RandomOffset;
@@ -81,14 +81,14 @@ void AEnemyBoss::SpawnFireBall()
                 AEnemyBossAttack_Fireball* Fireball = GetWorld()->SpawnActor<AEnemyBossAttack_Fireball>(
                     FireballFactory, SpawnLocation, SpawnRotation, SpawnParams);
 
-                if (Fireball)
+                /*if (Fireball)
                 {
                     UE_LOG(LogTemp, Warning, TEXT("Fireball spawned at %s"), *SpawnLocation.ToString());
                 }
                 else
                 {
                     UE_LOG(LogTemp, Error, TEXT("Failed to spawn fireball at %s"), *SpawnLocation.ToString());
-                }
+                }*/
 
                 (*CurrentSpawn)++;
             }),

@@ -46,6 +46,9 @@ public:
 
 	bool bStartQuest = false;
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void PlaySequencer_ClearBossStage();
+
 private:
 	FName CurrentQuestID;
 
@@ -57,4 +60,6 @@ private:
 
 	UFUNCTION()
 	void OnDestroyAllEnemies();
+
+	
 };

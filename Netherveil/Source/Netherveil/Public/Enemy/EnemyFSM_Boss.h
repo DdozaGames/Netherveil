@@ -45,6 +45,6 @@ public:
 	bool bAttackAfterDash = false; // 돌진 후 공격할지 여부
 	bool bIsDashAnimPlaying = false; //돌진 애니메이션 재생 여부
 
-	float initialHP = 2000.0f;
+	float initialHP = 100.0f; //2000
 	
 };
