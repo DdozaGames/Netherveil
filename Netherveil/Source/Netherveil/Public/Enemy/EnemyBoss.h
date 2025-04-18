@@ -35,5 +35,10 @@ public:
 	TSubclassOf<class AEnemyBossAttack_Fireball> FireballFactory; // 불덩이 액터 블루프린트
 
 	FTimerHandle FireballTimerHandle; // 불덩이 생성 타이머
-	
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class UCameraShakeBase> cameraShake;
+
+	UFUNCTION(BlueprintCallable, Category = "Attack")
+	void PlayCameraShake();
 };

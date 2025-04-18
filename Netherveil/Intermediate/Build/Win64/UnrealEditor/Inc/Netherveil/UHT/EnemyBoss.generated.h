@@ -22,6 +22,7 @@ struct FHitResult;
 #define FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_15_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execPlayCameraShake); \
 	DECLARE_FUNCTION(execSpawnFireBall); \
 	DECLARE_FUNCTION(execFireEnergyWave); \
 	DECLARE_FUNCTION(execOnBeginOverlap);

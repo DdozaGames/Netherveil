@@ -143,7 +143,7 @@ public:
 
 	//ÃÊ±â hp °ª
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category=Health)
-	int32 initialHp = 10;
+	int32 initialHp = 50;
 
 	UFUNCTION(BlueprintCallable, Category=Health)
 	void OnHitEvent();

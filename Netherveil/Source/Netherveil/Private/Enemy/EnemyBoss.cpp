@@ -39,39 +39,71 @@ void AEnemyBoss::FireEnergyWave()
 }
 void AEnemyBoss::SpawnFireBall()
 {
-    if (!FireballFactory) return;
+    if (!FireballFactory)
+    {
+        UE_LOG(LogTemp, Error, TEXT("FireballFactory is null!"));
+        return;
+    }
 
-    float SpawnRadius = 4000.0f; // 불덩이 생성 범위
-    float TotalDuration = 3.0f; // 총 3초 동안 생성
-    float SpawnInterval = 0.1f; // 0.3초마다 생성
-    int32 SpawnCount = TotalDuration / SpawnInterval; // 총 생성 횟수
+    const float SpawnRadius = 3000.0f;
+    const float TotalDuration = 4.0f;
+    const float SpawnInterval = 0.2f;
+    const int32 SpawnCount = TotalDuration / SpawnInterval;
 
-    int32 CurrentSpawn = 0;
+    int32* CurrentSpawn = new int32(0); // 포인터로 캡처하여 값 유지
 
-    UE_LOG(LogTemp, Warning, TEXT("Starting Fireball Spawn..."));
-
-    GetWorld()->GetTimerManager().SetTimer(FireballTimerHandle, FTimerDelegate::CreateLambda([this, SpawnRadius, SpawnInterval, SpawnCount, &CurrentSpawn]()
-        {
-            if (CurrentSpawn >= SpawnCount)
+    // 타이머 시작
+    GetWorld()->GetTimerManager().SetTimer(
+        FireballTimerHandle,
+        FTimerDelegate::CreateLambda([this, SpawnRadius, SpawnCount, CurrentSpawn]()
             {
-                GetWorld()->GetTimerManager().ClearTimer(FireballTimerHandle);
-                return;
-            }
+                if (*CurrentSpawn >= SpawnCount)
+                {
+                    GetWorld()->GetTimerManager().ClearTimer(FireballTimerHandle);
+                    delete CurrentSpawn; // 메모리 해제
+                    UE_LOG(LogTemp, Warning, TEXT("Fireball spawning complete."));
+                    return;
+                }
 
-            float RandomX = FMath::RandRange(-SpawnRadius, SpawnRadius);
-            float RandomY = FMath::RandRange(-SpawnRadius, SpawnRadius);
-            FVector SpawnLocation = GetActorLocation() + FVector(RandomX, RandomY, 2000.0f);
-            FRotator SpawnRotation = FRotator::ZeroRotator;
+                FVector RandomOffset = FVector(
+                    FMath::RandRange(-SpawnRadius, SpawnRadius),
+                    FMath::RandRange(-SpawnRadius, SpawnRadius),
+                    2000.0f // 공중
+                );
 
-            UE_LOG(LogTemp, Warning, TEXT("Spawning Fireball at: %s"), *SpawnLocation.ToString());
+                FVector SpawnLocation = GetActorLocation() + RandomOffset;
+                FRotator SpawnRotation = FRotator::ZeroRotator;
 
-            AEnemyBossAttack_Fireball* Fireball = GetWorld()->SpawnActor<AEnemyBossAttack_Fireball>(FireballFactory, SpawnLocation, SpawnRotation);
-            if (Fireball)
-            {
-                UE_LOG(LogTemp, Warning, TEXT("Fireball Spawned!"));
-            }
+                // 콜리전 처리 방식 명시
+                FActorSpawnParameters SpawnParams;
+                SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
-            ++CurrentSpawn;
+                AEnemyBossAttack_Fireball* Fireball = GetWorld()->SpawnActor<AEnemyBossAttack_Fireball>(
+                    FireballFactory, SpawnLocation, SpawnRotation, SpawnParams);
 
-        }), SpawnInterval, true);
+                if (Fireball)
+                {
+                    UE_LOG(LogTemp, Warning, TEXT("Fireball spawned at %s"), *SpawnLocation.ToString());
+                }
+                else
+                {
+                    UE_LOG(LogTemp, Error, TEXT("Failed to spawn fireball at %s"), *SpawnLocation.ToString());
+                }
+
+                (*CurrentSpawn)++;
+            }),
+        SpawnInterval,
+        true
+    );
+}
+
+
+void AEnemyBoss::PlayCameraShake()
+{
+    if (cameraShake)
+    {
+        // 카메라 셰이크 재생
+        auto controller = GetWorld()->GetFirstPlayerController();
+        controller->PlayerCameraManager->StartCameraShake(cameraShake);
+    }
 }

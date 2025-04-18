@@ -84,11 +84,11 @@ void UEnemyFSM_Boss::PlayAttack()
 	//Attack -> Move 넘어갈 때 공격 애니메이션 다 끝나면 전환되도록
 	//몽타주로 제어
 
-	int32 index = FMath::RandRange(0,2);
-	FString sectionName = FString::Printf(TEXT("Attack%d"),index);
-	//FString sectionName = FString::Printf(TEXT("Attack2"));
-	//bossAnim->PlayAttackAnim(FName(*sectionName));
+	/*FString sectionName = FString::Printf(TEXT("Attack2"));
+	bossAnim->PlayAttackAnim(FName(*sectionName));*/
 
+	int32 index = FMath::RandRange(0, 2);
+	FString sectionName = FString::Printf(TEXT("Attack%d"), index);
 	//근거리 공격 
 	if (index==1)
 	{

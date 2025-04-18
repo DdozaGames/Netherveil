@@ -14,6 +14,6 @@ void UEnemyFSM_ShroudfiendMelee::BeginPlay()
 	Super::BeginPlay();
 
 	me = Cast<AEnemyShroudfiendMelee>(GetOwner());
-	hp = 300.0f;
+	hp = 180.0f;
 }
 

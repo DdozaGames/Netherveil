@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 // Cross Module References
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UCameraShakeBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemy();
@@ -21,6 +22,13 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyBossAttack_Fireball_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Netherveil();
 // End Cross Module References
+	DEFINE_FUNCTION(AEnemyBoss::execPlayCameraShake)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->PlayCameraShake();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AEnemyBoss::execSpawnFireBall)
 	{
 		P_FINISH;
@@ -54,6 +62,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "FireEnergyWave", &AEnemyBoss::execFireEnergyWave },
 			{ "OnBeginOverlap", &AEnemyBoss::execOnBeginOverlap },
+			{ "PlayCameraShake", &AEnemyBoss::execPlayCameraShake },
 			{ "SpawnFireBall", &AEnemyBoss::execSpawnFireBall },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -164,6 +173,29 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AEnemyBoss_PlayCameraShake_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemyBoss_PlayCameraShake_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Attack" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBoss.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyBoss_PlayCameraShake_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyBoss, nullptr, "PlayCameraShake", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyBoss_PlayCameraShake_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEnemyBoss_PlayCameraShake_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_AEnemyBoss_PlayCameraShake()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEnemyBoss_PlayCameraShake_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AEnemyBoss_SpawnFireBall_Statics
 	{
 #if WITH_METADATA
@@ -207,6 +239,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_FireballFactory_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_FireballFactory;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_cameraShake_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_cameraShake;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -219,6 +255,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemyBoss_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AEnemyBoss_FireEnergyWave, "FireEnergyWave" }, // 608116188
 		{ &Z_Construct_UFunction_AEnemyBoss_OnBeginOverlap, "OnBeginOverlap" }, // 533663524
+		{ &Z_Construct_UFunction_AEnemyBoss_PlayCameraShake, "PlayCameraShake" }, // 965951598
 		{ &Z_Construct_UFunction_AEnemyBoss_SpawnFireBall, "SpawnFireBall" }, // 2281798838
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBoss_Statics::FuncInfo) < 2048);
@@ -246,9 +283,23 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballFactory = { "FireballFactory", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBoss, FireballFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyBossAttack_Fireball_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballFactory_MetaData), Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballFactory_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake_MetaData[] = {
+		{ "Category", "EnemyBoss" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xd2\xb5\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc5\xb8\xef\xbf\xbd\xcc\xb8\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBoss.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xd2\xb5\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc5\xb8\xef\xbf\xbd\xcc\xb8\xef\xbf\xbd" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake = { "cameraShake", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBoss, cameraShake), Z_Construct_UClass_UClass, Z_Construct_UClass_UCameraShakeBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake_MetaData), Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyBoss_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBoss_Statics::NewProp_EnergyWaveFactory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballFactory,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyBoss_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemyBoss>::IsAbstract,
@@ -289,9 +340,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyBoss, AEnemyBoss::StaticClass, TEXT("AEnemyBoss"), &Z_Registration_Info_UClass_AEnemyBoss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBoss), 2766875560U) },
+		{ Z_Construct_UClass_AEnemyBoss, AEnemyBoss::StaticClass, TEXT("AEnemyBoss"), &Z_Registration_Info_UClass_AEnemyBoss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBoss), 189332203U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_2237071595(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_251374311(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

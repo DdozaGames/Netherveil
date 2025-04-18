@@ -21,7 +21,7 @@ void UEnemyFSM_Spider::BeginPlay()
 	}
 	attackRange = 1500.f;
 	attackDelayTime = 5.0f;
-	hp = 400.0f;
+	hp = 250.0f;
 }
 
 void UEnemyFSM_Spider::AttackState()
@@ -63,7 +63,7 @@ void UEnemyFSM_Spider::OnDamageProcess(float amount)
 
 		anim->PlayDamageAnim(TEXT("Die"));
 
-		UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM_Spider:: Die"));
+		//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM_Spider:: Die"));
 
 	}
 	anim->animState = currentState;

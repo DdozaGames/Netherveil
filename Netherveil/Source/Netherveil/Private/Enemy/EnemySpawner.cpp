@@ -50,7 +50,7 @@ void AEnemySpawner::ActivateSpawner(int Index)
 	}
 
 	//보스 스테이지일 경우 시퀀스 재생 후 보스 & 적 스폰 
-	else if (Index==2 && !bSpawnBoss)
+	if (Index==2 && EnemyBossFactory)
 	{
 		GetWorld()->GetTimerManager().SetTimer(
 			SpawnTimerHandle,
@@ -58,9 +58,10 @@ void AEnemySpawner::ActivateSpawner(int Index)
 			&AEnemySpawner::SpawnBoss,
 			12.5f,
 			false
-		);
-		bSpawnBoss = true;
-
+		);		
+	}
+	else {
+		SpawnEnemies();
 		SpawnTimer(true);
 	}
 }
@@ -93,23 +94,21 @@ void AEnemySpawner::SpawnBoss()
 	{
 		FVector SpawnBossLocation = GetActorLocation();
 		GetWorld()->SpawnActor<AActor>(EnemyBossFactory, SpawnBossLocation, FRotator::ZeroRotator);
-		UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::SpawnBoss()"));
 	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::Fail Boss Spawn"));
-	}
+	
 }
 
 void AEnemySpawner::StopSpawning()
 {
-	UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::StopSpawning()-index : %d"),StageIndex);
+	//UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::StopSpawning()-index : %d"),StageIndex);
 	GetWorld()->GetTimerManager().ClearTimer(SpawnTimerHandle);
 	bIsActive = false;
 }
 
 void AEnemySpawner::SpawnTimer(bool bLoop)
 {
+	//UE_LOG(LogTemp, Warning, TEXT("AEnemySpawner::SpawnTimer"));
+
 	GetWorld()->GetTimerManager().SetTimer(
 		SpawnTimerHandle,
 		this,
