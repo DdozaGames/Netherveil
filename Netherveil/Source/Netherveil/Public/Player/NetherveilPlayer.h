@@ -88,7 +88,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = SniperUI)
 	TSubclassOf<class UUserWidget> crosshairUIFactory;
 
-	UPROPERTY()
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	class UUserWidget* _crosshairUI;
 
 	//카메라 셰이크
@@ -97,7 +97,10 @@ public:
 
 	//총알 발사 사운드
 	UPROPERTY(EditDefaultsOnly, Category = Sound)
-	class USoundBase* bulletSound;
+	class USoundBase* grenadeSound;
+
+	UPROPERTY(EditDefaultsOnly, Category = Sound)
+	class USoundBase* sniperSound;
 
 	//총 변경 시 호출되는 이벤트 함수
 	UFUNCTION(BlueprintImplementableEvent,BlueprintCallable,Category=Gun)

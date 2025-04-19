@@ -61,11 +61,11 @@ ANetherveilPlayer::ANetherveilPlayer()
 		sniperGunComp->SetRelativeScale3D(FVector(0.15f));
 	}
 
-	ConstructorHelpers::FObjectFinder<USoundBase> tempSound(TEXT("/Script/Engine.SoundWave'/Game/Asset/Weapon/SniperGun/Rifle.Rifle'"));
+	/*ConstructorHelpers::FObjectFinder<USoundBase> tempSound(TEXT("/Script/Engine.SoundWave'/Game/Asset/Weapon/SniperGun/Rifle.Rifle'"));
 	if (tempSound.Succeeded())
 	{
 		bulletSound = tempSound.Object;
-	}
+	}*/
 
 }
 
@@ -168,8 +168,12 @@ void ANetherveilPlayer::InputFire()
 
 	if (bUsingGrenadeGun)
 	{
+		
 		if (grenadeCurrentAmmo > 0)
 		{
+			//사운드 재생 
+			UGameplayStatics::PlaySound2D(GetWorld(), grenadeSound);
+
 			PlayFireEffects();
 
 			//총알 스폰 
@@ -188,50 +192,57 @@ void ANetherveilPlayer::InputFire()
 
 	else
 	{
-		PlayFireEffects();
-
-		sniperCurrentAmmo--;
-
-		FVector startPos = CamComp->GetComponentLocation();
-		FVector endPos = CamComp->GetComponentLocation() + CamComp->GetForwardVector() * 5000;
-		FHitResult hitInfo;
-		FCollisionQueryParams params;
-		params.AddIgnoredActor(this);
-
-		bool bHit = GetWorld()->LineTraceSingleByChannel(hitInfo, startPos, endPos, ECC_Visibility, params);
-
-		
-
-		if (bHit)
+		if (sniperCurrentAmmo > 0)
 		{
+			//사운드 재생 
+			UGameplayStatics::PlaySound2D(GetWorld(), sniperSound);
 
-			//파티클 생성 
-			FTransform bulletTrans;
-			bulletTrans.SetLocation(hitInfo.ImpactPoint);
-			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), bulletEffectFactory, bulletTrans);
+			PlayFireEffects();
 
-			//오브젝트 날리기 
-			/*auto hitComp = hitInfo.GetComponent();
-			if (hitComp && hitComp->IsSimulatingPhysics())
+			sniperCurrentAmmo--;
+
+			FVector startPos = CamComp->GetComponentLocation();
+			FVector endPos = CamComp->GetComponentLocation() + CamComp->GetForwardVector() * 5000;
+			FHitResult hitInfo;
+			FCollisionQueryParams params;
+			params.AddIgnoredActor(this);
+
+			bool bHit = GetWorld()->LineTraceSingleByChannel(hitInfo, startPos, endPos, ECC_Visibility, params);
+
+
+
+			if (bHit)
 			{
-				FVector force = -hitInfo.ImpactNormal * hitComp->GetMass() * 500000;
-				hitComp->AddForce(force);
-			}*/
 
-			auto enemy = hitInfo.GetActor()->GetDefaultSubobjectByName(TEXT("FSM"));
-			if (enemy)
-			{
-				auto enemyFSM = Cast<UEnemyFSM>(enemy);
-				float damage = FMath::RandRange(30, 80);
-				enemyFSM->OnDamageProcess(damage);
-			}
+				//파티클 생성 
+				FTransform bulletTrans;
+				bulletTrans.SetLocation(hitInfo.ImpactPoint);
+				UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), bulletEffectFactory, bulletTrans);
 
-			auto rift = Cast<ARift>(hitInfo.GetActor());
-			if (rift)
-			{
-				rift->OnDamageProcess();
+				//오브젝트 날리기 
+				/*auto hitComp = hitInfo.GetComponent();
+				if (hitComp && hitComp->IsSimulatingPhysics())
+				{
+					FVector force = -hitInfo.ImpactNormal * hitComp->GetMass() * 500000;
+					hitComp->AddForce(force);
+				}*/
+
+				auto enemy = hitInfo.GetActor()->GetDefaultSubobjectByName(TEXT("FSM"));
+				if (enemy)
+				{
+					auto enemyFSM = Cast<UEnemyFSM>(enemy);
+					float damage = FMath::RandRange(30, 80);
+					enemyFSM->OnDamageProcess(damage);
+				}
+
+				auto rift = Cast<ARift>(hitInfo.GetActor());
+				if (rift)
+				{
+					rift->OnDamageProcess();
+				}
 			}
 		}
+		
 	}
 
 	
@@ -341,9 +352,6 @@ void ANetherveilPlayer::PlayFireEffects()
 	{
 		anim->PlayAttackAnim();
 	}
-
-	//사운드 재생 
-	UGameplayStatics::PlaySound2D(GetWorld(), bulletSound);
 
 	//카메라 셰이크 재생
 	auto controller = GetWorld()->GetFirstPlayerController();
