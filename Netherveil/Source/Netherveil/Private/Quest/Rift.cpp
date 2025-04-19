@@ -35,11 +35,15 @@ void ARift::Tick(float DeltaTime)
 
 void ARift::DestroyRift()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Rift is Destroyed!: %s"), *RiftID.ToString());
+	//UE_LOG(LogTemp, Warning, TEXT("Rift is Destroyed!: %s"), *RiftID.ToString());
 	collisionComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	OnRiftDestroyed.Broadcast();
 
-	//파괴 애니메이션 재생 
+	//파괴 애니메이션 재생
+	if (DestroyEffectFactory)
+	{
+		GetWorld()->SpawnActor<AActor>(DestroyEffectFactory, GetActorLocation(), FRotator::ZeroRotator);
+	}
 	Destroy();
 }
 

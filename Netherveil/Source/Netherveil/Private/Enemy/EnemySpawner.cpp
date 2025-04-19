@@ -44,9 +44,17 @@ void AEnemySpawner::ActivateSpawner(int Index)
 	//메인 스테이지에서만 계속 스폰 
 	if (Index==0 || Index ==1 )
 	{
+		UE_LOG(LogTemp, Warning, TEXT("ActivateSpawner::Index 0 or 1"));
 		//일단 스폰 
 		SpawnEnemies();
 		SpawnTimer(true);
+	}
+
+	//서브 스테이지
+	else if (Index>=3 )
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ActivateSpawner::Index 3 or 4"));
+		SpawnEnemies();
 	}
 
 	//보스 스테이지일 경우 시퀀스 재생 후 보스 & 적 스폰 
@@ -60,7 +68,7 @@ void AEnemySpawner::ActivateSpawner(int Index)
 			false
 		);		
 	}
-	else {
+	else if (Index==2) {
 		SpawnEnemies();
 		SpawnTimer(true);
 	}

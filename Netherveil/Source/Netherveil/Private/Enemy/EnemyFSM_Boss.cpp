@@ -63,7 +63,7 @@ void UEnemyFSM_Boss::AttackState()
 	currentTime += GetWorld()->DeltaTimeSeconds;
 	if (currentTime > attackDelayTime )
 	{
-		UE_LOG(LogTemp, Warning, TEXT(" UEnemyFSM_Boss::Attack!"));
+		//UE_LOG(LogTemp, Warning, TEXT(" UEnemyFSM_Boss::Attack!"));
 		currentTime = 0;
 		bossAnim->bAttackEnd = false;
 		bossAnim->bAttackWaitEnd = false;

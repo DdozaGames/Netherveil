@@ -50,7 +50,7 @@ void AQuestManager::Tick(float DeltaTime)
 
     if (player->bAllStageDone && player->bAllQuestsDone)
     {
-        UE_LOG(LogTemp, Error, TEXT("Game clear!"));
+        //UE_LOG(LogTemp, Error, TEXT("Game clear!"));
         //엔딩 시퀀스 재생
         PlaySequencer_ClearBossStage();
         player->bAllQuestsDone = false;
@@ -128,7 +128,7 @@ void AQuestManager::CompleteQuest()
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("No More Quest!"));
+        //UE_LOG(LogTemp, Warning, TEXT("No More Quest!"));
         player->bAllQuestsDone = true;
     }
 
@@ -136,13 +136,13 @@ void AQuestManager::CompleteQuest()
 
 void AQuestManager::OnRiftDestroyed()
 {
-    UE_LOG(LogTemp, Warning, TEXT("Complete Quest!"));
+    //UE_LOG(LogTemp, Warning, TEXT("Complete Quest!"));
 
     
     if (player)
     {
         player->CompleteQuestUI(RiftID);
-        UE_LOG(LogTemp, Warning, TEXT("player->CompleteQuestUI"));
+        //UE_LOG(LogTemp, Warning, TEXT("player->CompleteQuestUI"));
     }
     CompleteQuest();
 }

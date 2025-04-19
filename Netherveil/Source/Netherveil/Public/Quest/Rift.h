@@ -49,4 +49,7 @@ public:
 	float riftCurrentHP = riftInitialHP;
 
 	void OnDamageProcess();
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> DestroyEffectFactory;
 };
