@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include <functional>
+
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "EnemyFSM.generated.h"
@@ -33,8 +35,12 @@ public:
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = FSM)
 	EEnemyState currentState = EEnemyState::Idle;
+	TMap<EEnemyState, TFunction<void()>> StateActions;
+
+	void ChangeState(EEnemyState NewState);
 
 	virtual void IdleState();
 	virtual void MoveState();
@@ -62,6 +68,9 @@ public:
 	FVector randomPos;
 
 	bool GetRandomPositionInNavMesh(FVector centerLocation, float radius, FVector& dest);
+
+	float pathUpdateTime = 1.0f; // r길찾기 업데이트 간격
+	float timeSinceLastPath = 0.0f;
 
 	//=========================Attack============================
 

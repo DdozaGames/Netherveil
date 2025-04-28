@@ -16,6 +16,15 @@ UEnemyFSM::UEnemyFSM()
 {
 	PrimaryComponentTick.bCanEverTick = true;
 
+	// 상태별 실행할 함수 등록
+	StateActions.Add(EEnemyState::Idle, [this]() { IdleState(); });
+	StateActions.Add(EEnemyState::Move, [this]() { MoveState(); });
+	StateActions.Add(EEnemyState::Attack, [this]() { AttackState(); });
+	StateActions.Add(EEnemyState::Damage, [this]() { DamageState(); });
+	StateActions.Add(EEnemyState::Die, [this]() { DieState(); });
+
+	// 초기 상태 설정
+	currentState = EEnemyState::Idle;
 }
 
 
@@ -46,7 +55,7 @@ void UEnemyFSM::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 	if (!bIsReady) return;
 
-	switch (currentState)
+	/*switch (currentState)
 	{
 	case EEnemyState::Idle:
 		IdleState();
@@ -64,8 +73,16 @@ void UEnemyFSM::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 		DieState();
 		break;
 
+	}*/
+
+	//TMap 활용 개선 
+	if (StateActions.Contains(currentState))
+	{
+		StateActions[currentState]();
 	}
 }
+
+
 
 void UEnemyFSM::IdleState()
 {
@@ -81,6 +98,7 @@ void UEnemyFSM::IdleState()
 	if (currentTime > idleDelayTime)
 	{
 		currentState = EEnemyState::Move;
+		//ChangeState(EEnemyState::Move);
 		currentTime = 0;
 
 		if (anim)
@@ -105,32 +123,43 @@ void UEnemyFSM::MoveState()
 	FVector dir = destination - me->GetActorLocation();
 	//me->AddMovementInput(dir.GetSafeNormal());
 
-	//NavigationSystem 객체 얻어오기
-	auto ns = UNavigationSystemV1::GetNavigationSystem(GetWorld());
-	//목적지 길 찾기 경로 데이터 검색
-	FPathFindingQuery query;
-	FAIMoveRequest req;
-
-	//목적지에서 인지할 수 있는 범위
-	req.SetAcceptanceRadius(3);
-	req.SetGoalLocation(destination);
-	//길 찾기를 위한 쿼리 생성
-	ai->BuildPathfindingQuery(req, query);
-	//길 찾기 결과 가져오기
-	FPathFindingResult r = ns->FindPathSync(query);
-
-	if (r.Result==ENavigationQueryResult::Success)
+	timeSinceLastPath += GetWorld()->DeltaTimeSeconds;
+	FPathFindingResult r;
+		
+	if (timeSinceLastPath >= pathUpdateTime)
 	{
-		ai->MoveToLocation(destination);
-	}
-	else
-	{
-		auto result = ai->MoveToLocation(randomPos);
-		if (result == EPathFollowingRequestResult::AlreadyAtGoal)
+		//NavigationSystem 객체 얻어오기
+		auto ns = UNavigationSystemV1::GetNavigationSystem(GetWorld());
+		//목적지 길 찾기 경로 데이터 검색
+		FPathFindingQuery query;
+		FAIMoveRequest req;
+
+		//목적지에서 인지할 수 있는 범위
+		req.SetAcceptanceRadius(3);
+		req.SetGoalLocation(destination);
+		//길 찾기를 위한 쿼리 생성
+		ai->BuildPathfindingQuery(req, query);
+
+		//길 찾기 결과 가져오기
+		r = ns->FindPathSync(query);
+		timeSinceLastPath = 0.0f;
+
+		if (r.Result == ENavigationQueryResult::Success)
 		{
-			GetRandomPositionInNavMesh(me->GetActorLocation(), 500, randomPos);
+			ai->MoveToLocation(destination);
+		}
+		else
+		{
+			auto result = ai->MoveToLocation(randomPos);
+			if (result == EPathFollowingRequestResult::AlreadyAtGoal)
+			{
+				GetRandomPositionInNavMesh(me->GetActorLocation(), 500, randomPos);
+			}
 		}
 	}
+	
+
+	
 
 	if(dir.Size() < attackRange )
 	{
@@ -242,7 +271,7 @@ void UEnemyFSM::DropItem()
 	itemPosition.SetLocation(adjustedLocation);
 
 	if (!grenadeAmmoItemFactory) {
-		UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItemClass is Null"));
+		//UE_LOG(LogTemp, Warning, TEXT("UEnemyFSM::DropItemClass is Null"));
 		return;
 	}
 	if (randNum<50)
