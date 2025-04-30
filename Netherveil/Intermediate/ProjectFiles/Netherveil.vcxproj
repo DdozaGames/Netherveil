@@ -223,6 +223,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Player\BulletPool.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Player\NetherveilPlayer.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -272,6 +277,7 @@
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\HealthItem.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\Item.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Player\Bullet.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Player\BulletPool.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Player\NetherveilPlayer.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Player\PlayerAnim.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Quest\QuestData.h"/>

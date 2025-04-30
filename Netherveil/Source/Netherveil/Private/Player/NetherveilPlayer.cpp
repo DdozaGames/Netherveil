@@ -1,6 +1,7 @@
 
 #include "Player/NetherveilPlayer.h"
 
+#include "EngineUtils.h"
 #include "Blueprint/UserWidget.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
@@ -13,6 +14,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Item/AmmoItem.h"
+#include "Player/BulletPool.h"
 #include "Quest/Rift.h"
 
 ANetherveilPlayer::ANetherveilPlayer()
@@ -89,6 +91,13 @@ void ANetherveilPlayer::BeginPlay()
 	ChangeToGrenadeGun();
 
 	anim = Cast<UPlayerAnim>(GetMesh()->GetAnimInstance());
+
+	// 월드에 있는 BulletPool 액터 찾기 
+	for (TActorIterator<ABulletPool> It(GetWorld()); It; ++It)
+	{
+		BulletPool = *It;
+		break;
+	}
 }
 
 void ANetherveilPlayer::Tick(float DeltaTime)
@@ -177,8 +186,16 @@ void ANetherveilPlayer::InputFire()
 			PlayFireEffects();
 
 			//총알 스폰 
-			FTransform firePosition = granadeGunComp->GetSocketTransform(TEXT("FirePosition"));
-			GetWorld()->SpawnActor<ABullet>(bulletFactory, firePosition);
+			FTransform fireTransform = granadeGunComp->GetSocketTransform(TEXT("FirePosition"));
+			//GetWorld()->SpawnActor<ABullet>(bulletFactory, firePosition);
+			FVector fireLocation = fireTransform.GetLocation();
+			FVector fireDirection = fireTransform.GetRotation().GetForwardVector();
+
+			ABullet* Bullet = BulletPool->GetBullet();
+			if (Bullet)
+			{
+				Bullet->Activate(fireLocation, fireDirection);
+			}
 			//탄약 소비 
 			grenadeCurrentAmmo--;
 		}

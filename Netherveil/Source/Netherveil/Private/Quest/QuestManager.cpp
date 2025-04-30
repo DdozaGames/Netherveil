@@ -68,7 +68,7 @@ void AQuestManager::StartQuest(FName QuestID)
 
     if (Quest)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Start Quest: %s"), *Quest->QuestName.ToString());
+        //UE_LOG(LogTemp, Warning, TEXT("Start Quest: %s"), *Quest->QuestName.ToString());
 
         CurrentQuestID = QuestID;
 

@@ -23,9 +23,10 @@ public:
 	UFUNCTION()
 	void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	//발사체의 이동을 담당할 컴포넌트
-	UPROPERTY(VisibleAnywhere, Category = Movement)
-	class UProjectileMovementComponent* movementComp;
+	////발사체의 이동을 담당할 컴포넌트
+	//UPROPERTY(VisibleAnywhere, Category = Movement)
+	//class UProjectileMovementComponent* movementComp;
+
 	//충돌 컴포넌트
 	UPROPERTY(VisibleAnywhere, Category = Collision)
 	class USphereComponent* collisionComp;
@@ -36,4 +37,20 @@ public:
 	UPROPERTY(EditAnywhere, Category = BulletEffect)
 	class UParticleSystem* bulletEffectFactory;
 
+	void Activate(FVector SpawnLoc, const FVector& Dir);
+	void Deactivate();
+
+	UPROPERTY(EditDefaultsOnly)
+	float Speed = 2000.0f;
+
+	bool bIsActive = false;
+
+	FTimerHandle LifeSpanTimerHandle;
+
+	UPROPERTY(EditAnywhere, Category = "Bullet")
+	float LifeTime = 2.0f;
+
+private:
+	FVector Direction;
+	FVector InitialSpawnLocation;
 };

@@ -25,15 +25,15 @@ ABullet::ABullet()
 	bodyMeshComp->SetRelativeScale3D(FVector(0.25f));
 
 	//발사체
-	movementComp = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("MovementComp"));
-	movementComp->SetUpdatedComponent(collisionComp);
-	movementComp->InitialSpeed = 5000;
-	movementComp->MaxSpeed = 5000;
-	movementComp->bShouldBounce = true; //반동여부
-	movementComp->Bounciness = 0.3f; //반동 값
+	//movementComp = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("MovementComp"));
+	//movementComp->SetUpdatedComponent(collisionComp);
+	//movementComp->InitialSpeed = 5000;
+	//movementComp->MaxSpeed = 5000;
+	//movementComp->bShouldBounce = true; //반동여부
+	//movementComp->Bounciness = 0.3f; //반동 값
 
 	//생명 시간 주기
-	InitialLifeSpan = 2.0f;
+	//InitialLifeSpan = 2.0f;
 }
 
 void ABullet::BeginPlay()
@@ -47,6 +47,16 @@ void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (!bIsActive) return;
+
+	FVector NewLocation = GetActorLocation() + Direction * Speed * DeltaTime;
+	SetActorLocation(NewLocation);
+
+	// 거리 초과 시 비활성화
+	/*if (FVector::Dist(NewLocation, InitialSpawnLocation) > 3000.0f)
+	{
+		Deactivate();
+	}*/
 }
 
 void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -66,7 +76,7 @@ void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 		bulletTrans.SetLocation(SweepResult.ImpactPoint);
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), bulletEffectFactory, bulletTrans);
 
-		this->Destroy();
+		Deactivate();
 
 	}
 
@@ -76,11 +86,33 @@ void ABullet::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* O
 		if (rift)
 		{
 			rift->OnDamageProcess();
-			this->Destroy();
+			Deactivate();
 
 		}
 
 	}
 	
+}
+
+void ABullet::Activate(FVector SpawnLoc, const FVector& Dir)
+{
+	SetActorLocation(SpawnLoc);
+	InitialSpawnLocation = SpawnLoc;
+	SetActorHiddenInGame(false);
+	SetActorEnableCollision(true);
+	Direction = Dir;
+	bIsActive = true;
+
+	// 타이머로 일정 시간 후 비활성화
+	GetWorldTimerManager().SetTimer(LifeSpanTimerHandle, this, &ABullet::Deactivate, LifeTime, false);
+}
+
+void ABullet::Deactivate()
+{
+	GetWorldTimerManager().ClearTimer(LifeSpanTimerHandle);
+
+	SetActorHiddenInGame(true);
+	SetActorEnableCollision(false);
+	bIsActive = false;
 }
 

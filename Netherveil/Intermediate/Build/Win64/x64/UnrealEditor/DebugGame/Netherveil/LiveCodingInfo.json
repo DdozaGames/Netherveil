@@ -4,6 +4,7 @@
 		"Module.Netherveil.cpp.obj": [
 			"AmmoItem.gen.cpp.obj",
 			"Bullet.gen.cpp.obj",
+			"BulletPool.gen.cpp.obj",
 			"Enemy.gen.cpp.obj",
 			"EnemyAnim.gen.cpp.obj",
 			"EnemyAnimBoss.gen.cpp.obj",
@@ -50,6 +51,7 @@
 			"HealthItem.cpp.obj",
 			"Item.cpp.obj",
 			"Bullet.cpp.obj",
+			"BulletPool.cpp.obj",
 			"NetherveilPlayer.cpp.obj",
 			"PlayerAnim.cpp.obj",
 			"QuestData.cpp.obj",

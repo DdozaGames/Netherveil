@@ -65,6 +65,9 @@ public:
 
 	void InputFire();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class ABulletPool* BulletPool;
+
 	//À¯ÅºÃÑ »ç¿ë ¿©ºÎ
 	bool bUsingGrenadeGun = true;
 	//À¯ÅºÃÑÀ¸·Î º¯°æ
