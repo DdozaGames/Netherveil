@@ -29,6 +29,9 @@ public:
     UFUNCTION()
     void StopSpawning();
 
+    UPROPERTY()
+    class AEnemyPool_Shroudfiend* SharedEnemyPool_Shroudfiend;
+
 protected:
     virtual void BeginPlay() override;
 };

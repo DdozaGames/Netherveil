@@ -2,6 +2,7 @@
 
 #include "NetherveilGameMode.h"
 
+#include "EngineUtils.h"
 #include "Enemy/EnemySpawner.h"
 #include "Kismet/GameplayStatics.h"
 #include "UObject/ConstructorHelpers.h"
@@ -23,6 +24,11 @@ void ANetherveilGameMode::BeginPlay()
         }
     }
 
+    for (TActorIterator<AEnemyPool_Shroudfiend> It(GetWorld()); It; ++It)
+    {
+        SharedEnemyPool_Shroudfiend = *It;
+        break;
+    }
 }
 
 void ANetherveilGameMode::StartStage(int32 StageIndex)

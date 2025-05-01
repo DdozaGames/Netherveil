@@ -3,38 +3,28 @@
 
 #include "Enemy/EnemySpawner.h"
 #include "DrawDebugHelpers.h"
+#include  "Enemy/EnemyPool_Shroudfiend.h"
+#include "Kismet/GameplayStatics.h"
+#include "Netherveil/NetherveilGameMode.h"
+#include "Player/NetherveilPlayer.h"
 
-// Sets default values
 AEnemySpawner::AEnemySpawner()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	auto gm = Cast<ANetherveilGameMode>(UGameplayStatics::GetGameMode(this));
+	if (gm &&gm->SharedEnemyPool_Shroudfiend)
+	{
+		ShroudFiendPool = gm->SharedEnemyPool_Shroudfiend;
+	}
 }
 
-// Called when the game starts or when spawned
 void AEnemySpawner::BeginPlay()
 {
 	Super::BeginPlay();
-	//DrawDebugSphere(
-	//	GetWorld(),
-	//	GetActorLocation(),    // 중심 위치
-	//	SpawnRadius,           // 반지름
-	//	32,                    // 세그먼트 수 (조밀도)
-	//	FColor::Green,         // 색상
-	//	true,                  // persistentLines: true로 하면 꺼질 때까지 유지됨
-	//	0.f,                   //  lifeTime: 0이면 영구
-	//	0,                     // Depth Priority
-	//	1.f                    // 선 두께
-	//);
+	
 }
 
-// Called every frame
-void AEnemySpawner::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
 
 void AEnemySpawner::ActivateSpawner(int Index)
 {
@@ -81,13 +71,28 @@ void AEnemySpawner::SpawnEnemies()
 		StopSpawning();
 		return;
 	}
-	if (EnemyShroudFiendFactory)
+	/*if (EnemyShroudFiendFactory)
 	{
 		FVector SpawnLocation1 = GetActorLocation() + FMath::VRand() * SpawnRadius;
 		GetWorld()->SpawnActor<AActor>(EnemyShroudFiendFactory, SpawnLocation1, FRotator::ZeroRotator);
 		
 
+	}*/
+
+	if (bShroudfiend)
+	{
+		if (ShroudFiendPool)
+		{
+			AActor* Enemy = ShroudFiendPool->GetEnemy();
+			if (Enemy)
+			{
+				FVector SpawnLocation = GetActorLocation() + FMath::VRand() * SpawnRadius;
+				Enemy->SetActorLocation(SpawnLocation);
+				Enemy->SetActorRotation(FRotator::ZeroRotator);
+			}
+		}
 	}
+	
 	if (EnemySpiderFactory)
 	{
 		FVector SpawnLocation2 = GetActorLocation() + FMath::VRand() * SpawnRadius;

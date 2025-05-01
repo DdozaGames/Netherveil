@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnemyFSM_ShroudfiendMelee() {}
 // Cross Module References
+	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyPool_Shroudfiend_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyFSM();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_NoRegister();
@@ -28,6 +29,11 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_ShroudfiendMelee() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ShroudFiendPool_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ShroudFiendPool;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +51,16 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_ShroudfiendMelee() {}
 		{ "ModuleRelativePath", "Public/Enemy/EnemyFSM_ShroudfiendMelee.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::NewProp_ShroudFiendPool_MetaData[] = {
+		{ "Category", "EnemyFSM_ShroudfiendMelee" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyFSM_ShroudfiendMelee.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::NewProp_ShroudFiendPool = { "ShroudFiendPool", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEnemyFSM_ShroudfiendMelee, ShroudFiendPool), Z_Construct_UClass_AEnemyPool_Shroudfiend_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::NewProp_ShroudFiendPool_MetaData), Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::NewProp_ShroudFiendPool_MetaData) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::NewProp_ShroudFiendPool,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UEnemyFSM_ShroudfiendMelee>::IsAbstract,
 	};
@@ -54,15 +70,16 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_ShroudfiendMelee() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::PropPointers),
 		0,
 		0x00B000A4u,
 		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::Class_MetaDataParams), Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::Class_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee_Statics::PropPointers) < 2048);
 	UClass* Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee()
 	{
 		if (!Z_Registration_Info_UClass_UEnemyFSM_ShroudfiendMelee.OuterSingleton)
@@ -83,9 +100,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_ShroudfiendMelee() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_ShroudfiendMelee_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee, UEnemyFSM_ShroudfiendMelee::StaticClass, TEXT("UEnemyFSM_ShroudfiendMelee"), &Z_Registration_Info_UClass_UEnemyFSM_ShroudfiendMelee, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEnemyFSM_ShroudfiendMelee), 3951080648U) },
+		{ Z_Construct_UClass_UEnemyFSM_ShroudfiendMelee, UEnemyFSM_ShroudfiendMelee::StaticClass, TEXT("UEnemyFSM_ShroudfiendMelee"), &Z_Registration_Info_UClass_UEnemyFSM_ShroudfiendMelee, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEnemyFSM_ShroudfiendMelee), 913797523U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_ShroudfiendMelee_h_2675060646(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_ShroudfiendMelee_h_3492798276(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_ShroudfiendMelee_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_ShroudfiendMelee_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

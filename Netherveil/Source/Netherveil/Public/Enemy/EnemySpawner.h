@@ -12,16 +12,13 @@ class NETHERVEIL_API AEnemySpawner : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AEnemySpawner();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> EnemyShroudFiendFactory;
@@ -60,5 +57,13 @@ public:
 	//스폰 시 한번만 스폰할지 계속 스폰할지
 	void SpawnTimer(bool bLoop);
 	
+	UPROPERTY(EditAnywhere)
+	class AEnemyPool_Shroudfiend* ShroudFiendPool;
 
+	//스포너에서 체크(true)된 적만 스폰 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bShroudfiend = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bSpider = false;
 };

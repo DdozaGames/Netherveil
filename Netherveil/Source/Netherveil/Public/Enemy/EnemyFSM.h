@@ -92,6 +92,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = FSM)
 	float damageDelayTime = 2.0f;
 
+	//오브젝트 풀링 활성화 전 초기화
+	void InitializeState();
+
 	//=============================Item===============================
 
 	//아이템 드랍

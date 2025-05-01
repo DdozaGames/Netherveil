@@ -17,4 +17,9 @@ class NETHERVEIL_API UEnemyFSM_ShroudfiendMelee : public UEnemyFSM
 public:
 	virtual void BeginPlay() override;
 
+	virtual void DieState() override;
+
+	UPROPERTY(EditAnywhere)
+	class AEnemyPool_Shroudfiend* ShroudFiendPool;
+
 };

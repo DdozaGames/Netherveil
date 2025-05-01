@@ -7,8 +7,11 @@
 #include "Item/AmmoItem.h"
 #include "Item/HealthItem.h"
 #include <NavigationSystem.h>
+
+#include "Enemy/EnemyPool_Shroudfiend.h"
 #include "Kismet/GameplayStatics.h"
 #include "Navigation/PathFollowingComponent.h"
+#include "Netherveil/NetherveilGameMode.h"
 #include "Player/NetherveilPlayer.h"
 #include "Runtime/AIModule/Classes/AIController.h"
 
@@ -216,7 +219,9 @@ void UEnemyFSM::DieState()
 		return;
 	}
 	DropItem();
-	me->Destroy();
+	//me->Destroy();
+
+	
 }
 
 
@@ -258,6 +263,15 @@ void UEnemyFSM::OnDamageProcess(float amount)
 	}
 	anim->animState = currentState;
 	ai->StopMovement();
+}
+
+void UEnemyFSM::InitializeState()
+{
+	anim->bDieDone = false;
+	currentState = EEnemyState::Idle;
+	anim->animState = currentState;
+	me->GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	
 }
 
 void UEnemyFSM::DropItem()

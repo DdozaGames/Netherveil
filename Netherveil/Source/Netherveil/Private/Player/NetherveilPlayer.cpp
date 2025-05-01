@@ -201,7 +201,7 @@ void ANetherveilPlayer::InputFire()
 		}
 		else
 		{
-			UE_LOG(LogTemp, Error, TEXT("No more ammo"));
+			//UE_LOG(LogTemp, Error, TEXT("No more ammo"));
 		}
 		
 	}
