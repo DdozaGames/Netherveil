@@ -6,7 +6,10 @@
 #include "AIController.h"
 #include "Components/CapsuleComponent.h"
 #include "Enemy/EnemyAnim_Spider.h"
+#include "Enemy/EnemyPool_Spider.h"
 #include "Enemy/EnemySpider.h"
+#include "Kismet/GameplayStatics.h"
+#include "Netherveil/NetherveilGameMode.h"
 #include "Player/NetherveilPlayer.h"
 
 
@@ -68,6 +71,24 @@ void UEnemyFSM_Spider::OnDamageProcess(float amount)
 	}
 	anim->animState = currentState;
 	ai->StopMovement();
+}
+
+void UEnemyFSM_Spider::DieState()
+{
+	Super::DieState();
+
+	if (anim->bDieDone)
+	{
+		auto gm = Cast<ANetherveilGameMode>(UGameplayStatics::GetGameMode(this));
+		if (gm && gm->SharedEnemyPool_Shroudfiend)
+		{
+			SpiderPool = gm->SharedEnemyPool_Spider;
+			SpiderPool->ReturnEnemy(me);
+			InitializeState();
+			hp = 180.0f;
+
+		}
+	}
 }
 
 

@@ -29,6 +29,12 @@ void ANetherveilGameMode::BeginPlay()
         SharedEnemyPool_Shroudfiend = *It;
         break;
     }
+
+    for (TActorIterator<AEnemyPool_Spider> It(GetWorld()); It; ++It)
+    {
+        SharedEnemyPool_Spider = *It;
+        break;
+    }
 }
 
 void ANetherveilGameMode::StartStage(int32 StageIndex)

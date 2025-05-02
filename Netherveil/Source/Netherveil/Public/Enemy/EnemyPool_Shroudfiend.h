@@ -17,15 +17,23 @@ public:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> EnemyClass;
+	TSubclassOf<AActor> DarkShroudfiendFactory;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> WhiteShroudfiendFactory;
 
 	UPROPERTY(EditAnywhere)
 	int32 PoolSize = 10;
 
 	UPROPERTY()
-	TArray<AActor*> Pool;
+	TArray<AActor*> Pool_DarkShroudfiend;
 
-	AActor* GetEnemy();
+	UPROPERTY()
+	TArray<AActor*> Pool_WhiteShroudfiend;
+
+	AActor* GetDarkShroudfiend();
+
+	AActor* GetWhiteShroudfiend();
 
 	void ReturnEnemy(AActor* Enemy);
 

@@ -21,5 +21,9 @@ public:
 
 	void OnDamageProcess(float amount) override;
 
+	virtual void DieState() override;
+
+	UPROPERTY(EditAnywhere)
+	class AEnemyPool_Spider* SpiderPool;
 
 };

@@ -193,6 +193,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyPool_Spider.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemyShroudfiendMelee.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -276,6 +281,7 @@
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_ShroudfiendMelee.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyFSM_Spider.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyPool_Shroudfiend.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyPool_Spider.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpawner.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpider.h"/>

@@ -60,9 +60,15 @@ public:
 	UPROPERTY(EditAnywhere)
 	class AEnemyPool_Shroudfiend* ShroudFiendPool;
 
+	UPROPERTY(EditAnywhere)
+	class AEnemyPool_Spider* SpiderPool;
+
 	//스포너에서 체크(true)된 적만 스폰 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bShroudfiend = false;
+	bool bDarkShroudfiend = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bWhiteShroudfiend = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bSpider = false;

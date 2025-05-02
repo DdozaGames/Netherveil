@@ -164,13 +164,16 @@ void AQuestManager::OnDestroyAllEnemies()
         AEnemy* Enemy = Cast<AEnemy>(EnemyActor);
         if (!Enemy || Enemy->IsPendingKill()) continue;
 
+        // 비활성화된 적이면 건너뛰기
+        if (Enemy->IsHidden()) continue;
+
         if (Enemy->IsA<AEnemyBoss>()) continue; // 보스 제외
-        // FSM 컴포넌트 가져오기
+
+        // FSM 가져와서 강제 데미지
         UEnemyFSM* FSM = Enemy->FindComponentByClass<UEnemyFSM>();
         if (FSM)
         {
-            FSM->OnDamageProcess(10000.0);
-            
+            FSM->OnDamageProcess(10000.0f); // 죽게 만들고 내부에서 비활성화
         }
     }
 }

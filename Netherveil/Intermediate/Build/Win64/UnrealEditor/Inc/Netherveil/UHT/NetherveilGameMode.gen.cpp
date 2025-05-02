@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilGameMode() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyPool_Shroudfiend_NoRegister();
+	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyPool_Spider_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemySpawner_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_ANetherveilGameMode();
 	NETHERVEIL_API UClass* Z_Construct_UClass_ANetherveilGameMode_NoRegister();
@@ -151,6 +152,10 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilGameMode() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SharedEnemyPool_Shroudfiend_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_SharedEnemyPool_Shroudfiend;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SharedEnemyPool_Spider_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SharedEnemyPool_Spider;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -195,11 +200,18 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilGameMode() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Shroudfiend = { "SharedEnemyPool_Shroudfiend", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilGameMode, SharedEnemyPool_Shroudfiend), Z_Construct_UClass_AEnemyPool_Shroudfiend_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Shroudfiend_MetaData), Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Shroudfiend_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Spider_MetaData[] = {
+		{ "ModuleRelativePath", "NetherveilGameMode.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Spider = { "SharedEnemyPool_Spider", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ANetherveilGameMode, SharedEnemyPool_Spider), Z_Construct_UClass_AEnemyPool_Spider_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Spider_MetaData), Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Spider_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANetherveilGameMode_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_StageSpawners_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_StageSpawners,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_CurrentStage,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Shroudfiend,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANetherveilGameMode_Statics::NewProp_SharedEnemyPool_Spider,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANetherveilGameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANetherveilGameMode>::IsAbstract,
@@ -240,9 +252,9 @@ void EmptyLinkFunctionForGeneratedCodeNetherveilGameMode() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_NetherveilGameMode_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ANetherveilGameMode, ANetherveilGameMode::StaticClass, TEXT("ANetherveilGameMode"), &Z_Registration_Info_UClass_ANetherveilGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilGameMode), 2860900882U) },
+		{ Z_Construct_UClass_ANetherveilGameMode, ANetherveilGameMode::StaticClass, TEXT("ANetherveilGameMode"), &Z_Registration_Info_UClass_ANetherveilGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANetherveilGameMode), 2356422779U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_NetherveilGameMode_h_2321505625(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_NetherveilGameMode_h_901200404(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_NetherveilGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_NetherveilGameMode_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnemyFSM_Spider() {}
 // Cross Module References
+	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyPool_Spider_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyFSM();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyFSM_Spider();
 	NETHERVEIL_API UClass* Z_Construct_UClass_UEnemyFSM_Spider_NoRegister();
@@ -28,6 +29,11 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_Spider() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpiderPool_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SpiderPool;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +51,16 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_Spider() {}
 		{ "ModuleRelativePath", "Public/Enemy/EnemyFSM_Spider.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UEnemyFSM_Spider_Statics::NewProp_SpiderPool_MetaData[] = {
+		{ "Category", "EnemyFSM_Spider" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyFSM_Spider.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UEnemyFSM_Spider_Statics::NewProp_SpiderPool = { "SpiderPool", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEnemyFSM_Spider, SpiderPool), Z_Construct_UClass_AEnemyPool_Spider_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Spider_Statics::NewProp_SpiderPool_MetaData), Z_Construct_UClass_UEnemyFSM_Spider_Statics::NewProp_SpiderPool_MetaData) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UEnemyFSM_Spider_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEnemyFSM_Spider_Statics::NewProp_SpiderPool,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UEnemyFSM_Spider_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UEnemyFSM_Spider>::IsAbstract,
 	};
@@ -54,15 +70,16 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_Spider() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_UEnemyFSM_Spider_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Spider_Statics::PropPointers),
 		0,
 		0x00B000A4u,
 		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Spider_Statics::Class_MetaDataParams), Z_Construct_UClass_UEnemyFSM_Spider_Statics::Class_MetaDataParams)
 	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UEnemyFSM_Spider_Statics::PropPointers) < 2048);
 	UClass* Z_Construct_UClass_UEnemyFSM_Spider()
 	{
 		if (!Z_Registration_Info_UClass_UEnemyFSM_Spider.OuterSingleton)
@@ -83,9 +100,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyFSM_Spider() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_Spider_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UEnemyFSM_Spider, UEnemyFSM_Spider::StaticClass, TEXT("UEnemyFSM_Spider"), &Z_Registration_Info_UClass_UEnemyFSM_Spider, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEnemyFSM_Spider), 2382633588U) },
+		{ Z_Construct_UClass_UEnemyFSM_Spider, UEnemyFSM_Spider::StaticClass, TEXT("UEnemyFSM_Spider"), &Z_Registration_Info_UClass_UEnemyFSM_Spider, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEnemyFSM_Spider), 238859626U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_Spider_h_3837364775(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_Spider_h_2260918633(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_Spider_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyFSM_Spider_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -4,6 +4,7 @@
 #include "Enemy/EnemySpawner.h"
 #include "DrawDebugHelpers.h"
 #include  "Enemy/EnemyPool_Shroudfiend.h"
+#include "Enemy/EnemyPool_Spider.h"
 #include "Kismet/GameplayStatics.h"
 #include "Netherveil/NetherveilGameMode.h"
 #include "Player/NetherveilPlayer.h"
@@ -13,9 +14,10 @@ AEnemySpawner::AEnemySpawner()
 	PrimaryActorTick.bCanEverTick = true;
 
 	auto gm = Cast<ANetherveilGameMode>(UGameplayStatics::GetGameMode(this));
-	if (gm &&gm->SharedEnemyPool_Shroudfiend)
+	if (gm &&gm->SharedEnemyPool_Shroudfiend &&gm->SharedEnemyPool_Spider)
 	{
 		ShroudFiendPool = gm->SharedEnemyPool_Shroudfiend;
+		SpiderPool = gm->SharedEnemyPool_Spider;
 	}
 }
 
@@ -79,11 +81,11 @@ void AEnemySpawner::SpawnEnemies()
 
 	}*/
 
-	if (bShroudfiend)
+	if (bDarkShroudfiend)
 	{
 		if (ShroudFiendPool)
 		{
-			AActor* Enemy = ShroudFiendPool->GetEnemy();
+			AActor* Enemy = ShroudFiendPool->GetDarkShroudfiend();
 			if (Enemy)
 			{
 				FVector SpawnLocation = GetActorLocation() + FMath::VRand() * SpawnRadius;
@@ -92,11 +94,33 @@ void AEnemySpawner::SpawnEnemies()
 			}
 		}
 	}
-	
-	if (EnemySpiderFactory)
+	if (bWhiteShroudfiend)
 	{
-		FVector SpawnLocation2 = GetActorLocation() + FMath::VRand() * SpawnRadius;
-		GetWorld()->SpawnActor<AActor>(EnemySpiderFactory, SpawnLocation2, FRotator::ZeroRotator);
+		if (ShroudFiendPool)
+		{
+			AActor* Enemy = ShroudFiendPool->GetWhiteShroudfiend();
+			if (Enemy)
+			{
+				FVector SpawnLocation = GetActorLocation() + FMath::VRand() * SpawnRadius;
+				Enemy->SetActorLocation(SpawnLocation);
+				Enemy->SetActorRotation(FRotator::ZeroRotator);
+			}
+		}
+	}
+
+	
+	if (bSpider)
+	{
+		if (SpiderPool)
+		{
+			AActor* Enemy = SpiderPool->GetSpider();
+			if (Enemy)
+			{
+				FVector SpawnLocation = GetActorLocation() + FMath::VRand() * SpawnRadius;
+				Enemy->SetActorLocation(SpawnLocation);
+				Enemy->SetActorRotation(FRotator::ZeroRotator);
+			}
+		}
 	}
 	
 }

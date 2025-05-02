@@ -21,13 +21,13 @@ void EmptyLinkFunctionForGeneratedCodeNetherveil_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xB17B1539,
-				0x43ADA357,
+				0xDB061F85,
+				0x358D4C9B,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_Netherveil.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_Netherveil.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Netherveil(Z_Construct_UPackage__Script_Netherveil, TEXT("/Script/Netherveil"), Z_Registration_Info_UPackage__Script_Netherveil, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xB17B1539, 0x43ADA357));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_Netherveil(Z_Construct_UPackage__Script_Netherveil, TEXT("/Script/Netherveil"), Z_Registration_Info_UPackage__Script_Netherveil, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xDB061F85, 0x358D4C9B));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -32,6 +32,9 @@ public:
     UPROPERTY()
     class AEnemyPool_Shroudfiend* SharedEnemyPool_Shroudfiend;
 
+    UPROPERTY()
+    class AEnemyPool_Spider* SharedEnemyPool_Spider;
+
 protected:
     virtual void BeginPlay() override;
 };

@@ -31,18 +31,27 @@ void EmptyLinkFunctionForGeneratedCodeEnemyPool_Shroudfiend() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_EnemyClass_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DarkShroudfiendFactory_MetaData[];
 #endif
-		static const UECodeGen_Private::FClassPropertyParams NewProp_EnemyClass;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_DarkShroudfiendFactory;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WhiteShroudfiendFactory_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_WhiteShroudfiendFactory;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_PoolSize_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_PoolSize;
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Pool_Inner;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Pool_DarkShroudfiend_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Pool_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Pool_DarkShroudfiend_MetaData[];
 #endif
-		static const UECodeGen_Private::FArrayPropertyParams NewProp_Pool;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_Pool_DarkShroudfiend;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Pool_WhiteShroudfiend_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Pool_WhiteShroudfiend_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_Pool_WhiteShroudfiend;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -59,12 +68,19 @@ void EmptyLinkFunctionForGeneratedCodeEnemyPool_Shroudfiend() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_EnemyClass_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_DarkShroudfiendFactory_MetaData[] = {
 		{ "Category", "EnemyPool_Shroudfiend" },
 		{ "ModuleRelativePath", "Public/Enemy/EnemyPool_Shroudfiend.h" },
 	};
 #endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_EnemyClass = { "EnemyClass", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyPool_Shroudfiend, EnemyClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_EnemyClass_MetaData), Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_EnemyClass_MetaData) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_DarkShroudfiendFactory = { "DarkShroudfiendFactory", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyPool_Shroudfiend, DarkShroudfiendFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_DarkShroudfiendFactory_MetaData), Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_DarkShroudfiendFactory_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_WhiteShroudfiendFactory_MetaData[] = {
+		{ "Category", "EnemyPool_Shroudfiend" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyPool_Shroudfiend.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_WhiteShroudfiendFactory = { "WhiteShroudfiendFactory", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyPool_Shroudfiend, WhiteShroudfiendFactory), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_WhiteShroudfiendFactory_MetaData), Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_WhiteShroudfiendFactory_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_PoolSize_MetaData[] = {
 		{ "Category", "EnemyPool_Shroudfiend" },
@@ -72,18 +88,28 @@ void EmptyLinkFunctionForGeneratedCodeEnemyPool_Shroudfiend() {}
 	};
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_PoolSize = { "PoolSize", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyPool_Shroudfiend, PoolSize), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_PoolSize_MetaData), Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_PoolSize_MetaData) };
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_Inner = { "Pool", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_DarkShroudfiend_Inner = { "Pool_DarkShroudfiend", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_DarkShroudfiend_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Enemy/EnemyPool_Shroudfiend.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool = { "Pool", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyPool_Shroudfiend, Pool), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_MetaData), Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_MetaData) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_DarkShroudfiend = { "Pool_DarkShroudfiend", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyPool_Shroudfiend, Pool_DarkShroudfiend), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_DarkShroudfiend_MetaData), Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_DarkShroudfiend_MetaData) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_WhiteShroudfiend_Inner = { "Pool_WhiteShroudfiend", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_WhiteShroudfiend_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Enemy/EnemyPool_Shroudfiend.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_WhiteShroudfiend = { "Pool_WhiteShroudfiend", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyPool_Shroudfiend, Pool_WhiteShroudfiend), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_WhiteShroudfiend_MetaData), Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_WhiteShroudfiend_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_EnemyClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_DarkShroudfiendFactory,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_WhiteShroudfiendFactory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_PoolSize,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_Inner,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_DarkShroudfiend_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_DarkShroudfiend,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_WhiteShroudfiend_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::NewProp_Pool_WhiteShroudfiend,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyPool_Shroudfiend_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemyPool_Shroudfiend>::IsAbstract,
@@ -123,9 +149,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyPool_Shroudfiend() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyPool_Shroudfiend_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyPool_Shroudfiend, AEnemyPool_Shroudfiend::StaticClass, TEXT("AEnemyPool_Shroudfiend"), &Z_Registration_Info_UClass_AEnemyPool_Shroudfiend, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyPool_Shroudfiend), 4169207599U) },
+		{ Z_Construct_UClass_AEnemyPool_Shroudfiend, AEnemyPool_Shroudfiend::StaticClass, TEXT("AEnemyPool_Shroudfiend"), &Z_Registration_Info_UClass_AEnemyPool_Shroudfiend, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyPool_Shroudfiend), 3059792069U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyPool_Shroudfiend_h_3778873015(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyPool_Shroudfiend_h_3955761181(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyPool_Shroudfiend_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyPool_Shroudfiend_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
