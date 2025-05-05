@@ -20,6 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyBoss_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyBossAttack_EnergyWave_NoRegister();
 	NETHERVEIL_API UClass* Z_Construct_UClass_AEnemyBossAttack_Fireball_NoRegister();
+	NETHERVEIL_API UClass* Z_Construct_UClass_AFireballPool_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Netherveil();
 // End Cross Module References
 	DEFINE_FUNCTION(AEnemyBoss::execPlayCameraShake)
@@ -243,6 +244,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_cameraShake_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_cameraShake;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_FireballPool_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_FireballPool;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -296,10 +301,18 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake = { "cameraShake", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBoss, cameraShake), Z_Construct_UClass_UClass, Z_Construct_UClass_UCameraShakeBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake_MetaData), Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballPool_MetaData[] = {
+		{ "Category", "EnemyBoss" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBoss.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballPool = { "FireballPool", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBoss, FireballPool), Z_Construct_UClass_AFireballPool_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballPool_MetaData), Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballPool_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyBoss_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBoss_Statics::NewProp_EnergyWaveFactory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballFactory,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBoss_Statics::NewProp_cameraShake,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBoss_Statics::NewProp_FireballPool,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyBoss_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemyBoss>::IsAbstract,
@@ -340,9 +353,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBoss() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyBoss, AEnemyBoss::StaticClass, TEXT("AEnemyBoss"), &Z_Registration_Info_UClass_AEnemyBoss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBoss), 189332203U) },
+		{ Z_Construct_UClass_AEnemyBoss, AEnemyBoss::StaticClass, TEXT("AEnemyBoss"), &Z_Registration_Info_UClass_AEnemyBoss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBoss), 1385978270U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_251374311(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_4151884949(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBoss_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

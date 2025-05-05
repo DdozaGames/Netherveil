@@ -16,7 +16,6 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
-	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION()
 	void OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
@@ -27,4 +26,14 @@ public:
 
 	UPROPERTY(VisibleAnywhere, Category = BodyMesh)
 	class UStaticMeshComponent* bodyMeshComp;
+
+	void Activate(FVector SpawnLoc);
+	void Deactivate();
+
+	bool bIsActive = false;
+
+	FTimerHandle LifeSpanTimerHandle;
+
+	UPROPERTY(EditAnywhere, Category = "Bullet")
+	float LifeTime = 4.0f;
 };

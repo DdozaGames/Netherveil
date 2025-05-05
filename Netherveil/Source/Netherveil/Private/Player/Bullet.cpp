@@ -99,7 +99,8 @@ void ABullet::Activate(FVector SpawnLoc, const FVector& Dir)
 	SetActorLocation(SpawnLoc);
 	InitialSpawnLocation = SpawnLoc;
 	SetActorHiddenInGame(false);
-	SetActorEnableCollision(true);
+	collisionComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	//SetActorEnableCollision(true);
 	Direction = Dir;
 	bIsActive = true;
 
@@ -112,7 +113,9 @@ void ABullet::Deactivate()
 	GetWorldTimerManager().ClearTimer(LifeSpanTimerHandle);
 
 	SetActorHiddenInGame(true);
-	SetActorEnableCollision(false);
+	collisionComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	//SetActorEnableCollision(false);
 	bIsActive = false;
 }
 

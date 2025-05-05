@@ -41,4 +41,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Attack")
 	void PlayCameraShake();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class AFireballPool* FireballPool;
 };

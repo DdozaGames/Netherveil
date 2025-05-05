@@ -144,6 +144,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBossAttack_Fireball() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_bodyMeshComp_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_bodyMeshComp;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LifeTime_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_LifeTime;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -179,9 +183,17 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBossAttack_Fireball() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_bodyMeshComp = { "bodyMeshComp", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBossAttack_Fireball, bodyMeshComp), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_bodyMeshComp_MetaData), Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_bodyMeshComp_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_LifeTime_MetaData[] = {
+		{ "Category", "Bullet" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBossAttack_Fireball.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_LifeTime = { "LifeTime", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBossAttack_Fireball, LifeTime), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_LifeTime_MetaData), Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_LifeTime_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_collisionComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_bodyMeshComp,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::NewProp_LifeTime,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyBossAttack_Fireball_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemyBossAttack_Fireball>::IsAbstract,
@@ -221,9 +233,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyBossAttack_Fireball() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_Fireball_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyBossAttack_Fireball, AEnemyBossAttack_Fireball::StaticClass, TEXT("AEnemyBossAttack_Fireball"), &Z_Registration_Info_UClass_AEnemyBossAttack_Fireball, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBossAttack_Fireball), 1932502201U) },
+		{ Z_Construct_UClass_AEnemyBossAttack_Fireball, AEnemyBossAttack_Fireball::StaticClass, TEXT("AEnemyBossAttack_Fireball"), &Z_Registration_Info_UClass_AEnemyBossAttack_Fireball, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBossAttack_Fireball), 3295571196U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_Fireball_h_2696416789(TEXT("/Script/Netherveil"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_Fireball_h_172452604(TEXT("/Script/Netherveil"),
 		Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_Fireball_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PC_1M_Desktop_UnrealProject_Netherveil_Netherveil_Source_Netherveil_Public_Enemy_EnemyBossAttack_Fireball_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -26,7 +26,7 @@ void AEnemyBossAttack_Fireball::BeginPlay()
 	Super::BeginPlay();
 
 	// 불덩이를 6초 후에 자동 삭제
-	SetLifeSpan(6.0f);
+	//SetLifeSpan(6.0f);
 
 	collisionComp->OnComponentBeginOverlap.AddDynamic(this, &AEnemyBossAttack_Fireball::OnBeginOverlap);
 
@@ -38,11 +38,6 @@ void AEnemyBossAttack_Fireball::BeginPlay()
 	}
 }
 
-void AEnemyBossAttack_Fireball::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
 
 void AEnemyBossAttack_Fireball::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -51,7 +46,27 @@ void AEnemyBossAttack_Fireball::OnBeginOverlap(UPrimitiveComponent* OverlappedCo
 	if (player)
 	{
 		player->OnHitEvent();
-		this->Destroy();
+		Deactivate();
 	}
+}
+
+void AEnemyBossAttack_Fireball::Activate(FVector SpawnLoc)
+{
+	SetActorLocation(SpawnLoc);
+	SetActorHiddenInGame(false);
+	collisionComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	bIsActive = true;
+
+	// 타이머로 일정 시간 후 비활성화
+	GetWorldTimerManager().SetTimer(LifeSpanTimerHandle, this, &AEnemyBossAttack_Fireball::Deactivate, LifeTime, false);
+}
+
+void AEnemyBossAttack_Fireball::Deactivate()
+{
+	GetWorldTimerManager().ClearTimer(LifeSpanTimerHandle);
+
+	SetActorHiddenInGame(true);
+	collisionComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	bIsActive = false;
 }
 

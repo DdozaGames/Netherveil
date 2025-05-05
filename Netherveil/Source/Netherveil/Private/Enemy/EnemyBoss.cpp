@@ -3,9 +3,11 @@
 
 #include "Enemy/EnemyBoss.h"
 
+#include "EngineUtils.h"
 #include "Components/CapsuleComponent.h"
 #include "Enemy/EnemyBossAttack_EnergyWave.h"
 #include "Enemy/EnemyBossAttack_Fireball.h"
+#include "Enemy/FireballPool.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/NetherveilPlayer.h"
 
@@ -15,6 +17,13 @@ void AEnemyBoss::BeginPlay()
 	Super::BeginPlay();
     
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AEnemyBoss::OnBeginOverlap);
+
+    // 월드에 있는 BulletPool 액터 찾기 
+    for (TActorIterator<AFireballPool> It(GetWorld()); It; ++It)
+    {
+        FireballPool = *It;
+        break;
+    }
 }
 
 void AEnemyBoss::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -72,23 +81,20 @@ void AEnemyBoss::SpawnFireBall()
                 );
 
                 FVector SpawnLocation = GetActorLocation() + RandomOffset;
-                FRotator SpawnRotation = FRotator::ZeroRotator;
+                //FRotator SpawnRotation = FRotator::ZeroRotator;
 
                 // 콜리전 처리 방식 명시
                 FActorSpawnParameters SpawnParams;
                 SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
-                AEnemyBossAttack_Fireball* Fireball = GetWorld()->SpawnActor<AEnemyBossAttack_Fireball>(
-                    FireballFactory, SpawnLocation, SpawnRotation, SpawnParams);
+                /*AEnemyBossAttack_Fireball* Fireball = GetWorld()->SpawnActor<AEnemyBossAttack_Fireball>(
+                    FireballFactory, SpawnLocation, SpawnRotation, SpawnParams);*/
 
-                /*if (Fireball)
+                AEnemyBossAttack_Fireball* Fireball = FireballPool->GetFireball();
+                if (Fireball)
                 {
-                    UE_LOG(LogTemp, Warning, TEXT("Fireball spawned at %s"), *SpawnLocation.ToString());
+                    Fireball->Activate(SpawnLocation);
                 }
-                else
-                {
-                    UE_LOG(LogTemp, Error, TEXT("Failed to spawn fireball at %s"), *SpawnLocation.ToString());
-                }*/
 
                 (*CurrentSpawn)++;
             }),

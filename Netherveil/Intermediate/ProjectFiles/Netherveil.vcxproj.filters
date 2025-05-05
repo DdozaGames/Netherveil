@@ -105,6 +105,9 @@
     <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\EnemySpider.cpp">
       <Filter>Source\Netherveil\Private\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\FireballPool.cpp">
+      <Filter>Source\Netherveil\Private\Enemy</Filter>
+    </ClCompile>
     <Filter Include="Source\Netherveil\Private\Item">
       <UniqueIdentifier>{45A5E0F1-3876-3136-BE70-2292ED1EF8B7}</UniqueIdentifier>
     </Filter>
@@ -202,6 +205,9 @@
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpider.h">
+      <Filter>Source\Netherveil\Public\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\FireballPool.h">
       <Filter>Source\Netherveil\Public\Enemy</Filter>
     </ClInclude>
     <Filter Include="Source\Netherveil\Public\Item">

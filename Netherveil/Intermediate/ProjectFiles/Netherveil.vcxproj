@@ -213,6 +213,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Netherveil\Private\Enemy\FireballPool.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Netherveil\Private\Item\AmmoItem.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -285,6 +290,7 @@
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemyShroudfiendMelee.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpawner.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\EnemySpider.h"/>
+    <ClInclude Include="..\..\Source\Netherveil\Public\Enemy\FireballPool.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\AmmoItem.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\HealthItem.h"/>
     <ClInclude Include="..\..\Source\Netherveil\Public\Item\Item.h"/>
