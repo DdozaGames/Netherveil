@@ -54,6 +54,7 @@ void AEnemyBossAttack_Fireball::Activate(FVector SpawnLoc)
 {
 	SetActorLocation(SpawnLoc);
 	SetActorHiddenInGame(false);
+	collisionComp->SetSimulatePhysics(true);
 	collisionComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	bIsActive = true;
 
@@ -66,6 +67,7 @@ void AEnemyBossAttack_Fireball::Deactivate()
 	GetWorldTimerManager().ClearTimer(LifeSpanTimerHandle);
 
 	SetActorHiddenInGame(true);
+	collisionComp->SetSimulatePhysics(false);
 	collisionComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	bIsActive = false;
 }

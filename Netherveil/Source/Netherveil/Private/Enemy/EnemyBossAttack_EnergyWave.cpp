@@ -49,7 +49,7 @@ void AEnemyBossAttack_EnergyWave::OnBeginOverlap(UPrimitiveComponent* Overlapped
     if (player)
     {
         player->OnHitEvent();
-        UE_LOG(LogTemp, Warning, TEXT(" AEnemyBossAttack_EnergyWave::hit player"));
+        //UE_LOG(LogTemp, Warning, TEXT(" AEnemyBossAttack_EnergyWave::hit player"));
         //this->Destroy();
     }
 }
