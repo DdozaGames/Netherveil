@@ -22,29 +22,41 @@
 - 퀘스트 데이터를 DataTable에서 로드하고 관리하는 QuestManager
 - 퀘스트마다 특정 균열만 활성화하고 나머지는 대기 상태로 유지
 - 현재 진행중인 스테이지의 적 스포너만 활성화
-<img src= "https://github.com/user-attachments/assets/8e556416-b554-4750-a845-b01b26782363" height="300" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/QuestChart.png" height="300" />
 
 ### Post Processing
-#### 몰입감 있는 플레이 경험을 위해 각 Stage에 최적화된 분위기를 연출 
+몰입감 있는 플레이 경험을 위해 각 Stage에 최적화된 분위기를 연출 
 - Stage 1
-<img src= "https://github.com/user-attachments/assets/072d8467-220b-45b3-a033-1c144d13b5a4" height="250" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Stage1.png" height="250" />
+
 - Stage 2
-<img src= "https://github.com/user-attachments/assets/d9b314b6-361e-4bb8-9d7a-fde3ab159293" height="250" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Stage2.png" height="250" />
+
 - Boss Stage
-<img src= "https://github.com/user-attachments/assets/d9b314b6-361e-4bb8-9d7a-fde3ab159293" height="250" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/BossStage.png" height="250" />
 
 ### 플레이어 공격 모드
-- Grenade (유탄총)
-<img src= "https://github.com/user-attachments/assets/072d8467-220b-45b3-a033-1c144d13b5a4" height="250" />
-- Sniper (스나이퍼)
-<img src= "https://github.com/user-attachments/assets/072d8467-220b-45b3-a033-1c144d13b5a4" height="250" />
+- Grenade (유탄총) / Sniper (스나이퍼)
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/GrenadeGun.png" height="250" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/SniperGun.png" height="250" />
+
+### 아이템 시스템
+- 플레이어 HP
+- 탄약 (Grenade, Sniper)
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/ItemHP.png" height="250" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/ItemGrenadeAmmo.png" height="250" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/ItemSniperAmmo.png" height="250" />
+
+### 미니맵
+- 실시간으로 적의 위치를 표시
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Minimap.png" height="250" />
 
 ### 퀘스트 완료 시
-<img src= "https://github.com/user-attachments/assets/8e556416-b554-4750-a845-b01b26782363" height="250" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/CompleteQuest.png" height="250" />
 
 
  ## 📺 시연 영상 (클릭 시 이동)
  <a href="https://www.youtube.com/watch?v=rhvf1A6h_io">
-   <img src="https://github.com/user-attachments/assets/7b840036-6f66-49cf-bac9-3010613b7b24" height="250" />
+   <img src="https://github.com/DdozaGames/Netherveil/blob/main/photo/NetherveilMain.png" height="250" />
  </a>
     
