@@ -1,9 +1,8 @@
-<img src="https://github.com/user-attachments/assets/a8bace0e-a0d4-4e51-b907-15f9a766913f" height="300" />
+<img src="https://github.com/DdozaGames/Netherveil/blob/main/photo/NetherveilMain.png" height="300" />
 </a>
 </center>
 
 # Netherveil
-> 감정을 잃은 26세기의 로봇 도시를 배경으로 하는 핵 앤 슬래쉬 액션 RPG 게임
 
 <img src="https://img.shields.io/badge/Unreal-0E1128?style=flat&logo=unrealengine&logoColor=white"/> <img src="https://img.shields.io/badge/-Blueprint-137CBD?style=flat&logo=blueprint&logoColor=white"> <img src="https://img.shields.io/badge/-C%2B%2B-00599C?style=flat&logo=C%2B%2B&logoColor=white"> 
 
