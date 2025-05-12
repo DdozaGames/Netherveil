@@ -18,23 +18,25 @@
 플레이어는 균열을 닫고 점령당한 지역을 되찾기 위해 전투를 벌이는 퀘스트 기반의 FPS 게임
 
 
-## 🚀주요 기능
+## 🚀 주요 기능
 
 ### 🗝️ 퀘스트 시스템
 - 퀘스트 데이터를 DataTable에서 로드하고 관리하는 QuestManager
 - 퀘스트마다 특정 균열만 활성화하고 나머지는 대기 상태로 유지
 - 현재 진행중인 스테이지의 적 스포너만 활성화
+- 퀘스트 완료 시 UI 반영 및 알림
 <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/QuestChart.png" height="450" />
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/CompleteQuest.png" height="270" />
 
 ### 🎬 Post Processing
 몰입감 있는 플레이 경험을 위해 각 Stage에 최적화된 분위기를 연출 
-- Stage 1
+- **Stage 1**
 <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Stage1.png" height="270" />
 
-- Stage 2
+- **Stage 2**
 <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Stage2.png" height="270" />
 
-- Boss Stage
+- **Boss Stage**
 <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/BossStage.png" height="270" />
 
 ### 🔫 플레이어 공격 모드
@@ -48,12 +50,19 @@
   
 <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/ItemHP.png" height="100" /> <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/ItemGrenadeAmmo.png" height="100" /> <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/ItemSniperAmmo.png" height="100" />
 
+### 👾 적 AI
+- Shroudfiend : 근거리 공격 (할퀴기)
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Shroudfiend.png" height="200" />
+
+- Spider : 원거리 공격 (번개 볼 발사)
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Spider.png" height="200" />
+
+- Boss : 근거리 공격 (할퀴기, 불 구덩이 투하, 에너지파 발사)
+<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Boss.png" height="200" />
+
 ### 🗺️ 미니맵
 - 실시간으로 적의 위치를 표시
 <img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/Minimap.png" height="150" />
-
-### 퀘스트 완료 시
-<img src= "https://github.com/DdozaGames/Netherveil/blob/main/photo/CompleteQuest.png" height="270" />
 
 
  ## 📺 시연 영상 (클릭 시 이동)
