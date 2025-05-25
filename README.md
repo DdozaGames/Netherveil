@@ -7,7 +7,7 @@
 <img src="https://img.shields.io/badge/Unreal-0E1128?style=flat&logo=unrealengine&logoColor=white"/> <img src="https://img.shields.io/badge/-Blueprint-137CBD?style=flat&logo=blueprint&logoColor=white"> <img src="https://img.shields.io/badge/-C%2B%2B-00599C?style=flat&logo=C%2B%2B&logoColor=white"> 
 
 ## 📢 프로젝트 소개
-- 장르 : 싱글플레이 FPS 게임
+- 장르 : 싱글플레이 슈팅 게임
 - 개발 환경 :  Unreal Engine 5
 - 주 사용 기술 : C++
 - 제작 기간 : 2025.2 - 2025.05​
